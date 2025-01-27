@@ -2,8 +2,10 @@ from gtep.gtep_model import ExpansionPlanningModel
 from gtep.gtep_data import ExpansionPlanningData
 from gtep.gtep_solution import ExpansionPlanningSolution
 from pyomo.core import TransformationFactory
+from pyomo.environ import SolverFactory
 from pyomo.contrib.appsi.solvers.highs import Highs
 from pyomo.contrib.appsi.solvers.gurobi import Gurobi
+from pyomo.contrib.appsi.solvers.ipopt import Ipopt
 from icecream import ic
 
 
@@ -13,23 +15,47 @@ data_object.load_prescient(data_path)
 
 
 mod_object = ExpansionPlanningModel(
+<<<<<<< HEAD:gtep/driver_config_work.py
     stages=1, data=data_object, num_reps=1, len_reps=1, num_commit=24, num_dispatch=4
 )
 
 for k, v in mod_object.config.items():
     print(f"k: {k}", f"v: {v}")
+=======
+    stages=1,
+    data=data_object.md,
+    num_reps=1,
+    len_reps=1,
+    num_commit=24, # 24
+    num_dispatch=4, # 4
+)
+mod_object.config["flow_model"] = "ACR"
+for k,v in mod_object.config.items():
+    ic(k,v)
+
+# quit()
+>>>>>>> da58e56 (Model Accuracy Improvements and Testings):gtep/driver_config_test.py
 
 mod_object.config["include_investment"] = False
 mod_object.create_model()
 
+<<<<<<< HEAD:gtep/driver_config_work.py
 ic(mod_object)
 exit()
 
+=======
+#ic(mod_object)
+
+
+#quit()
+>>>>>>> da58e56 (Model Accuracy Improvements and Testings):gtep/driver_config_test.py
 TransformationFactory("gdp.bound_pretransformation").apply_to(mod_object.model)
 TransformationFactory("gdp.bigm").apply_to(mod_object.model)
-# opt = SolverFactory("gurobi")
+opt = SolverFactory("gurobi")
 opt = Gurobi()
-# opt = Highs()
+#opt = SolverFactory("ipopt")
+#opt = Ipopt()
+opt.config.logfile = "logfileACtest.txt"
 # # mod_object.results = opt.solve(mod_object.model, tee=True)
 mod_object.results = opt.solve(mod_object.model)
 
@@ -39,11 +65,19 @@ mod_object.results = opt.solve(mod_object.model)
 
 # sol_object.import_data_object(data_object)
 
+<<<<<<< HEAD:gtep/driver_config_work.py
 # # sol_object.read_json("./gtep_lots_of_buses_solution.json")  # "./gtep/data/WECC_USAEE"
 # # sol_object.read_json("./gtep_11bus_solution.json")  # "./gtep/data/WECC_Reduced_USAEE"
 # # sol_object.read_json("./gtep_solution.json")
 # # sol_object.read_json("./updated_gtep_solution_test.json")
 # # sol_object.read_json("./gtep_wiggles.json")
+=======
+# sol_object.read_json("./gtep_lots_of_buses_solution.json")  # "./gtep/data/WECC_USAEE"
+# sol_object.read_json("./gtep_11bus_solution.json")  # "./gtep/data/WECC_Reduced_USAEE"
+# sol_object.read_json("./gtep_solution.json")
+# sol_object.read_json("./updated_gtep_solution_test.json")
+# sol_object.read_json("./gtep_wiggles.json")
+>>>>>>> da58e56 (Model Accuracy Improvements and Testings):gtep/driver_config_test.py
 # sol_object.plot_levels(save_dir="./plots/")
 
 # save_numerical_results = False
@@ -57,9 +91,10 @@ mod_object.results = opt.solve(mod_object.model)
 # if load_numerical_results:
 #     # sol_object.read_json("./gtep_solution.json")
 #     sol_object.read_json("./bigger_longer_wigglier_gtep_solution.json")
-# plot_results = False
-# if plot_results:
-#     sol_object.plot_levels(save_dir="./plots/")
+plot_results = False
+if plot_results:
+    sol_object.plot_levels(save_dir="./gtep/ACreactive_plots/")
+
 
 
 pass
