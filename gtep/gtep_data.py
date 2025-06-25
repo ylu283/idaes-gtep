@@ -101,6 +101,14 @@ class ExpansionPlanningData:
         #]
 
 
+        ## FIXME:
+        ## RESIL WEEK ONLY
+        ## but we'll want something similar just less insane in the future
+        if len(self.representative_dates) == 5:
+            self.representative_weights = {1:91, 2:91, 3:91, 4:91, 5:1}
+        else:
+            self.representative_weights = {1:91, 2:91, 3:91, 4:91}
+
         for date in self.representative_dates:
             key_idx = time_keys.index(date)
             time_key_set = time_keys[key_idx : key_idx + 24]
