@@ -27,7 +27,7 @@ class ExpansionPlanningData:
         options_dict = {
             "data_path": data_path,
             "input_format": "rts-gmlc",
-            "start_date": "01-01-2020",
+            "start_date": "01-01-2019",
             "num_days": 365,
             "sced_horizon": 1,
             "sced_frequency_minutes": 60,
@@ -39,7 +39,7 @@ class ExpansionPlanningData:
         # Use prescient data provider to load in sequential data for representative periods
         data_list = []
 
-        x = datetime.datetime(2020, 1, 1)
+        x = datetime.datetime(2019, 1, 1)
         data_provider = gmlc_data_provider.GmlcDataProvider(options=prescient_options)
         # populate an egret model data with the basic stuff
         self.md = data_provider.get_initial_actuals_model(
@@ -56,8 +56,6 @@ class ExpansionPlanningData:
         # data_provider.populate_initial_state_data(options=prescient_options, model=md)
         self.load_default_data_settings()
 
-        self.load_storage_csv(data_path)
-
         for gen in self.md.data["elements"]["generator"]:
             if "-c" in gen:  # key/Gen UID in csv file; -c = candidate?
                 self.md.data["elements"]["generator"][gen]["in_service"] = False
@@ -66,10 +64,6 @@ class ExpansionPlanningData:
         for branch in self.md.data["elements"]["branch"]:
             if "-c" in branch:  # key/Branch UID
                 self.md.data["elements"]["branch"][branch]["in_service"] = False
-
-        for stor in self.md.data["elements"]["storage"]:
-            if "-c" in stor:  # key/Branch UID
-                self.md.data["elements"]["storage"][stor]["in_service"] = False
 
         ## NOTE: Below is only for multiple representative periods and creates a list
         ## of modelData objects, not just a single modelData object
@@ -81,37 +75,12 @@ class ExpansionPlanningData:
 
         time_keys = self.md.data["system"]["time_keys"]
         self.representative_dates = [
-<<<<<<< HEAD
-            "2020-01-17 00:00",
-            "2020-04-23 00:00",
-            "2020-07-05 00:00",
-            "2020-10-14 00:00",
-            "2020-08-12 00:00",
-=======
             "2019-01-28 00:00",
             "2019-04-23 00:00",
             "2019-07-05 00:00",
             "2019-10-14 00:00",
-            "2019-05-24 00:00",
->>>>>>> 1a45b27 (outage code)
+            "2019-05-20 00:00",
         ]
-        #self.representative_dates = ["2020-01-17 00:00",
-        #    "2020-04-23 00:00",
-        #    "2020-07-05 00:00",
-        #    "2020-10-14 00:00",
-        #    "2020-08-12 00:00",
-        #    "2020-01-19 00:00",
-        #    "2020-04-25 00:00",
-        #    "2020-07-07 00:00",
-        #    "2020-10-16 00:00",
-        #    "2020-08-14 00:00",
-        #    "2020-01-15 00:00",
-        #    "2020-04-21 00:00",
-        #    "2020-07-03 00:00",
-        #    "2020-10-12 00:00",
-        #    "2020-08-10 00:00"
-        #]
-
 
         ## FIXME:
         ## RESIL WEEK ONLY
@@ -210,7 +179,6 @@ class ExpansionPlanningData:
                 self.md.data["elements"]["generator"][gen]["lifetime"] = 1
             else:
                 self.md.data["elements"]["generator"][gen]["lifetime"] = 3
-                self.md.data["elements"]["generator"][gen]["lifetime"] = 3
             self.md.data["elements"]["generator"][gen]["spinning_reserve_frac"] = 0.1
             self.md.data["elements"]["generator"][gen]["quickstart_reserve_frac"] = 0.1
             self.md.data["elements"]["generator"][gen]["capital_multiplier"] = 1
@@ -222,7 +190,7 @@ class ExpansionPlanningData:
             self.md.data["elements"]["generator"][gen]["ramp_down_rate"] = 0.1
             self.md.data["elements"]["generator"][gen]["emissions_factor"] = 1
             self.md.data["elements"]["generator"][gen]["start_fuel"] = 1
-            self.md.data["elements"]["generator"][gen]["investment_cost"] = 1
+            self.md.data["elements"]["generator"][gen]["investment_cost"] = 235164
         for branch in self.md.data["elements"]["branch"]:
             self.md.data["elements"]["branch"][branch]["loss_rate"] = 0
             self.md.data["elements"]["branch"][branch]["distance"] = 1
@@ -230,20 +198,6 @@ class ExpansionPlanningData:
         self.md.data["system"]["min_operating_reserve"] = 0.1
         self.md.data["system"]["min_spinning_reserve"] = 0.1
 
-    def load_storage_csv(self, data_path):
-        try:
-            storage_path = data_path + "/storage.csv"
-            storage_df = pd.read_csv(storage_path)
-            
-            storage_data = {}
-            for _, row in storage_df.iterrows():
-                name = row['name']  
-                storage_data[name] = row.drop('name').to_dict()  
-            
-            self.md.data['elements']['storage'] = storage_data
-        except FileNotFoundError:
-            print(f"Warning: The file '{storage_path}' does not exist. Skipping loading storage data.")
-            self.md.data['elements']['storage'] = {}
     def texas_case_study_updates(self, data_path):
         generator_update_path = data_path + "/gen.csv"
         generator_df = pd.read_csv(generator_update_path)
