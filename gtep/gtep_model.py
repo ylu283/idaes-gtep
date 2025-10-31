@@ -1028,7 +1028,10 @@ def add_commitment_variables(b, commitment_period):
         ## NOTE: Reminder: thermalMin is a percentage of thermalCapacity
         @disj.Constraint(b.dispatchPeriods)
         def operating_limit_min(d, dispatchPeriod):
-            return b.dispatchPeriod[dispatchPeriod].thermalGeneration[generator] >= 0 * u.MW
+            return (
+                b.dispatchPeriod[dispatchPeriod].thermalGeneration[generator]
+                >= 0 * u.MW
+            )
 
         # Maximum operating limits
         @disj.Constraint(b.dispatchPeriods)
@@ -1065,7 +1068,10 @@ def add_commitment_variables(b, commitment_period):
         ## NOTE: Reminder: thermalMin is a percentage of thermalCapacity
         @disj.Constraint(b.dispatchPeriods)
         def operating_limit_max(disj, dispatchPeriod):
-            return b.dispatchPeriod[dispatchPeriod].thermalGeneration[generator] <= 0 * u.MW
+            return (
+                b.dispatchPeriod[dispatchPeriod].thermalGeneration[generator]
+                <= 0 * u.MW
+            )
 
         # Maximum quickstart reserve constraint
         ## NOTE: maxQuickstartReserve is a percentage of thermalCapacity
