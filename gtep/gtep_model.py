@@ -969,7 +969,7 @@ def add_commitment_variables(b, commitment_period):
                 else pyo.Constraint.Skip
             )
 
-        ##NOTE: maxSpiningReserve is a percentage of thermalCapacity
+        ##NOTE: maxSpinningReserve is a percentage of thermalCapacity
         @disj.Constraint(
             b.dispatchPeriods, m.thermalGenerators, doc="Maximum spinning reserve"
         )
