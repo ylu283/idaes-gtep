@@ -1,5 +1,18 @@
-from os.path import abspath, join, dirname
+#################################################################################
+# The Institute for the Design of Advanced Energy Systems Integrated Platform
+# Framework (IDAES IP) was produced under the DOE Institute for the
+# Design of Advanced Energy Systems (IDAES).
+#
+# Copyright (c) 2018-2025 by the software owners: The Regents of the
+# University of California, through Lawrence Berkeley National Laboratory,
+# National Technology & Engineering Solutions of Sandia, LLC, Carnegie Mellon
+# University, West Virginia University Research Corporation, et al.
+# All rights reserved.  Please see the files COPYRIGHT.md and LICENSE.md
+# for full copyright and license information.
+#################################################################################
+
 import pyomo.common.unittest as unittest
+
 from pyomo.environ import ConcreteModel, Var, SolverFactory, value
 from pyomo.environ import units as u
 from gtep.gtep_model import ExpansionPlanningModel
@@ -12,21 +25,24 @@ from prescient.simulator.config import PrescientConfig
 from pyomo.contrib.appsi.solvers.highs import Highs
 
 
+import logging
+from io import StringIO
+
+
 # Helper functions
 def read_debug_model():
-    curr_dir = dirname(abspath(__file__))
-    debug_data_path = abspath(join(curr_dir, "..", "..", "data", "5bus"))
+    debug_data_path = "./gtep/data/5bus"
     dataObject = ExpansionPlanningData()
     dataObject.load_prescient(debug_data_path)
-    return dataObject
+    return dataObject.md
 
 
 class TestGTEP(unittest.TestCase):
     def test_model_init(self):
         # Test that the ExpansionPlanningModel object can read a default dataset and init
         # properly with default values, including building a Pyomo.ConcreteModel object
-        data_object = read_debug_model()
-        modObject = ExpansionPlanningModel(data=data_object)
+        md = read_debug_model()
+        modObject = ExpansionPlanningModel(data=md)
         self.assertIsInstance(modObject, ExpansionPlanningModel)
         modObject.create_model()
         self.assertIsInstance(modObject.model, ConcreteModel)
@@ -41,7 +57,7 @@ class TestGTEP(unittest.TestCase):
         # Test that the ExpansionPlanningModel object can read a default dataset and init
         # properly with non-default values
         modObject = ExpansionPlanningModel(
-            data=data_object, stages=2, num_reps=4, len_reps=16, num_commit=12, num_dispatch=12
+            data=md, stages=2, num_reps=4, len_reps=16, num_commit=12, num_dispatch=12
         )
         self.assertIsInstance(modObject, ExpansionPlanningModel)
         modObject.create_model()
@@ -87,9 +103,9 @@ class TestGTEP(unittest.TestCase):
 
     # Solve the debug model as is.  Objective value should be $6078.86
     def test_solve_bigm(self):
-        data_object = read_debug_model()
+        md = read_debug_model()
         modObject = ExpansionPlanningModel(
-            data=data_object, num_reps=1, len_reps=1, num_commit=1, num_dispatch=1
+            data=md, num_reps=1, len_reps=1, num_commit=1, num_dispatch=1
         )
         modObject.create_model()
         opt = Highs()
@@ -111,9 +127,9 @@ class TestGTEP(unittest.TestCase):
         )
 
     def test_no_investment(self):
-        data_object = read_debug_model()
+        md = read_debug_model()
         modObject = ExpansionPlanningModel(
-            data=data_object, num_reps=1, len_reps=1, num_commit=1, num_dispatch=1
+            data=md, num_reps=1, len_reps=1, num_commit=1, num_dispatch=1
         )
         modObject.config["include_investment"] = False
         modObject.create_model()
