@@ -173,3 +173,9 @@ cython_debug/
 # ignore "data"
 *.csv
 *.xlsx
+.claude/
+CLAUDE.md
+claude-settings/
+skills/
+*.claude
+claude-rules.md
