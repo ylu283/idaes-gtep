@@ -1,0 +1,79 @@
+Initializing simulation...
+Did not find reserves.csv; assuming no reserves
+Setting default t0 state in RTS-GMLC parser
+Dates to simulate: 2035-01-01 to 2035-02-04
+RUC activation hours: 0
+Final RUC date: 2035-02-04
+Using current day's forecasts for RUC solves
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.35
+
+Pyomo model solve time: 33.9879891872406
+
+Deterministic RUC Cost: 15173436959.74
+
+Fixed costs:      6300578.42
+Variable costs:   2160582.17
+
+Projected over-generation reported at t=2035-01-01 00:00 -   total=    -1347.45
+Projected over-generation reported at t=2035-01-01 01:00 -   total=    -1251.92
+Projected over-generation reported at t=2035-01-01 02:00 -   total=    -1288.84
+Projected over-generation reported at t=2035-01-01 03:00 -   total=    -1257.77
+Projected reserve shortfall reported at t=2035-01-01 03:00 - total=      133.19
+Projected over-generation reported at t=2035-01-01 04:00 -   total=    -1187.76
+Projected reserve shortfall reported at t=2035-01-01 04:00 - total=       95.87
+Projected over-generation reported at t=2035-01-01 05:00 -   total=    -1278.44
+Projected over-generation reported at t=2035-01-01 06:00 -   total=    -1316.22
+Projected over-generation reported at t=2035-01-01 07:00 -   total=    -1203.49
+Projected reserve shortfall reported at t=2035-01-01 07:00 - total=       84.62
+Projected over-generation reported at t=2035-01-01 08:00 -   total=    -1026.08
+Projected over-generation reported at t=2035-01-01 09:00 -   total=     -894.76
+Projected reserve shortfall reported at t=2035-01-01 09:00 - total=       35.28
+Projected over-generation reported at t=2035-01-01 11:00 -   total=     -555.36
+Projected reserve shortfall reported at t=2035-01-01 11:00 - total=      434.67
+Projected over-generation reported at t=2035-01-01 12:00 -   total=    -1119.52
+Projected reserve shortfall reported at t=2035-01-01 12:00 - total=      826.15
+Projected over-generation reported at t=2035-01-01 13:00 -   total=     -485.05
+Projected reserve shortfall reported at t=2035-01-01 13:00 - total=      946.82
+Projected over-generation reported at t=2035-01-01 14:00 -   total=     -520.79
+Projected reserve shortfall reported at t=2035-01-01 14:00 - total=      445.54
+Projected over-generation reported at t=2035-01-01 15:00 -   total=     -394.66
+Projected reserve shortfall reported at t=2035-01-01 15:00 - total=      207.19
+Projected reserve shortfall reported at t=2035-01-01 16:00 - total=      620.67
+Projected reserve shortfall reported at t=2035-01-02 03:00 - total=      378.88
+Projected reserve shortfall reported at t=2035-01-02 04:00 - total=      545.68
+Projected reserve shortfall reported at t=2035-01-02 05:00 - total=      624.08
+Projected reserve shortfall reported at t=2035-01-02 06:00 - total=      316.85
+Projected reserve shortfall reported at t=2035-01-02 07:00 - total=      508.32
+Projected reserve shortfall reported at t=2035-01-02 08:00 - total=      481.20
+Projected reserve shortfall reported at t=2035-01-02 09:00 - total=      301.84
+Projected reserve shortfall reported at t=2035-01-02 10:00 - total=      388.51
+
+Traceback (most recent call last):
+  File "./run_coal_prescient.py", line 37, in <module>
+    Prescient().simulate(**prescient_options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 75, in simulate
+    return self._simulate(self.config)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 82, in _simulate
+    return super().simulate(options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/simulator.py", line 95, in simulate
+    oracle_manager.call_initialization_oracle(options, first_time_step)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/oracle_manager.py", line 125, in call_initialization_oracle
+    self._generate_pending_ruc(options, time_step.date, time_step.hour, None)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/oracle_manager.py", line 212, in _generate_pending_ruc
+    deterministic_ruc_instance, ruc_market = self._solve_ruc(
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/oracle_manager.py", line 162, in _solve_ruc
+    deterministic_ruc_instance = self.engine.solve_deterministic_ruc(
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/engine.py", line 108, in solve_deterministic_ruc
+    return self._p.solve_deterministic_ruc(self._ruc_solver, options, ruc_instance, uc_date, uc_hour, network_type, slack_type, self._ptdf_manager)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/egret_plugin.py", line 315, in solve_deterministic_ruc
+    reporting.report_curtailment_for_deterministic_ruc(ruc_instance_for_this_period)                        
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/reporting.py", line 122, in report_curtailment_for_deterministic_ruc
+    quantity_curtailed_this_period = sum(gdict['p_max']['values'][i] - gdict['pg']['values'][i] \
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/reporting.py", line 122, in <genexpr>
+    quantity_curtailed_this_period = sum(gdict['p_max']['values'][i] - gdict['pg']['values'][i] \
+TypeError: 'float' object is not subscriptable
