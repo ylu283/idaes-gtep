@@ -10,9 +10,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.64
+Pyomo model construction time:         3.88
 
-Pyomo model solve time: 42.49528622627258
+Pyomo model solve time: 44.641875982284546
 
 Deterministic RUC Cost: 15162301020.26
 
@@ -250,9 +250,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.96
+Pyomo model construction time:         4.16
 
-Pyomo model solve time: 1763.206889629364
+Pyomo model solve time: 1878.300786972046
 
 Deterministic RUC Cost: 26213628.62
 
@@ -538,7 +538,7 @@ Extracting scenario to simulate
 
 Pyomo model construction time:         3.95
 
-Pyomo model solve time: 20.667315006256104
+Pyomo model solve time: 20.370656490325928
 
 Deterministic RUC Cost: 4508958425.86
 
@@ -838,9 +838,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.00
+Pyomo model construction time:         4.34
 
-Pyomo model solve time: 38.722248554229736
+Pyomo model solve time: 42.23082256317139
 
 Deterministic RUC Cost: 1781304683.93
 
@@ -1162,9 +1162,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.10
+Pyomo model construction time:         4.35
 
-Pyomo model solve time: 47.25421357154846
+Pyomo model solve time: 49.143637895584106
 
 Deterministic RUC Cost: 345844400.66
 
@@ -1463,9 +1463,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.26
+Pyomo model construction time:         4.44
 
-Pyomo model solve time: 37.87019729614258
+Pyomo model solve time: 39.7659387588501
 
 Deterministic RUC Cost: 31859691250.19
 
@@ -1809,9 +1809,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.68
+Pyomo model construction time:         3.94
 
-Pyomo model solve time: 22.520493030548096
+Pyomo model solve time: 24.267859935760498
 
 Deterministic RUC Cost: 17983513505.53
 
@@ -2146,9 +2146,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.08
+Pyomo model construction time:         4.41
 
-Pyomo model solve time: 27.46195888519287
+Pyomo model solve time: 29.507447004318237
 
 Deterministic RUC Cost: 3661114056.30
 
@@ -2457,9 +2457,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.13
+Pyomo model construction time:         4.44
 
-Pyomo model solve time: 15.344636678695679
+Pyomo model solve time: 16.537740468978882
 
 Deterministic RUC Cost: 885676383.92
 
@@ -2755,9 +2755,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.77
+Pyomo model construction time:         3.96
 
-Pyomo model solve time: 18.190401315689087
+Pyomo model solve time: 19.55707836151123
 
 Deterministic RUC Cost: 4775367515.52
 
@@ -3056,9 +3056,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.08
+Pyomo model construction time:         4.36
 
-Pyomo model solve time: 39.39965200424194
+Pyomo model solve time: 42.29027581214905
 
 Deterministic RUC Cost: 6674285474.34
 
@@ -3382,9 +3382,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.19
+Pyomo model construction time:         4.39
 
-Pyomo model solve time: 38.03495717048645
+Pyomo model solve time: 40.85735726356506
 
 Deterministic RUC Cost: 12224205484.52
 
@@ -3705,9 +3705,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.68
+Pyomo model construction time:         3.97
 
-Pyomo model solve time: 29.83500838279724
+Pyomo model solve time: 31.910512685775757
 
 Deterministic RUC Cost: 3842697962.55
 
@@ -4042,9 +4042,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.18
+Pyomo model construction time:         4.51
 
-Pyomo model solve time: 37.20249962806702
+Pyomo model solve time: 39.371196269989014
 
 Deterministic RUC Cost: 314741683.91
 
@@ -4336,9 +4336,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.18
+Pyomo model construction time:         4.48
 
-Pyomo model solve time: 310.8786561489105
+Pyomo model solve time: 336.1909396648407
 
 Deterministic RUC Cost: 1121484805.88
 
@@ -4626,9 +4626,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.11
+Pyomo model construction time:         4.44
 
-Pyomo model solve time: 243.53621625900269
+Pyomo model solve time: 264.43997502326965
 
 Deterministic RUC Cost: 6152776132.19
 
@@ -4931,9 +4931,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.08
+Pyomo model construction time:         4.40
 
-Pyomo model solve time: 43.34806442260742
+Pyomo model solve time: 46.83868479728699
 
 Deterministic RUC Cost: 522267880.72
 
@@ -5233,9 +5233,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.04
+Pyomo model construction time:         4.37
 
-Pyomo model solve time: 38.46515655517578
+Pyomo model solve time: 41.55200958251953
 
 Deterministic RUC Cost: 29810289630.26
 
@@ -5572,9 +5572,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.69
+Pyomo model construction time:         4.03
 
-Pyomo model solve time: 28.74645447731018
+Pyomo model solve time: 30.778862714767456
 
 Deterministic RUC Cost: 7500267465.33
 
@@ -5917,9 +5917,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.05
+Pyomo model construction time:         4.44
 
-Pyomo model solve time: 18.940895795822144
+Pyomo model solve time: 20.329148530960083
 
 Deterministic RUC Cost: 1761293092.81
 
@@ -6208,9 +6208,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.09
+Pyomo model construction time:         4.39
 
-Pyomo model solve time: 17.98249387741089
+Pyomo model solve time: 19.233975648880005
 
 Deterministic RUC Cost: 30936858216.83
 
@@ -6533,9 +6533,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.74
+Pyomo model construction time:         4.05
 
-Pyomo model solve time: 30.883638620376587
+Pyomo model solve time: 33.173145055770874
 
 Deterministic RUC Cost: 40002945663.12
 
@@ -6917,9 +6917,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.08
+Pyomo model construction time:         4.36
 
-Pyomo model solve time: 31.812236309051514
+Pyomo model solve time: 33.919209480285645
 
 Deterministic RUC Cost: 5916786814.13
 
@@ -7248,9 +7248,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.72
+Pyomo model construction time:         4.04
 
-Pyomo model solve time: 33.45596718788147
+Pyomo model solve time: 36.01370978355408
 
 Deterministic RUC Cost: 6855528405.79
 
@@ -7568,9 +7568,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.16
+Pyomo model construction time:         4.46
 
-Pyomo model solve time: 20.12766695022583
+Pyomo model solve time: 21.691113471984863
 
 Deterministic RUC Cost: 1091902584.02
 
@@ -7884,9 +7884,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.09
+Pyomo model construction time:         4.54
 
-Pyomo model solve time: 39.27930808067322
+Pyomo model solve time: 41.91598391532898
 
 Deterministic RUC Cost: 831111766.96
 
@@ -8197,9 +8197,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.60
+Pyomo model construction time:         3.94
 
-Pyomo model solve time: 19.425716876983643
+Pyomo model solve time: 21.25659465789795
 
 Deterministic RUC Cost: 2172421350.88
 
@@ -8494,9 +8494,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.19
+Pyomo model construction time:         4.54
 
-Pyomo model solve time: 19.82662057876587
+Pyomo model solve time: 21.311832904815674
 
 Deterministic RUC Cost: 8527764003.15
 
@@ -8799,9 +8799,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.08
+Pyomo model construction time:         4.43
 
-Pyomo model solve time: 1130.717082977295
+Pyomo model solve time: 1227.7282979488373
 
 Deterministic RUC Cost: 805613494.79
 
@@ -9097,9 +9097,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.09
+Pyomo model construction time:         4.40
 
-Pyomo model solve time: 21.084867238998413
+Pyomo model solve time: 22.572279453277588
 
 Deterministic RUC Cost: 4042167716.61
 
@@ -9399,9 +9399,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         3.75
+Pyomo model construction time:         4.01
 
-Pyomo model solve time: 237.57492423057556
+Pyomo model solve time: 257.73303055763245
 
 Deterministic RUC Cost: 4012619871.25
 
@@ -9703,9 +9703,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.09
+Pyomo model construction time:         4.46
 
-Pyomo model solve time: 45.320960998535156
+Pyomo model solve time: 48.673802614212036
 
 Deterministic RUC Cost: 704537220.97
 
@@ -10004,9 +10004,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.31
+Pyomo model construction time:         4.54
 
-Pyomo model solve time: 24.201029777526855
+Pyomo model solve time: 25.9503173828125
 
 Deterministic RUC Cost: 16887999003.33
 
@@ -10345,9 +10345,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.05
+Pyomo model construction time:         4.31
 
-Pyomo model solve time: 25.85521388053894
+Pyomo model solve time: 27.051817893981934
 
 Deterministic RUC Cost: 46934839990.69
 
@@ -10693,9 +10693,9 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 
-Pyomo model construction time:         4.20
+Pyomo model construction time:         4.52
 
-Pyomo model solve time: 38.33311629295349
+Pyomo model solve time: 41.0731201171875
 
 Deterministic RUC Cost: 7736766324.08
 
@@ -11109,21 +11109,5 @@ Number on/offs:                  2
 Sum on/off ramps:             0.00
 Sum nominal ramps:          777.70
 
-Traceback (most recent call last):
-  File "./run_coal_prescient.py", line 37, in <module>
-    Prescient().simulate(**prescient_options)
-  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 75, in simulate
-    return self._simulate(self.config)
-  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 82, in _simulate
-    return super().simulate(options)
-  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/simulator.py", line 114, in simulate
-    stats_manager.end_simulation()
-  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/stats_manager.py", line 171, in end_simulation
-    self._finish_simulation()
-  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/stats_manager.py", line 228, in _finish_simulation
-    self._overall_publisher.publish(self._overall_stats)
-  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/util/publish_subscribe.py", line 94, in publish
-    subscriber_callable(report)
-  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/reporting_manager.py", line 96, in <lambda>
-    stats_manager.register_for_overall_stats(lambda overall: runtime_file.close())
-OSError: [Errno 116] Stale file handle
+Simulation Complete
+Total simulation time: 7631.30 seconds
