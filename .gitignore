@@ -171,13 +171,10 @@ cython_debug/
 *.DS_Store
 
 # ignore "data"
-*.csv
-*.xlsx
 .claude/
 CLAUDE.md
 claude-settings/
 skills/
 *.claude
 claude-rules.md
-WORKFLOW_UICK_REF.md
 WORKFLOW_QUICK_REF.md
