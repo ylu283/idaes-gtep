@@ -475,22 +475,22 @@ def add_investment_constraints(b, investment_stage):
         )
 
     # Curtailment penalties for investment period
-    # @b.Constraint()
-    # def renewable_curtailment_cost(b):
-    #     renewableCurtailmentRep = 0
-    #     for rep_per in b.representativePeriods:
-    #         for com_per in b.representativePeriod[rep_per].commitmentPeriods:
-    #             renewableCurtailmentRep += (
-    #                 m.weights[rep_per]
-    #                 * m.commitmentPeriodLength
-    #                 * b.representativePeriod[rep_per]
-    #                 .commitmentPeriod[com_per]
-    #                 .renewableCurtailmentCommitment
-    #             )
-    #     return (
-    #         b.renewableCurtailmentInvestment
-    #         == m.investmentFactor[investment_stage] * renewableCurtailmentRep
-    #     )
+    @b.Constraint()
+    def renewable_curtailment_cost(b):
+        renewableCurtailmentRep = 0
+        for rep_per in b.representativePeriods:
+            for com_per in b.representativePeriod[rep_per].commitmentPeriods:
+                renewableCurtailmentRep += (
+                    m.weights[rep_per]
+                    * m.commitmentPeriodLength
+                    * b.representativePeriod[rep_per]
+                    .commitmentPeriod[com_per]
+                    .renewableCurtailmentCommitment
+                )
+        return (
+            b.renewableCurtailmentInvestment
+            == m.investmentFactor[investment_stage] * renewableCurtailmentRep
+        )
 
     ## NOTE: Constraint (13) in the reference paper
     # Minimum per-stage renewable generation requirement
@@ -597,9 +597,9 @@ def add_dispatch_variables(b, dispatch_period):
 
     b.curtailmentCostDispatch = sum(b.renewableCurtailmentCost.values())
 
-    b.operatingCostDispatch = b.generationCostDispatch + b.loadShedCostDispatch
-    # + b.curtailmentCostDispatch
-    # )
+    b.operatingCostDispatch = (
+        b.generationCostDispatch + b.loadShedCostDispatch + b.curtailmentCostDispatch
+    )
 
     b.renewableCurtailmentDispatch = sum(
         b.renewableCurtailment[gen] for gen in m.renewableGenerators
@@ -1922,7 +1922,7 @@ def model_data_references(m):
     # NOTE: what should this be valued at?  This being both curtailment and load shed.
     # TODO: update valuations
     m.curtailmentCost = Param(
-        initialize=2 * max(value(item) for item in m.fuelCost1.values()) * 0,
+        initialize=2 * max(value(item) for item in m.fuelCost1.values()),
         units=u.USD / (u.MW * u.hr),
     )
     m.loadShedCost = Param(
