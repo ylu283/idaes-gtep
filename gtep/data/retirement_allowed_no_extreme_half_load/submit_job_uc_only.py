@@ -5,7 +5,7 @@ import subprocess
 
 THIS_DIR = Path(__file__).resolve().parent
 
-def submit_job(job_name: str = "ERCOT") -> None:
+def submit_job(job_name: str = "ERCOT_UC_only") -> None:
     # make job_scripts dir
     job_scripts_dir = THIS_DIR / "job_scripts"
     os.makedirs(job_scripts_dir, exist_ok=True)
@@ -27,7 +27,7 @@ def submit_job(job_name: str = "ERCOT") -> None:
         module load gurobi
         module load ipopt/3.14.2
 
-        python ./run_coal_prescient.py
+        python ./run_coal_prescient_uc_only.py
     """)
     with open(sh_path, "w", newline="\n") as f:
         f.write(script)
@@ -37,4 +37,4 @@ def submit_job(job_name: str = "ERCOT") -> None:
     print(f"Submitted: {sh_path}")
 
 if __name__ == "__main__":
-    submit_job("ERCOT")
+    submit_job("ERCOT_UC_only")

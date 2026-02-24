@@ -11,7 +11,7 @@ prescient_options = {
 #    "output_directory": "Prescient_2/results",
     "start_date": "01-01-2019",
 #    "start_date": "03-11-2019",
-    "num_days": 365,
+    "num_days": 90,
     "sced_horizon": 6,
 #    "sced_horizon": 24,
     "ruc_mipgap": 0.01,

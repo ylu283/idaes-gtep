@@ -9,7 +9,7 @@ prescient_options = {
     "run_sced_with_persistent_forecast_errors": False,
     "output_directory": "Prescient_2/results_uc_only",
     "start_date": "01-01-2019",
-    "num_days": 365,
+    "num_days": 90,
     "sced_horizon": 1,
     "ruc_mipgap": 0.01,
     "deterministic_ruc_solver": "gurobi_persistent",
