@@ -125,6 +125,34 @@ python summarize_curtailment_penalty_results.py
 - If negative LMP frequency and floor hits change strongly with penalty levels, then price-cap/penalty formulation is a major driver of your LMP mismatch vs paper UC.
 - If sensitivity is weak, remaining mismatch is more likely dominated by structural differences already identified (renewable treatment, chronology, reserve formulation, two-pass UC pricing method).
 
+## 6.1 Debug Update (2026-02-28)
+
+CRC log `ERCOT_curtailment_penalty_pcm.o269980` showed a setup failure before optimization:
+
+- `ValueError: key 'name' not defined for ConfigDict`
+
+Root cause:
+
+- case metadata key `name` was passed into `Prescient().simulate(**options)` as if it were a simulator option.
+
+Fix implemented:
+
+- sanitize case options so metadata keys are excluded from Prescient kwargs;
+- persist per-case status/error in `experiment_manifest.json`;
+- add `--continue-on-error` to complete remaining cases even if one fails.
+
+Recommended rerun command:
+
+```bash
+python run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark --continue-on-error
+```
+
+Then summarize:
+
+```bash
+python summarize_curtailment_penalty_results.py --strict
+```
+
 ## 7. Sources
 
 1. Prescient config and threshold behavior

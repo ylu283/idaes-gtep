@@ -7,6 +7,7 @@ THIS_DIR = Path(__file__).resolve().parent
 
 
 def submit_job(job_name: str = "ERCOT_curtailment_penalty_pcm") -> None:
+    """Create and submit an SGE job script for curtailment-penalty experiments."""
     job_scripts_dir = THIS_DIR / "job_scripts"
     os.makedirs(job_scripts_dir, exist_ok=True)
 
@@ -26,7 +27,9 @@ def submit_job(job_name: str = "ERCOT_curtailment_penalty_pcm") -> None:
         module load gurobi
         module load ipopt/3.14.2
 
-        python ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark
+        # Continue through remaining cases even if one case fails, and keep
+        # failure details in experiment_manifest.json for post-run debugging.
+        python ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark --continue-on-error
         """
     )
     with open(sh_path, "w", newline="\n") as f:

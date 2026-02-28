@@ -66,3 +66,15 @@ To analyze results from a new PCM simulation:
 4. Run all cells
 
 The notebook auto-discovers all buses and generators from the CSV files — no manual name lists needed.
+
+## Curtailment-Penalty Sweep (Current)
+
+- Run experiments from:
+  - `gtep/data/retirement_allowed_no_extreme_half_load/run_curtailment_penalty_experiments.py`
+- Summarize in this folder with:
+  - `python summarize_curtailment_penalty_results.py`
+  - use `--strict` to fail on incomplete case outputs
+- Default experiment input root:
+  - `../data/retirement_allowed_no_extreme_half_load/Prescient_2/experiments/curtailment_penalty/pcm`
+- Default summary output:
+  - `curtailment_penalty_summary.csv`

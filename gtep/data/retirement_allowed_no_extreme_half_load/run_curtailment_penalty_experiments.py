@@ -1,8 +1,13 @@
-"""Run a curtailment-penalty proxy experiment sweep in Prescient.
+"""Run curtailment-penalty proxy experiments for Prescient PCM/UC.
 
 Prescient does not expose a dedicated renewable curtailment penalty option in
 the run configuration. This script uses price/violation penalty thresholds as
 the practical proxy lever for curtailment pricing behavior in SCED/RUC.
+
+Design goals:
+- isolate each case in its own output directory;
+- keep an incremental manifest for reproducibility/debugging;
+- fail fast by default, with optional continue-on-error behavior.
 """
 
 from __future__ import annotations
@@ -10,14 +15,18 @@ from __future__ import annotations
 import argparse
 import json
 from copy import deepcopy
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from prescient.simulator import Prescient
-
 
 def _patch_prescient_curtailment_report() -> None:
-    """Handle renewable generators with scalar p_max (e.g., HYDRO in RTS-GMLC)."""
+    """Patch legacy Prescient curtailment reporting for scalar renewable ``p_max``.
+
+    Some Prescient builds assume renewable ``p_max`` is always time-series data.
+    RTS-GMLC hydro units may use a scalar ``p_max`` and trigger a TypeError in
+    reporting code. This monkey patch keeps reporting non-fatal for both forms.
+    """
     try:
         from prescient.engine.egret import reporting
     except Exception:
@@ -159,13 +168,44 @@ CASE_SETS: dict[str, list[dict[str, Any]]] = {
 
 
 def _build_case_options(mode: str, case: dict[str, Any]) -> dict[str, Any]:
+    """Create sanitized Prescient options for one case.
+
+    Case dicts contain metadata keys (e.g., ``name``) used by this runner.
+    Those keys are removed to avoid passing unknown options into Prescient.
+    """
     options = deepcopy(BASE_COMMON_OPTIONS)
     options.update(MODE_OPTIONS[mode])
-    options.update(case)
+    for key, value in case.items():
+        # metadata keys are not valid Prescient configuration options
+        if key in {"name"}:
+            continue
+        options[key] = value
     return options
 
 
+def _validate_case(case: dict[str, Any]) -> None:
+    """Validate case metadata and threshold values before launch."""
+    case_name = case.get("name")
+    if not isinstance(case_name, str) or not case_name.strip():
+        raise ValueError("Each case must define a non-empty string 'name'.")
+
+    for key, value in case.items():
+        if not key.endswith("_threshold"):
+            continue
+        if not isinstance(value, (int, float)) or value <= 0:
+            raise ValueError(
+                f"Case '{case_name}' has invalid threshold '{key}={value}'. "
+                "Thresholds must be positive numeric values."
+            )
+
+
+def _utc_now_iso() -> str:
+    """Return current UTC timestamp in ISO-8601 format."""
+    return datetime.now(timezone.utc).isoformat()
+
+
 def _parse_args() -> argparse.Namespace:
+    """Define CLI arguments for the case sweep runner."""
     parser = argparse.ArgumentParser(description="Run a Prescient curtailment-penalty sweep.")
     parser.add_argument("--mode", choices=["pcm", "uc_only"], default="pcm")
     parser.add_argument("--case-set", choices=sorted(CASE_SETS), default="benchmark")
@@ -178,17 +218,38 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--start-date", default="01-01-2019")
     parser.add_argument("--num-days", type=int, default=90)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--continue-on-error",
+        action="store_true",
+        help="Continue running remaining cases after a case failure.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
+    """Run configured cases, recording per-case status in a manifest."""
     args = _parse_args()
 
     case_root = Path(args.output_root) / args.mode
     case_root.mkdir(parents=True, exist_ok=True)
 
+    if not args.dry_run:
+        # Late import allows dry-run and local linting in environments without Prescient.
+        from prescient.simulator import Prescient
+
     case_manifest: list[dict[str, Any]] = []
+    manifest_path = case_root / "experiment_manifest.json"
+    manifest: dict[str, Any] = {
+        "mode": args.mode,
+        "case_set": args.case_set,
+        "data_path": args.data_path,
+        "start_date": args.start_date,
+        "num_days": args.num_days,
+        "continue_on_error": args.continue_on_error,
+        "cases": case_manifest,
+    }
     for case in CASE_SETS[args.case_set]:
+        _validate_case(case)
         case_name = case["name"]
         output_directory = case_root / case_name
 
@@ -198,7 +259,13 @@ def main() -> None:
         options["start_date"] = args.start_date
         options["num_days"] = args.num_days
 
-        case_manifest.append({"case_name": case_name, "options": options})
+        case_record: dict[str, Any] = {
+            "case_name": case_name,
+            "status": "pending",
+            "start_ts_utc": _utc_now_iso(),
+            "options": options,
+        }
+        case_manifest.append(case_record)
 
         print(f"\n=== Running case: {case_name} ===")
         print(f"Output: {output_directory}")
@@ -209,20 +276,28 @@ def main() -> None:
             f"cont={options.get('contingency_price_threshold')}, "
             f"reserve={options.get('reserve_price_threshold')}"
         )
-        if args.dry_run:
-            continue
-        Prescient().simulate(**options)
 
-    manifest = {
-        "mode": args.mode,
-        "case_set": args.case_set,
-        "data_path": args.data_path,
-        "start_date": args.start_date,
-        "num_days": args.num_days,
-        "cases": case_manifest,
-    }
-    manifest_path = case_root / "experiment_manifest.json"
-    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+        try:
+            if args.dry_run:
+                case_record["status"] = "dry_run"
+            else:
+                Prescient().simulate(**options)
+                case_record["status"] = "ok"
+        except Exception as err:
+            case_record["status"] = "error"
+            case_record["error_type"] = type(err).__name__
+            case_record["error_message"] = str(err)
+            case_record["end_ts_utc"] = _utc_now_iso()
+            # Persist failure details immediately for post-mortem debugging.
+            manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+            print(f"Case '{case_name}' failed: {type(err).__name__}: {err}")
+            if not args.continue_on_error:
+                raise
+        else:
+            case_record["end_ts_utc"] = _utc_now_iso()
+            # Persist successful case completion incrementally as checkpointing.
+            manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+
     print(f"\nWrote manifest: {manifest_path}")
 
 
