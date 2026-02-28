@@ -11,4 +11,6 @@ export LD_LIBRARY_PATH=~/.conda/envs/users/ylu28//dispatches/lib:$LD_LIBRARY_PAT
 module load gurobi
 module load ipopt/3.14.2
 
-python ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark
+# Continue through remaining cases even if one case fails, and keep
+# failure details in experiment_manifest.json for post-run debugging.
+python ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark --continue-on-error
