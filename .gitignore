@@ -178,3 +178,7 @@ skills/
 *.claude
 claude-rules.md
 WORKFLOW_QUICK_REF.md
+
+# Codex local workflow files
+AGENTS.md
+.codex/
