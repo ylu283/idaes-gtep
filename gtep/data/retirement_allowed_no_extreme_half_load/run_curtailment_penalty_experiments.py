@@ -14,13 +14,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import traceback
 from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 
-def _patch_prescient_curtailment_report() -> None:
+def _patch_prescient_curtailment_report() -> bool:
     """Patch legacy Prescient curtailment reporting for scalar renewable ``p_max``.
 
     Some Prescient builds assume renewable ``p_max`` is always time-series data.
@@ -29,8 +30,12 @@ def _patch_prescient_curtailment_report() -> None:
     """
     try:
         from prescient.engine.egret import reporting
-    except Exception:
-        return
+    except Exception as err:
+        print(
+            "WARNING: failed to import prescient.engine.egret.reporting for "
+            f"hydro curtailment patch: {type(err).__name__}: {err}"
+        )
+        return False
 
     def _at_time(value: Any, idx: int) -> float:
         if isinstance(value, dict):
@@ -54,9 +59,12 @@ def _patch_prescient_curtailment_report() -> None:
                 print(f"{t} {quantity_curtailed_this_period:12.2f}")
 
     reporting.report_curtailment_for_deterministic_ruc = _safe_report_curtailment_for_deterministic_ruc
-
-
-_patch_prescient_curtailment_report()
+    patched_func = reporting.report_curtailment_for_deterministic_ruc
+    print(
+        "Applied hydro-safe curtailment reporting patch: "
+        f"{patched_func.__module__}.{patched_func.__name__}"
+    )
+    return True
 
 
 BASE_COMMON_OPTIONS: dict[str, Any] = {
@@ -233,9 +241,12 @@ def main() -> None:
     case_root = Path(args.output_root) / args.mode
     case_root.mkdir(parents=True, exist_ok=True)
 
+    patch_applied = False
     if not args.dry_run:
         # Late import allows dry-run and local linting in environments without Prescient.
         from prescient.simulator import Prescient
+        # Apply patch after Prescient import to avoid module reload/order issues.
+        patch_applied = _patch_prescient_curtailment_report()
 
     case_manifest: list[dict[str, Any]] = []
     manifest_path = case_root / "experiment_manifest.json"
@@ -281,12 +292,16 @@ def main() -> None:
             if args.dry_run:
                 case_record["status"] = "dry_run"
             else:
+                if not patch_applied:
+                    # Try once more before each case in case environment import order changed.
+                    patch_applied = _patch_prescient_curtailment_report()
                 Prescient().simulate(**options)
                 case_record["status"] = "ok"
         except Exception as err:
             case_record["status"] = "error"
             case_record["error_type"] = type(err).__name__
             case_record["error_message"] = str(err)
+            case_record["traceback"] = traceback.format_exc()
             case_record["end_ts_utc"] = _utc_now_iso()
             # Persist failure details immediately for post-mortem debugging.
             manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

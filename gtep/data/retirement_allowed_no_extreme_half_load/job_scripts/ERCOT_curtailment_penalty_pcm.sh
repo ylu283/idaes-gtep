@@ -13,4 +13,4 @@ module load ipopt/3.14.2
 
 # Continue through remaining cases even if one case fails, and keep
 # failure details in experiment_manifest.json for post-run debugging.
-python ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark --continue-on-error
+python -u ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark --continue-on-error

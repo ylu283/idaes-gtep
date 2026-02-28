@@ -29,7 +29,7 @@ def submit_job(job_name: str = "ERCOT_curtailment_penalty_pcm") -> None:
 
         # Continue through remaining cases even if one case fails, and keep
         # failure details in experiment_manifest.json for post-run debugging.
-        python ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark --continue-on-error
+        python -u ./run_curtailment_penalty_experiments.py --mode pcm --case-set benchmark --continue-on-error
         """
     )
     with open(sh_path, "w", newline="\n") as f:
