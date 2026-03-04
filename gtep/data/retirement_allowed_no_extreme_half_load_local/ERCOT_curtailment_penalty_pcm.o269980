@@ -1,0 +1,15 @@
+
+=== Running case: penalty_300 ===
+Output: Prescient_2/experiments/curtailment_penalty/pcm/penalty_300
+Penalty settings: price=300.0, trans=300.0, cont=300.0, reserve=300.0
+Initializing simulation...
+Traceback (most recent call last):
+  File "./run_curtailment_penalty_experiments.py", line 230, in <module>
+    main()
+  File "./run_curtailment_penalty_experiments.py", line 214, in main
+    Prescient().simulate(**options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 73, in simulate
+    self.config.set_value(options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/pyomo/common/config.py", line 2307, in set_value
+    raise ValueError(
+ValueError: key 'name' not defined for ConfigDict '' and implicit (undefined) keys are not allowed

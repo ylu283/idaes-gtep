@@ -1,0 +1,224 @@
+
+=== Running case: penalty_300 ===
+Output: Prescient_2/experiments/curtailment_penalty/pcm/penalty_300
+Penalty settings: price=300.0, trans=300.0, cont=300.0, reserve=300.0
+Initializing simulation...
+Did not find reserves.csv; assuming no reserves
+Setting default t0 state in RTS-GMLC parser
+Dates to simulate: 2019-01-01 to 2019-03-31
+RUC activation hours: 0
+Final RUC date: 2019-03-31
+Using current day's forecasts for RUC solves
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.31
+
+Pyomo model solve time: 203.98168087005615
+
+Deterministic RUC Cost: 5726449810.42
+
+Fixed costs:     33715533.45
+Variable costs:   5416263.77
+
+Projected over-generation reported at t=2019-01-01 00:00 -   total=    -1607.30
+Projected over-generation reported at t=2019-01-01 01:00 -   total=    -1513.81
+Projected over-generation reported at t=2019-01-01 02:00 -   total=    -1555.60
+Projected over-generation reported at t=2019-01-01 03:00 -   total=    -1513.96
+Projected over-generation reported at t=2019-01-01 04:00 -   total=    -1440.90
+Projected over-generation reported at t=2019-01-01 05:00 -   total=    -1520.95
+Projected over-generation reported at t=2019-01-01 06:00 -   total=    -1554.86
+Projected over-generation reported at t=2019-01-01 07:00 -   total=    -1440.10
+Projected over-generation reported at t=2019-01-01 08:00 -   total=    -1266.93
+Projected over-generation reported at t=2019-01-01 09:00 -   total=    -1169.95
+Projected over-generation reported at t=2019-01-01 10:00 -   total=     -174.94
+Projected over-generation reported at t=2019-01-01 11:00 -   total=     -841.60
+Projected over-generation reported at t=2019-01-01 12:00 -   total=     -906.65
+Projected over-generation reported at t=2019-01-01 13:00 -   total=     -566.82
+Projected over-generation reported at t=2019-01-01 14:00 -   total=     -867.21
+Projected over-generation reported at t=2019-01-01 15:00 -   total=     -714.40
+Projected over-generation reported at t=2019-01-01 17:00 -   total=     -301.73
+
+Case 'penalty_300' failed: TypeError: 'float' object is not subscriptable
+
+=== Running case: penalty_1000 ===
+Output: Prescient_2/experiments/curtailment_penalty/pcm/penalty_1000
+Penalty settings: price=1000.0, trans=1000.0, cont=1000.0, reserve=1000.0
+Initializing simulation...
+Did not find reserves.csv; assuming no reserves
+Setting default t0 state in RTS-GMLC parser
+Dates to simulate: 2019-01-01 to 2019-03-31
+RUC activation hours: 0
+Final RUC date: 2019-03-31
+Using current day's forecasts for RUC solves
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.45
+
+Pyomo model solve time: 214.4636754989624
+
+Deterministic RUC Cost: 19015255042.08
+
+Fixed costs:     17845818.29
+Variable costs:   5431271.78
+
+Projected over-generation reported at t=2019-01-01 00:00 -   total=    -1601.79
+Projected over-generation reported at t=2019-01-01 01:00 -   total=    -1508.41
+Projected over-generation reported at t=2019-01-01 02:00 -   total=    -1543.42
+Projected over-generation reported at t=2019-01-01 03:00 -   total=    -1508.73
+Projected over-generation reported at t=2019-01-01 04:00 -   total=    -1435.88
+Projected over-generation reported at t=2019-01-01 05:00 -   total=    -1516.11
+Projected over-generation reported at t=2019-01-01 06:00 -   total=    -1550.17
+Projected over-generation reported at t=2019-01-01 07:00 -   total=    -1440.10
+Projected over-generation reported at t=2019-01-01 08:00 -   total=    -1273.87
+Projected over-generation reported at t=2019-01-01 09:00 -   total=    -1192.56
+Projected over-generation reported at t=2019-01-01 10:00 -   total=     -181.89
+Projected over-generation reported at t=2019-01-01 11:00 -   total=     -851.14
+Projected over-generation reported at t=2019-01-01 12:00 -   total=     -910.42
+Projected over-generation reported at t=2019-01-01 13:00 -   total=     -572.23
+Projected over-generation reported at t=2019-01-01 14:00 -   total=     -876.86
+Projected over-generation reported at t=2019-01-01 15:00 -   total=     -715.71
+Projected over-generation reported at t=2019-01-01 17:00 -   total=     -312.67
+
+Case 'penalty_1000' failed: TypeError: 'float' object is not subscriptable
+
+=== Running case: penalty_2000 ===
+Output: Prescient_2/experiments/curtailment_penalty/pcm/penalty_2000
+Penalty settings: price=2000.0, trans=2000.0, cont=2000.0, reserve=2000.0
+Initializing simulation...
+Did not find reserves.csv; assuming no reserves
+Setting default t0 state in RTS-GMLC parser
+Dates to simulate: 2019-01-01 to 2019-03-31
+RUC activation hours: 0
+Final RUC date: 2019-03-31
+Using current day's forecasts for RUC solves
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.51
+
+Pyomo model solve time: 929.523885011673
+
+Deterministic RUC Cost: 37745925586.35
+
+Fixed costs:     59622850.28
+Variable costs:   5303242.85
+
+Projected over-generation reported at t=2019-01-01 00:00 -   total=    -1607.30
+Projected over-generation reported at t=2019-01-01 01:00 -   total=    -1513.81
+Projected over-generation reported at t=2019-01-01 02:00 -   total=    -1548.77
+Projected over-generation reported at t=2019-01-01 03:00 -   total=    -1513.96
+Projected over-generation reported at t=2019-01-01 04:00 -   total=    -1440.90
+Projected over-generation reported at t=2019-01-01 05:00 -   total=    -1520.95
+Projected over-generation reported at t=2019-01-01 06:00 -   total=    -1554.86
+Projected over-generation reported at t=2019-01-01 07:00 -   total=    -1440.20
+Projected over-generation reported at t=2019-01-01 08:00 -   total=    -1268.20
+Projected over-generation reported at t=2019-01-01 09:00 -   total=    -1167.25
+Projected over-generation reported at t=2019-01-01 10:00 -   total=     -171.29
+Projected over-generation reported at t=2019-01-01 11:00 -   total=     -818.45
+Projected over-generation reported at t=2019-01-01 12:00 -   total=     -884.01
+Projected over-generation reported at t=2019-01-01 13:00 -   total=     -566.73
+Projected over-generation reported at t=2019-01-01 14:00 -   total=     -859.11
+Projected over-generation reported at t=2019-01-01 15:00 -   total=     -709.70
+Projected over-generation reported at t=2019-01-01 16:00 -   total=       -3.19
+Projected over-generation reported at t=2019-01-01 17:00 -   total=     -246.08
+Projected load shedding reported at t=2019-01-02 07:00 -     total=        5.73
+
+Case 'penalty_2000' failed: TypeError: 'float' object is not subscriptable
+
+=== Running case: penalty_5000 ===
+Output: Prescient_2/experiments/curtailment_penalty/pcm/penalty_5000
+Penalty settings: price=5000.0, trans=5000.0, cont=5000.0, reserve=5000.0
+Initializing simulation...
+Did not find reserves.csv; assuming no reserves
+Setting default t0 state in RTS-GMLC parser
+Dates to simulate: 2019-01-01 to 2019-03-31
+RUC activation hours: 0
+Final RUC date: 2019-03-31
+Using current day's forecasts for RUC solves
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.79
+
+Pyomo model solve time: 214.74914455413818
+
+Deterministic RUC Cost: 94539616349.51
+
+Fixed costs:     50612668.89
+Variable costs:   5416944.21
+
+Projected over-generation reported at t=2019-01-01 00:00 -   total=    -1607.30
+Projected over-generation reported at t=2019-01-01 01:00 -   total=    -1513.81
+Projected over-generation reported at t=2019-01-01 02:00 -   total=    -1555.60
+Projected over-generation reported at t=2019-01-01 03:00 -   total=    -1513.96
+Projected over-generation reported at t=2019-01-01 04:00 -   total=    -1440.90
+Projected over-generation reported at t=2019-01-01 05:00 -   total=    -1520.95
+Projected over-generation reported at t=2019-01-01 06:00 -   total=    -1554.86
+Projected over-generation reported at t=2019-01-01 07:00 -   total=    -1440.20
+Projected over-generation reported at t=2019-01-01 08:00 -   total=    -1265.81
+Projected over-generation reported at t=2019-01-01 09:00 -   total=    -1167.33
+Projected over-generation reported at t=2019-01-01 10:00 -   total=     -171.29
+Projected over-generation reported at t=2019-01-01 11:00 -   total=     -818.45
+Projected over-generation reported at t=2019-01-01 12:00 -   total=     -884.01
+Projected over-generation reported at t=2019-01-01 13:00 -   total=     -566.59
+Projected over-generation reported at t=2019-01-01 14:00 -   total=     -860.20
+Projected over-generation reported at t=2019-01-01 15:00 -   total=     -714.39
+Projected over-generation reported at t=2019-01-01 17:00 -   total=     -301.07
+
+Case 'penalty_5000' failed: TypeError: 'float' object is not subscriptable
+
+=== Running case: penalty_10000 ===
+Output: Prescient_2/experiments/curtailment_penalty/pcm/penalty_10000
+Penalty settings: price=10000.0, trans=10000.0, cont=10000.0, reserve=10000.0
+Initializing simulation...
+Did not find reserves.csv; assuming no reserves
+Setting default t0 state in RTS-GMLC parser
+Dates to simulate: 2019-01-01 to 2019-03-31
+RUC activation hours: 0
+Final RUC date: 2019-03-31
+Using current day's forecasts for RUC solves
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.71
+
+Pyomo model solve time: 927.6538896560669
+
+Deterministic RUC Cost: 188369253911.45
+
+Fixed costs:     59462164.22
+Variable costs:   5309322.40
+
+Projected over-generation reported at t=2019-01-01 00:00 -   total=    -1607.30
+Projected over-generation reported at t=2019-01-01 01:00 -   total=    -1513.81
+Projected over-generation reported at t=2019-01-01 02:00 -   total=    -1548.77
+Projected over-generation reported at t=2019-01-01 03:00 -   total=    -1513.96
+Projected over-generation reported at t=2019-01-01 04:00 -   total=    -1440.90
+Projected over-generation reported at t=2019-01-01 05:00 -   total=    -1520.95
+Projected over-generation reported at t=2019-01-01 06:00 -   total=    -1554.86
+Projected over-generation reported at t=2019-01-01 07:00 -   total=    -1440.20
+Projected over-generation reported at t=2019-01-01 08:00 -   total=    -1268.20
+Projected over-generation reported at t=2019-01-01 09:00 -   total=    -1167.25
+Projected over-generation reported at t=2019-01-01 10:00 -   total=     -171.29
+Projected over-generation reported at t=2019-01-01 11:00 -   total=     -818.45
+Projected over-generation reported at t=2019-01-01 12:00 -   total=     -884.01
+Projected over-generation reported at t=2019-01-01 13:00 -   total=     -566.49
+Projected over-generation reported at t=2019-01-01 14:00 -   total=     -858.76
+Projected over-generation reported at t=2019-01-01 15:00 -   total=     -709.17
+Projected over-generation reported at t=2019-01-01 17:00 -   total=     -246.08
+
+Case 'penalty_10000' failed: TypeError: 'float' object is not subscriptable
+
+Wrote manifest: Prescient_2/experiments/curtailment_penalty/pcm/experiment_manifest.json
