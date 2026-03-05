@@ -18,13 +18,13 @@ Added:
 
 - `/Users/yilu/Documents/GitHub/idaes-gtep/gtep/data/retirement_allowed_no_extreme_half_load/run_curtailment_penalty_experiments.py`
 
-This script:
+This script:   
 
 - reuses your current `btheta` Prescient setup;
 - supports `pcm` and `uc_only` modes;
 - sweeps penalty/cap cases (`quick` or `benchmark`);
 - writes each case to its own output folder under:
-  - `Prescient_2/experiments/curtailment_penalty/<mode>/<case_name>`;
+- `Prescient_2/experiVments/curtailment_penalty/<mode>/<case_name>`;
 - writes `experiment_manifest.json` with full options for reproducibility.
 
 It also carries forward the hydro-safe curtailment reporting patch you already needed for scalar `p_max`.
