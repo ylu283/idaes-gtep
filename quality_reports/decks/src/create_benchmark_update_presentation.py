@@ -13,8 +13,8 @@ from pptx.util import Emu, Inches, Pt
 
 
 ROOT = Path("/Users/yilu/Documents/GitHub/idaes-gtep")
-DATA_JSON = ROOT / "quality_reports/plans/data/benchmark_update_slide_data.json"
-OUT_PPTX = ROOT / "quality_reports/plans/2026-03-03_Benchmarking_Update_PCM_vs_Paper.pptx"
+DATA_JSON = ROOT / "quality_reports/decks/data/benchmark_update_slide_data.json"
+OUT_PPTX = ROOT / "quality_reports/decks/2026-03-03_Benchmarking_Update_PCM_vs_Paper.pptx"
 
 # Colors (aligned with create_presentation.py)
 DARK_BLUE = RGBColor(0x1B, 0x3A, 0x5C)

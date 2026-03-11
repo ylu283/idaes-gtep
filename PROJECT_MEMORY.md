@@ -1,6 +1,6 @@
 # Project Memory (Lean)
 
-Last updated: 2026-02-28
+Last updated: 2026-03-05
 
 ## Current Focus
 
@@ -43,9 +43,22 @@ Last updated: 2026-02-28
 ## Reference Reports
 
 - Prescient vs paper UC comparison:
-  - `quality_reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md`
+  - `quality_reports/reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md`
 - Curtailment-penalty setup and rationale:
-  - `quality_reports/curtailment_penalty_experiment_setup_2026-02-28.md`
+  - `quality_reports/reports/curtailment_penalty_experiment_setup_2026-02-28.md`
+
+## Quality Reports Canonical Paths
+
+- Governance doc:
+  - `quality_reports/README.md`
+- Latest index:
+  - `quality_reports/INDEX.md`
+- Final reports:
+  - `quality_reports/reports/`
+- Deck outputs:
+  - `quality_reports/decks/`
+- Lab notes:
+  - `quality_reports/lab_logs/`
 
 ## Next Decision Point
 

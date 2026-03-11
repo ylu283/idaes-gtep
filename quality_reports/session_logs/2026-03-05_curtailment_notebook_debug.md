@@ -36,7 +36,32 @@ Applied 30+ edits to the 60-cell notebook (now 58 cells after 2 merges):
 - Final cell count: 58 (21 markdown + 37 code) — matches plan target
 - `PRESCIENT_PRICE_FLOOR` used in cells 2, 27, 36: OK
 
+---
+
+## Round 2: Runtime Bug Fixes (2026-03-05)
+
+User ran the notebook and hit runtime errors in cells 30, 47-53. Two root causes:
+
+### Root Cause A: GEN UID int->str type mismatch (5 edits)
+- `gen_meta["GEN UID"]` and Prescient `Generator` columns are both int64
+- Previous edits incorrectly added `.astype(str)` / `.astype({"GEN UID": str})`, causing merge `ValueError` and `.isin()` all-False
+- **Fixed cells:** 30 (merge), 42 (2 fuel_gens sets), 47 (wind_gen_ids), 48 (solar_gen_ids)
+- Removed all `.astype(str)` on GEN UID; only remaining `.astype(str)` is on `penalty` (cell 29, for display)
+
+### Root Cause B: daily_demand Date dtype (1 edit)
+- Cell 49: `.groupby(dt.date)` produces Python `datetime.date` objects (dtype=object)
+- `.dt.quarter` and `.dt.dayofweek` crash with `AttributeError` on object dtype
+- **Fix:** Changed `.dt.date` to `.dt.normalize()` which keeps `datetime64[ns]`
+- Cells 50-53 unaffected: they use `dt.date == some_date.date()` which still works since `normal_date` is now a Timestamp
+
+### Round 2 Verification
+- Valid JSON: OK
+- All 37 code cells parse: OK
+- Zero `"GEN UID"].astype(str)` remaining: OK
+- Zero `dt.date)["Demand"]` remaining: OK (replaced with `dt.normalize()`)
+- Only `.astype(str)` remaining is on `penalty` column (cell 29, display labels): OK
+
 ## Quality Score
-- Correctness: 9/10 (all bugs fixed, not runtime-tested)
+- Correctness: 9/10 (both root causes fixed, 6 cell edits)
 - Readability: 9/10 (consistent headers, docstrings, enriched markdown)
-- Maintainability: 8/10 (named constants, clean date handling)
+- Maintainability: 8/10 (named constants, clean date handling, consistent dtypes)

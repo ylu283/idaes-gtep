@@ -169,6 +169,7 @@ cython_debug/
 
 # ignore .DS_Store
 *.DS_Store
+~$*.pptx
 
 # ignore "data"
 .claude/

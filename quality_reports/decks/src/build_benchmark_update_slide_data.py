@@ -13,10 +13,10 @@ from typing import Any
 
 
 ROOT = Path("/Users/yilu/Documents/GitHub/idaes-gtep")
-MODEL_COMPARE_MD = ROOT / "quality_reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md"
-CURTAILMENT_SETUP_MD = ROOT / "quality_reports/curtailment_penalty_experiment_setup_2026-02-28.md"
+MODEL_COMPARE_MD = ROOT / "quality_reports/reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md"
+CURTAILMENT_SETUP_MD = ROOT / "quality_reports/reports/curtailment_penalty_experiment_setup_2026-02-28.md"
 HYDRO_Q1_JSON = ROOT / "gtep/pcm_analysis/PCM_result_hydro_q1_comparison.json"
-OUT_JSON = ROOT / "quality_reports/plans/data/benchmark_update_slide_data.json"
+OUT_JSON = ROOT / "quality_reports/decks/data/benchmark_update_slide_data.json"
 
 
 def _extract_metric_block(pattern: str, text: str) -> dict[str, float] | None:
