@@ -1,6 +1,6 @@
 # Project Memory (Lean)
 
-Last updated: 2026-03-05
+Last updated: 2026-03-11
 
 ## Current Focus
 
@@ -13,6 +13,11 @@ Last updated: 2026-03-05
 - Negative LMP behavior in Prescient is persistent across runs (not hydro-only).
 - `-1000` LMP floor events align with current threshold settings.
 - Curtailment sweep log `ERCOT_curtailment_penalty_pcm.o269980` failed before solving due to invalid Prescient option key `name` passed from case metadata.
+- Curtailment sweep Jan-Mar common-window results now available:
+  - negative-LMP fraction increases from `9.62%` (`penalty_300`) to `12.80%` (`penalty_10000`);
+  - weighted LMP decreases from `+9.79` to `-88.35` $/MWh;
+  - overgeneration remains high and near-flat (~888-890 GWh).
+- Paper curtailment interpretation corrected: paper uses bounded net-load slack `rnwcur_b_t` (no direct curtailment objective term), not explicit renewable offer-penalty economics.
 
 ## Key Paths
 
@@ -31,7 +36,7 @@ Last updated: 2026-03-05
 - Output root:
   - `gtep/data/retirement_allowed_no_extreme_half_load/Prescient_2/experiments/curtailment_penalty/<mode>/<case>/`
 - Analysis sink:
-  - `gtep/pcm_analysis/curtailment_penalty_summary.csv`
+  - `gtep/pcm_analysis/curtailment_penalty_benchmark_summary.csv`
 
 ## Debug Update (2026-02-28)
 
@@ -46,6 +51,8 @@ Last updated: 2026-03-05
   - `quality_reports/reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md`
 - Curtailment-penalty setup and rationale:
   - `quality_reports/reports/curtailment_penalty_experiment_setup_2026-02-28.md`
+- Curtailment slide-content review (for updated benchmark deck):
+  - `quality_reports/reports/2026-03-11_curtailment_ppt_content_review.md`
 
 ## Quality Reports Canonical Paths
 

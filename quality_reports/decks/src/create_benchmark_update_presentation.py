@@ -320,7 +320,28 @@ def main():
     # Slide 5
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     add_background(slide)
-    y = add_title_bar(slide, "Curtailment Penalty Work: Current Status", "Experiment framework in place; run still in progress")
+    y = add_title_bar(slide, "Curtailment Penalty Work: Current Status", "Experiment framework in place; summary results available")
+    curtail_results = curtail.get("results_summary", [])
+    if curtail_results:
+        best = curtail_results[0]
+        worst = curtail_results[-1]
+        result_lines = [
+            {
+                "text": (
+                    f"Neg LMP fraction rises from {best['neg_lmp_frac']*100:.2f}% "
+                    f"({int(best['penalty'])}) to {worst['neg_lmp_frac']*100:.2f}% ({int(worst['penalty'])})."
+                ),
+                "color": RED,
+            },
+            {
+                "text": (
+                    f"Weighted LMP shifts from {best['weighted_lmp']:.2f} to "
+                    f"{worst['weighted_lmp']:.2f} $/MWh across sweep."
+                )
+            },
+        ]
+    else:
+        result_lines = [{"text": "Result summary CSV not found; regenerate data payload.", "color": RED}]
     add_bullet_box(
         slide,
         Inches(0.5),
@@ -332,7 +353,7 @@ def main():
             {"text": "Experiment implemented in current Prescient pipeline and reproducible by case manifest."},
             {"text": "Purpose: measure sensitivity of curtailment, negative-LMP share, and floor-hit behavior."},
             {"text": f"Runner script: {curtail['script']}"},
-            {"text": "This section intentionally remains brief until the full run is complete."},
+            *result_lines,
         ],
         font_size=16,
     )

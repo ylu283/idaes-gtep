@@ -10,12 +10,14 @@ import json
 import re
 from pathlib import Path
 from typing import Any
+import csv
 
 
 ROOT = Path("/Users/yilu/Documents/GitHub/idaes-gtep")
 MODEL_COMPARE_MD = ROOT / "quality_reports/reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md"
 CURTAILMENT_SETUP_MD = ROOT / "quality_reports/reports/curtailment_penalty_experiment_setup_2026-02-28.md"
 HYDRO_Q1_JSON = ROOT / "gtep/pcm_analysis/PCM_result_hydro_q1_comparison.json"
+CURTAILMENT_SUMMARY_CSV = ROOT / "gtep/pcm_analysis/curtailment_penalty_benchmark_summary.csv"
 OUT_JSON = ROOT / "quality_reports/decks/data/benchmark_update_slide_data.json"
 
 
@@ -63,11 +65,29 @@ def parse_curtailment_setup(md_text: str) -> dict[str, Any]:
     else:
         values = [300, 1000, 2000, 5000, 10000]
 
-    return {
+    out = {
         "penalty_values_usd_per_mwh": values,
-        "status": "Ongoing 4-day simulation for 90-day experiment; run not finished yet.",
+        "status": "Curtailment sweep results are available for a common Jan-Mar overlap window.",
         "script": "run_curtailment_penalty_experiments.py",
     }
+    if CURTAILMENT_SUMMARY_CSV.exists():
+        rows: list[dict[str, Any]] = []
+        with CURTAILMENT_SUMMARY_CSV.open(newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for r in reader:
+                rows.append(
+                    {
+                        "case": r["case"],
+                        "penalty": float(r["penalty"]),
+                        "neg_lmp_frac": float(r["neg_lmp_frac"]),
+                        "floor_hit_frac": float(r["floor_hit_frac"]),
+                        "weighted_lmp": float(r["weighted_lmp"]),
+                        "total_curtailment_mwh": float(r["total_curtailment_mwh"]),
+                        "total_overgeneration_mwh": float(r["total_overgeneration_mwh"]),
+                    }
+                )
+        out["results_summary"] = sorted(rows, key=lambda x: x["penalty"])
+    return out
 
 
 def parse_hydro_q1(hydro_payload: dict[str, Any]) -> dict[str, Any]:
@@ -110,6 +130,7 @@ def build_payload() -> dict[str, Any]:
         "sources": {
             "model_comparison_report": str(MODEL_COMPARE_MD),
             "curtailment_setup_report": str(CURTAILMENT_SETUP_MD),
+            "curtailment_summary_csv": str(CURTAILMENT_SUMMARY_CSV),
             "hydro_q1_summary_json": str(HYDRO_Q1_JSON),
             "hydro_q1_notebook": str(ROOT / "gtep/pcm_analysis/prescient_lmp_analysis_with_hydro_q1.ipynb"),
         },

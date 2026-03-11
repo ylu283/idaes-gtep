@@ -92,6 +92,21 @@ So this experiment is the correct first-step sensitivity:
 - it isolates economically meaningful penalty signals already available in your live pipeline,
 - without changing core model equations or data schema.
 
+## 4.1 How Your Prescient Model Realizes Curtailment
+
+In your current Prescient PCM pipeline, curtailment is realized through dispatch feasibility and violation-penalty economics, not through a single explicit "renewable curtailment penalty" input.
+
+Practical mechanism in your setup:
+
+1. Renewable availability and dispatch limits are enforced by Prescient/Egret model structure.
+2. SCED/RUC balances and network constraints are solved with configured price/violation thresholds.
+3. When surplus energy cannot be absorbed/exported economically, renewable output can be curtailed and tracked in:
+   - `renewables_detail.csv` (`Curtailment`)
+   - `hourly_summary.csv` (`RenewablesCurtailment`)
+4. Threshold settings (`price_threshold`, transmission/interface/contingency/reserve thresholds) strongly shape LMP tails and curtailment/overgeneration outcomes.
+
+This is why the sweep is labeled curtailment-penalty *proxy*: it tunes economic penalty environment that drives curtailment behavior, rather than toggling a dedicated standalone curtailment-cost parameter.
+
 ## 5. How To Run
 
 From:
@@ -124,6 +139,27 @@ python summarize_curtailment_penalty_results.py
 
 - If negative LMP frequency and floor hits change strongly with penalty levels, then price-cap/penalty formulation is a major driver of your LMP mismatch vs paper UC.
 - If sensitivity is weak, remaining mismatch is more likely dominated by structural differences already identified (renewable treatment, chronology, reserve formulation, two-pass UC pricing method).
+
+## 6.2 Results Update from `prescient_lmp_analysis_curtailment_penalty.ipynb` (2026-03-11)
+
+Common comparison window used across all five cases:
+- `2019-01-01 00:00:00` to `2019-03-31 23:00:00`
+
+| Case | LMP Min | LMP Max | Negative LMP Fraction | Floor-Hit Fraction | Weighted LMP ($/MWh) | Curtailment (MWh) | OverGeneration (MWh) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `penalty_300` | -300 | 382.18 | 9.62% | 1.52% | 9.79 | 118,560.19 | 888,328.44 |
+| `penalty_1000` | -1000 | 1273.72 | 10.51% | 1.50% | 3.96 | 124,325.36 | 889,003.40 |
+| `penalty_2000` | -2000 | 2549.63 | 11.43% | 1.51% | -7.91 | 125,040.34 | 888,986.03 |
+| `penalty_5000` | -5000 | 6373.67 | 11.91% | 1.49% | -39.57 | 121,351.43 | 889,606.53 |
+| `penalty_10000` | -10000 | 12749.61 | 12.80% | 1.49% | -88.35 | 123,327.86 | 888,692.76 |
+
+Key findings:
+
+1. Larger penalty caps materially widen price tails and increase negative-LMP share.
+2. Floor-hit fraction stays around ~1.5%, indicating persistent clipping behavior across cap levels.
+3. Load-weighted LMP becomes increasingly negative as cap increases (from `+9.79` at 300 to `-88.35` at 10000).
+4. Overgeneration remains high and nearly flat (~888-890 GWh), so cap tuning alone is not removing structural surplus conditions.
+5. This supports using penalty sweep as diagnostics, while prioritizing structural alignment steps for paper benchmarking.
 
 ## 6.1 Debug Update (2026-02-28)
 

@@ -1,6 +1,6 @@
 # Quality Reports Index
 
-Last updated: 2026-03-05
+Last updated: 2026-03-11
 
 ## Latest By Topic
 
@@ -8,6 +8,7 @@ Last updated: 2026-03-05
 |---|---|---|---|
 | Prescient vs paper UC comparison | `reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md` | `decks/2026-03-03_Benchmarking_Update_PCM_vs_Paper.pptx` | Core model-assumption divergence audit |
 | Curtailment penalty setup/results | `reports/curtailment_penalty_experiment_setup_2026-02-28.md` | (none) | Experiment rationale and run setup |
+| Curtailment PPT content review | `reports/2026-03-11_curtailment_ppt_content_review.md` | `decks/2026-03-03_Benchmarking_Update_PCM_vs_Paper.pptx` | Review + applied slide updates for curtailment mechanics/results |
 | Lab progress notes | `lab_logs/lab_log_2026-03-01.md` | (none) | Session-level progress memory |
 
 ## Legacy Path Map (Phased, Non-Breaking Migration)

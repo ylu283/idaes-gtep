@@ -72,12 +72,12 @@ Prescient().simulate(**prescient_options)
 
 Interpretation: paper removes wind/solar from demand before optimization; Prescient keeps renewable units explicit in market clearing.
 
-## 3.2 Curtailment economics and nodal balance
+## 3.2 Curtailment economics and nodal balance (corrected)
 
 ### Paper code (exact)
 
 ```python
-# UC_function.py
+# UC_function.py (standard SCUC)
 model.rnwcur_b_t = Var(model.BUS, model.TIME, domain=NonNegativeReals)
 
 def objfunction(model):
@@ -109,7 +109,31 @@ def nodal_balance_f(model, b, t):
 "reserve_price_threshold": 5,
 ```
 
-Interpretation: paper has free curtailment relief in balance (no curtailment cost in objective). Prescient uses market-penalty/cap settings that can produce deep negative prices and floor clipping.
+Additional paper DLR code follows the same mechanism:
+
+```python
+# UC_function_DLR.py (hourly DLR)
+model.rnwcur_b_t = Var(model.BUS, model.TIME,domain=NonNegativeReals)
+...
+def rnwcur_f_1(model, b, t):
+    if load_b_t[b - 1][t - 1] >= 0:
+        return model.rnwcur_b_t[b, t] == 0
+    else:
+        return model.rnwcur_b_t[b, t] <= -load_b_t[b - 1][t - 1]/BaseMVA
+...
+def nodal_balance_f(model, b, t):
+    ...
+    nodal_balance_right = model.load_b_t[b, t]/BaseMVA + model.rnwcur_b_t[b,t]
+    return nodal_balance_left == nodal_balance_right
+```
+
+Correct interpretation:
+- Paper does **not** model renewable curtailment as a direct penalty term in objective.
+- Wind/solar are first subtracted from load (`load_b_t` net-load construction in `Run_SCUC_annual.py`/`RunUC_annual_dlr.py`).
+- `rnwcur_b_t` is a **bounded nonnegative slack on nodal net-load balance**:
+  - forced to zero when bus net load is nonnegative;
+  - allowed only up to the magnitude of negative net load.
+- So “curtailment” in paper is implemented as balancing relief for net negative load, not as explicit renewable bid/offering economics.
 
 ## 3.3 Pricing method: paper two-pass dual pricing vs Prescient market process
 
@@ -217,7 +241,7 @@ Interpretation: paper standard SCUC enforces day-specific line ratings (and has 
 | Rank | Difference | Impact on LMP sign/trend | Confidence | Why |
 |---:|---|---|---|---|
 | 1 | Renewable representation (net-load vs explicit renewable units) | Very high | High | Directly changes supply-demand balance shape and overgeneration regimes. |
-| 2 | Curtailment treatment/economics | Very high | High | Paper allows free curtailment relief in balance; Prescient behavior with explicit penalties/caps can produce deep negatives. |
+| 2 | Curtailment treatment/economics | Very high | High | Paper uses a bounded net-load slack (`rnwcur_b_t`) with no direct curtailment objective term; Prescient uses penalty-threshold economics in market clearing, which can produce deep negative tails. |
 | 3 | Chronology/horizon (daily independent vs rolling 90d/36h) | High | High | Commitment coupling and look-ahead materially alter marginal conditions. |
 | 4 | Pricing workflow (paper two-pass dual vs Prescient engine) | High | Medium-High | Price definition/extraction pathway differs, even with similar dispatch. |
 | 5 | Price caps/thresholds | Medium-High | High | Observed -1000 floor confirms clipping behavior influences tails and averages. |
@@ -240,7 +264,7 @@ Below each item: concept -> concrete action -> expected LMP effect -> tradeoff.
 
 ## 5.2 Match curtailment behavior more closely
 
-- Concept: paper curtailment variable is free relief in nodal balance when net load is negative.
+- Concept: paper “curtailment” is a bounded nodal slack applied only when net load is negative (after wind/solar subtraction), with no direct objective penalty term.
 - Concrete action:
   1. Use alignment-mode settings that avoid punitive overgeneration behavior.
   2. If needed, implement a custom benchmark variant that mimics free curtailment logic.
