@@ -1,6 +1,6 @@
 # Quality Reports Index
 
-Last updated: 2026-03-11
+Last updated: 2026-04-01
 
 ## Latest By Topic
 
@@ -9,7 +9,11 @@ Last updated: 2026-03-11
 | Prescient vs paper UC comparison | `reports/model_comparison_prescient_vs_paper_uc_2026-02-28.md` | `decks/2026-03-03_Benchmarking_Update_PCM_vs_Paper.pptx` | Core model-assumption divergence audit |
 | Curtailment penalty setup/results | `reports/curtailment_penalty_experiment_setup_2026-02-28.md` | (none) | Experiment rationale and run setup |
 | Curtailment PPT content review | `reports/2026-03-11_curtailment_ppt_content_review.md` | `decks/2026-03-03_Benchmarking_Update_PCM_vs_Paper.pptx` | Review + applied slide updates for curtailment mechanics/results |
-| Lab progress notes | `lab_logs/lab_log_2026-03-01.md` | (none) | Session-level progress memory |
+| IDAES meeting plan slide | (none) | `decks/2026-03-26_idaes_meeting_plan_slide.pptx` | One-slide timeline for conversion check, PCM run, analysis, and Apr 23 meeting |
+| GTEP non-PCM explainer | `reports/2026-03-24_gtep_non_pcm_model_explainer_and_conversion_spec.md` | (none) | Clear-language model walkthrough + expansion-result production path |
+| GTEP to Prescient mapping spec | `reports/2026-03-24_gtep_to_prescient_pcm_data_mapping_spec.md` | (none) | Required columns/files and pseudo-code conversion workflow |
+| GTEP 2035 conversion domain review | `reports/2026-04-01_gtep_2035_conversion_domain_review.md` | (none) | Critical bug fix audit: cost curve encoding, source file selection |
+| Lab progress notes | `lab_logs/lab_log_2026-04-01.md` | (none) | 2035 PCM conversion + domain review fixes |
 
 ## Legacy Path Map (Phased, Non-Breaking Migration)
 
@@ -30,3 +34,6 @@ Last updated: 2026-03-11
 Keep only transient logs in:
 - `quality_reports/session_logs/2026-03-04_curtailment_notebook_update.md`
 - `quality_reports/session_logs/2026-03-05_curtailment_notebook_debug.md`
+- `quality_reports/session_logs/2026-03-11_report_accuracy_review.md`
+- `quality_reports/session_logs/2026-03-24_gtep_prescient_conversion_worklog.md`
+- `quality_reports/session_logs/2026-04-01_gtep_2035_pcm_conversion.md`

@@ -103,7 +103,7 @@ Content:
 
 ### Slide 15 title
 
-**Corrected Paper Curtilment Mechanism vs Our Model**
+**Corrected Paper Curtailment Mechanism vs Our Model**
 
 Left column (Paper):
 - net-load construction after wind/solar subtraction.

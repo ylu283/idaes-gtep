@@ -32,6 +32,8 @@ Interpretation: this is a model-design mismatch, not noise.
 
 ## 3. Exact Code Evidence for Major Differences
 
+> **Scope note:** This section examines the UC formulation and run scripts. The paper's upstream data generation code (`formpyomo_UC.py` and related modules that build Pyomo model data from raw inputs) has not been audited. Differences in data preprocessing (e.g., generator parameter rounding, load profile construction) could introduce additional discrepancies not captured here.
+
 ## 3.1 Renewable treatment: paper net-load vs Prescient explicit renewables
 
 ### Paper code (exact)
@@ -127,6 +129,8 @@ def nodal_balance_f(model, b, t):
     return nodal_balance_left == nodal_balance_right
 ```
 
+> **Note on DLR variant:** The DLR `rnwcur_f_1` condition checks `load_b_t[b-1][t-1] >= 0` (raw net load) rather than `load_b_t[b-1][t-1]/BaseMVA >= 0` (per-unit) as in the standard SCUC version. Since `BaseMVA > 0`, the sign check is functionally equivalent, but the inconsistency suggests the `/BaseMVA` was inadvertently dropped when adapting the DLR variant.
+
 Correct interpretation:
 - Paper does **not** model renewable curtailment as a direct penalty term in objective.
 - Wind/solar are first subtracted from load (`load_b_t` net-load construction in `Run_SCUC_annual.py`/`RunUC_annual_dlr.py`).
@@ -199,7 +203,7 @@ for d in range(dnum_start-1,dnum_end):
 "simulate_out_of_sample": True,
 ```
 
-Interpretation: paper runs daily independent problems; Prescient runs rolling chronology with look-ahead.
+Interpretation: paper runs daily independent problems (no inter-day coupling). Prescient simulates 90 sequential days with a 36-hour RUC look-ahead per day and 6-hour SCED look-ahead, with inter-day coupling through commitment states carried forward between days.
 
 ## 3.5 Reserve formulation mismatch
 
@@ -221,7 +225,7 @@ model.reserve_tot_cons = Constraint(model.GEN, model.TIME, rule=reserve_tot_f)
 "reserve_factor": 0.1,
 ```
 
-Interpretation: reserve requirement structure is not equivalent.
+Interpretation: reserve requirement structure is not equivalent. The paper's `reserve_tot_f` constraint enforces an N-1 adequacy form: for every generator `g`, total system reserve must exceed that generator's output plus its own reserve (i.e., the system can withstand losing any single unit). This is structurally different from Prescient's percentage-of-load reserve requirement (`reserve_factor=0.1`, meaning 10% of load). The paper form is more conservative under high single-unit concentration and less conservative when many small units are online.
 
 ## 3.6 Network/rating treatment mismatch
 
@@ -236,18 +240,32 @@ for l in range(case_inst.branchtotnum):
 
 Interpretation: paper standard SCUC enforces day-specific line ratings (and has separate hourly DLR workflow). Current Prescient runs use RTS-GMLC branch data path unless explicitly time-varying mapped.
 
+## 3.7 Solver choice mismatch
+
+### Paper code (exact)
+
+```python
+# UC_function.py
+#UC_solver = SolverFactory('glpk', executable='...')
+UC_solver = SolverFactory('conopt',
+                            executable='...')
+UC_solver.options.mipgap = 0.01
+```
+
+Interpretation: CONOPT is a nonlinear programming (NLP) solver that cannot handle binary/integer variables natively. The paper model declares `u_g_t` and `v_g_t` as `domain=Binary`, but CONOPT would solve a continuous relaxation where these variables take values in [0,1] rather than {0,1}. The `mipgap` option would be silently ignored. This means Run1 commitments may be fractional, and the Run2 dual prices are extracted from a model with relaxed (non-integer) commitment decisions fixed as continuous values. This could produce systematically different LMP behavior compared to Prescient's true MILP UC (using Gurobi).
+
 ## 4. Impact Ranking: Which Differences Most Likely Drive LMP Divergence
 
 | Rank | Difference | Impact on LMP sign/trend | Confidence | Why |
 |---:|---|---|---|---|
 | 1 | Renewable representation (net-load vs explicit renewable units) | Very high | High | Directly changes supply-demand balance shape and overgeneration regimes. |
 | 2 | Curtailment treatment/economics | Very high | High | Paper uses a bounded net-load slack (`rnwcur_b_t`) with no direct curtailment objective term; Prescient uses penalty-threshold economics in market clearing, which can produce deep negative tails. |
-| 3 | Chronology/horizon (daily independent vs rolling 90d/36h) | High | High | Commitment coupling and look-ahead materially alter marginal conditions. |
+| 3 | Chronology/horizon (daily independent vs 90 sequential days with 36h RUC look-ahead) | High | High | Commitment coupling and look-ahead materially alter marginal conditions. |
 | 4 | Pricing workflow (paper two-pass dual vs Prescient engine) | High | Medium-High | Price definition/extraction pathway differs, even with similar dispatch. |
-| 5 | Price caps/thresholds | Medium-High | High | Observed -1000 floor confirms clipping behavior influences tails and averages. |
-| 6 | Reserve formulation | Medium | Medium | Can shift scarcity and dispatch margins, but typically secondary to 1-3. |
-| 7 | Line rating treatment (daily/Hourly DLR vs current input handling) | Medium | Medium | Congestion pattern changes can be large but depend on how ratings are loaded. |
-| 8 | Solver stack differences | Low-Medium | Medium | Matters, but usually not enough alone to explain sign reversal from all-positive to ~11% negative. |
+| 5 | Solver choice (CONOPT NLP relaxation vs Gurobi MILP) | Medium-High | High | Paper likely solves continuous relaxation (fractional commitments), producing systematically different dual prices than Prescient's integer UC. See Section 3.7. |
+| 6 | Price caps/thresholds | Medium-High | High | Observed -1000 floor confirms clipping behavior influences tails and averages. |
+| 7 | Reserve formulation | Medium | Medium | Can shift scarcity and dispatch margins, but typically secondary to 1-3. |
+| 8 | Line rating treatment (daily/Hourly DLR vs current input handling) | Medium | Medium | Congestion pattern changes can be large but depend on how ratings are loaded. |
 
 ## 5. What “Change Prescient PCM Toward Their Model” Means (Novice + Deep)
 

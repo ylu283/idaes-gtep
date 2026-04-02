@@ -23,6 +23,7 @@ NAME_RE = re.compile(r"^\d{4}-\d{2}-\d{2}_[a-z0-9_]+_[a-z0-9_]+\.[A-Za-z0-9]+$")
 LEGACY_NAME_ALLOWLIST = {
     "decks/2026-02-26_IDAES_Update_Kay.pptx",
     "decks/2026-03-03_Benchmarking_Update_PCM_vs_Paper.pptx",
+    "decks/2026-03-03_Benchmarking_Update_PCM_vs_Paper_archive.pptx",
     "decks/src/2026-02-26_presentation-outline.md",
     "lab_logs/lab_log_2026-03-01.md",
     "reports/curtailment_penalty_experiment_setup_2026-02-28.md",
@@ -42,8 +43,8 @@ def main() -> None:
         if path.is_dir():
             continue
 
-        # skip hidden/system/temp files
-        if rel.name.startswith(".") or rel.name.startswith("~$"):
+        # skip hidden/system/temp/cache files
+        if rel.name.startswith(".") or rel.name.startswith("~$") or "__pycache__" in rel.parts:
             continue
 
         rel_str = rel.as_posix()

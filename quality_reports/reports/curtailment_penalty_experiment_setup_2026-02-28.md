@@ -20,7 +20,7 @@ Added:
 
 This script:   
 
-- reuses your current `btheta` Prescient setup;
+- reuses current `btheta` Prescient setup;
 - supports `pcm` and `uc_only` modes;
 - sweeps penalty/cap cases (`quick` or `benchmark`);
 - writes each case to its own output folder under:
@@ -50,6 +50,10 @@ Metrics computed per case:
 - total curtailment (from `renewables_detail.csv` and `hourly_summary.csv`),
 - total overgeneration/load shedding/reserve shortfall.
 
+> **LMP column note:** The summarizer reads the `LMP DA` column from `bus_detail.csv` (DA RUC dual variable), falling back to `LMP` (RT SCED) if `LMP DA` is not present. The analysis notebooks and results table in Section 6.2 also use `LMP DA`. Prior to the 2026-03-11 fix, the summarizer used the RT `LMP` column, so older `curtailment_penalty_summary.csv` files may contain RT-based statistics that differ from the notebook-reported DA values.
+>
+> **Simple mean note:** The summarizer's `lmp_mean` is computed as a simple arithmetic mean across all bus-hour records (`statistics.fmean`), not a load-weighted average. Load-weighted LMP (the project convention for system-level reporting) is computed in the analysis notebooks but not in the summarizer output.
+
 ### 2.3 New cluster submit helper
 
 Added:
@@ -66,8 +70,8 @@ Tested benchmark sweep values:
 
 Reasoning:
 
-1. `1000` preserves your current baseline behavior.
-   - Your active scripts currently use `price_threshold=1000` (e.g., `run_coal_prescient_btheta.py` and `run_coal_prescient_btheta_uc_only.py`).
+1. `1000` matches only the `price_threshold` from the current baseline.
+   - Your active scripts use `price_threshold=1000`, but also set `contingency_price_threshold=100` and `reserve_price_threshold=5`. The benchmark `penalty_1000` case uses 1000 for **all** thresholds uniformly, which is materially different.
 2. `10000` is Prescient's documented default for `price_threshold`.
    - This serves as an upper reference consistent with the simulator's default design.
 3. `2000` and `5000` align with ERCOT-era system-wide offer cap levels used in market design reforms.
@@ -75,11 +79,22 @@ Reasoning:
 4. `300` provides a conservative low-penalty stress case.
    - It helps quantify how strongly cap tightness drives the observed negative-LMP share and floor clipping.
 
+**Important:** `penalty_1000` in the benchmark set is **NOT** equivalent to the actual baseline run. The benchmark applies uniform thresholds for clean sensitivity analysis:
+
+| Threshold | Baseline (`run_coal_prescient_btheta.py`) | `penalty_1000` (benchmark) |
+|---|---|---|
+| `price_threshold` | 1000 | 1000 |
+| `contingency_price_threshold` | 100 | 1000 (10x increase) |
+| `reserve_price_threshold` | 5 | 1000 (200x increase) |
+| `transmission_price_threshold` | (not set) | 1000 (newly introduced) |
+| `interface_price_threshold` | (not set) | 1000 (newly introduced) |
+
+The `quick` case set includes a `baseline_current` case that correctly mirrors the actual baseline thresholds. The benchmark set uses uniform thresholds for clean sensitivity analysis but should not be compared 1:1 with the original baseline run.
+
 This range intentionally spans:
 
 - tight cap behavior (`300`),
-- your present benchmark (`1000`),
-- ERCOT-relevant intermediate/high levels (`2000`, `5000`),
+- uniform penalty levels (`1000`, `2000`, `5000`),
 - Prescient default high-cap behavior (`10000`).
 
 ## 4. Why This Is a "Curtailment-Penalty" Proxy (and Not Exact)

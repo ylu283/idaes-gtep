@@ -66,13 +66,24 @@ def _summarize_case(case_dir: Path, cap: float | None, run_status: str, run_erro
         }
 
     lmp_values: list[float] = []
+    demand_values: list[float] = []
     cap_floor_hits = 0
     cap_ceiling_hits = 0
     with bus_path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames or []
+        lmp_col = "LMP DA" if "LMP DA" in fieldnames else "LMP"
+        if lmp_col not in fieldnames:
+            return {
+                "case": case_dir.name,
+                "status": "no_lmp_column",
+                "run_status": run_status,
+                "run_error": run_error,
+            }
         for row in reader:
-            lmp = _safe_float(row.get("LMP"))
+            lmp = _safe_float(row.get(lmp_col))
             lmp_values.append(lmp)
+            demand_values.append(_safe_float(row.get("Demand")))
             if cap is not None:
                 if lmp <= -cap + 1e-9:
                     cap_floor_hits += 1
@@ -108,6 +119,11 @@ def _summarize_case(case_dir: Path, cap: float | None, run_status: str, run_erro
         }
 
     negative_count = sum(1 for x in lmp_values if x < 0.0)
+    total_demand = sum(demand_values)
+    if total_demand > 1.0:
+        lmp_load_weighted = sum(d * l for d, l in zip(demand_values, lmp_values)) / total_demand
+    else:
+        lmp_load_weighted = fmean(lmp_values)
     return {
         "case": case_dir.name,
         "status": "ok",
@@ -118,6 +134,7 @@ def _summarize_case(case_dir: Path, cap: float | None, run_status: str, run_erro
         "lmp_min": min(lmp_values),
         "lmp_max": max(lmp_values),
         "lmp_mean": fmean(lmp_values),
+        "lmp_load_weighted": lmp_load_weighted,
         "negative_lmp_fraction": negative_count / len(lmp_values),
         "cap_floor_hits": cap_floor_hits,
         "cap_ceiling_hits": cap_ceiling_hits,
@@ -182,6 +199,7 @@ def main() -> None:
         "lmp_min",
         "lmp_max",
         "lmp_mean",
+        "lmp_load_weighted",
         "negative_lmp_fraction",
         "cap_floor_hits",
         "cap_ceiling_hits",
@@ -206,7 +224,7 @@ def main() -> None:
             f"curtailment={row.get('total_renewables_curtailment_mwh', '')}"
         )
     if args.strict:
-        bad = [row for row in summaries if row.get("status") in {"missing_outputs", "header_only_or_empty"}]
+        bad = [row for row in summaries if row.get("status") in {"missing_outputs", "header_only_or_empty", "no_lmp_column"}]
         if bad:
             names = ", ".join(row["case"] for row in bad)
             raise SystemExit(f"Strict mode failure: incomplete cases detected: {names}")
