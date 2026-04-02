@@ -11,6 +11,8 @@
 
 A domain review was conducted on the GTEP stage 3 (2035) → Prescient PCM data conversion. The initial implementation contained **2 CRITICAL**, **3 MAJOR**, and **3 MINOR** issues. All were fixed and verified before finalizing the conversion.
 
+**Update (2026-04-02):** A subsequent fact-check found an additional CRITICAL bug — see CRITICAL-3 below.
+
 ---
 
 ## Findings
@@ -49,6 +51,35 @@ CORRECT: MC = 22.80 × 927.39 × 0.001 = $21.15/MWh (fuel_cost × heat_rate)
 - Was never used for actual Prescient simulations
 
 **Fix:** `Prescient_2/gen.csv` (the file actually used for the 2019 baseline simulations) is now the primary source. It has correct 4-segment cost curves, real ramp rates, and all required columns.
+
+---
+
+### CRITICAL-3: fuel_cost3 Units Mismatch ($/MWh placed in $/MMBTU column)
+
+**Severity:** CRITICAL
+**Status:** FIXED (2026-04-02)
+
+**Problem:** `fuel_cost3` in the GTEP model has units `USD/(MW·hr)` = $/MWh (see `gtep_model.py:1889`). The conversion notebook placed this value directly into the "Fuel Price $/MMBTU" column. Prescient then computes marginal cost as:
+
+```
+MC = Fuel_Price ($/MMBTU) × HR_incr_1 (BTU/kWh) × 0.001
+```
+
+This double-counts the heat rate for generators where HR_incr_1 ≠ 1000:
+- **CT Gen 2:** FP=22.80, HR=927, MC=$21.15 (0.93× — appeared correct by coincidence)
+- **COAL Gen 26:** FP=18.94, HR=8911, MC=$168.77 (8.9× too high)
+- **NUC Gen 1:** FP=7.38, HR=16453, MC=$121.40 (16.5× too high)
+
+**Impact:** Coal and nuclear would never dispatch competitively against CTs, producing completely wrong merit order and LMPs in the 2035 PCM simulation.
+
+**Fix:** Back-calculate Fuel Price per generator: `FP = fuel_cost3 / (HR_incr_1 × 0.001)`. This ensures the first-segment MC exactly equals `fuel_cost3` for every generator.
+
+**Verification:**
+```
+CT Gen 2:    FP=24.587 × HR=927.39 × 0.001 = $22.80/MWh  ✓
+COAL Gen 26: FP=2.125  × HR=8911   × 0.001 = $18.94/MWh  ✓
+NUC Gen 1:   FP=0.448  × HR=16453  × 0.001 = $7.38/MWh   ✓
+```
 
 ---
 
@@ -125,7 +156,7 @@ CORRECT: MC = 22.80 × 927.39 × 0.001 = $21.15/MWh (fuel_cost × heat_rate)
 
 | Check | Result |
 |-------|--------|
-| Total generators | 278 (134 CT, 69 WIND, 61 PV, 12 COAL, 2 NUC) |
+| Total generators | 278 (135 CT, 69 WIND, 60 PV, 12 COAL, 2 NUC) |
 | Total capacity | 107,164 MW |
 | Required files (12) | All present |
 | Empty GEN UIDs | 0 |

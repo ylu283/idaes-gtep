@@ -37,7 +37,7 @@ Additional fixes from domain review:
 - 25 generators not in ANY gen.csv (multi-unit CTs and some pv/wind candidates) — synthesized from templates
 
 ## Results
-- 278 generators: 134 CT, 69 WIND, 61 PV, 12 COAL, 2 NUC
+- 278 generators: 135 CT, 69 WIND, 60 PV, 12 COAL, 2 NUC
 - Total capacity: ~107 GW
 - Validation: PASSED (0 errors, 0 warnings)
 - CT Gen 2 marginal cost: $21.15/MWh (verified correct)
@@ -57,7 +57,13 @@ Additional fixes from domain review:
 - [LEARN:conversion] `Prescient/gen.csv` is jkskolf's intermediate with broken encoding. `Prescient_2/gen.csv` is the correct source for existing generators.
 - [LEARN:conversion] `Output_pct_0` must be explicitly set to 0 for renewables after any merge with candidate templates.
 
+## Update (2026-04-02): Fuel Price Units Bug Fix
+
+Fact-check revealed `fuel_cost3` is $/MWh (not $/MMBTU). Previous version placed it directly in "Fuel Price $/MMBTU",
+inflating COAL costs 9× and NUC 16×. Fixed by back-calculating `FP = fuel_cost3 / (HR_incr_1 × 0.001)`.
+See `quality_reports/lab_logs/lab_log_2026-04-02.md` for details.
+
 ## Next Steps
-- Upload to CRC and run 30-day test
+- Upload corrected data to CRC and run 30-day test
 - Check for solver errors (especially with synthesized generators)
 - If clean, extend to 90/365-day run
