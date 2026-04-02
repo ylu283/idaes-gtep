@@ -27,3 +27,21 @@ All thermal generator MCs now equal their fuel_cost3 target:
 - CT: MC = $22.80/MWh (all generators)
 - COAL: MC = $18.94/MWh (all generators)
 - NUC: MC = $7.38/MWh (all generators)
+
+## GTEP Model Cost Structure (follow-up investigation)
+
+Confirmed that GTEP **does use fuel_cost3 directly** in its expansion planning optimization.
+The relevant code is `gtep_model.py:577-578`:
+
+```python
+def generatorCost(b, gen):
+    return b.thermalGeneration[gen] * i_p.fuelCost[gen]
+```
+
+- `thermalGeneration` units: MW·hr (energy)
+- `fuelCost` = `fuelCost3` (for stage 3), units: USD/(MW·hr) = $/MWh
+
+GTEP uses a **simplified linear cost model** — one flat marginal cost per generator, no heat rate curve.
+This is correct within GTEP's own formulation. The bug was only in the GTEP→Prescient conversion,
+where the $/MWh value was placed into Prescient's "Fuel Price $/MMBTU" column without accounting
+for the fact that Prescient applies its own `FP × HR × 0.001` cost calculation.
