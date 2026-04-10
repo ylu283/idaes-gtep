@@ -1,6 +1,6 @@
 # Quality Reports Index
 
-Last updated: 2026-04-01
+Last updated: 2026-04-10
 
 ## Latest By Topic
 
@@ -13,6 +13,12 @@ Last updated: 2026-04-01
 | GTEP non-PCM explainer | `reports/2026-03-24_gtep_non_pcm_model_explainer_and_conversion_spec.md` | (none) | Clear-language model walkthrough + expansion-result production path |
 | GTEP to Prescient mapping spec | `reports/2026-03-24_gtep_to_prescient_pcm_data_mapping_spec.md` | (none) | Required columns/files and pseudo-code conversion workflow |
 | GTEP 2035 conversion domain review | `reports/2026-04-01_gtep_2035_conversion_domain_review.md` | (none) | Critical bug fix audit: cost curve encoding, source file selection |
+| 2035 Full-Year PCM Analysis | `reports/2026-04-07_prescient_2035_annual_pcm_analysis.md` | (none) | 365-day Prescient PTDF analysis, NUC/COAL zero-dispatch documented |
+| 2035 conversion audit | `reports/2026-04-10_prescient_2035_conversion_audit.md` | (none) | Full audit: data sources, fuel_cost3 tracing, uniform MC impact |
+| GTEP model overview | `reports/2026-04-10_gtep_model_overview.md` | (none) | Structure, temporal hierarchy, objective, constraints, data pipeline |
+| GTEP variables & parameters | `reports/2026-04-10_gtep_model_variables_parameters.md` | (none) | Complete reference: all sets, params, vars, expressions with line numbers |
+| GTEP equations | `reports/2026-04-10_gtep_model_equations.md` | (none) | Mathematical formulation of all active constraints |
+| GTEP assumptions & limitations | `reports/2026-04-10_gtep_model_assumptions.md` | (none) | Cost model, temporal, network, data flow assumptions; known TODOs |
 | Lab progress notes | `lab_logs/lab_log_2026-04-01.md` | (none) | 2035 PCM conversion + domain review fixes |
 
 ## Legacy Path Map (Phased, Non-Breaking Migration)
@@ -37,3 +43,4 @@ Keep only transient logs in:
 - `quality_reports/session_logs/2026-03-11_report_accuracy_review.md`
 - `quality_reports/session_logs/2026-03-24_gtep_prescient_conversion_worklog.md`
 - `quality_reports/session_logs/2026-04-01_gtep_2035_pcm_conversion.md`
+- `quality_reports/session_logs/2026-04-07_prescient_2035_annual_analysis.md`
