@@ -27,7 +27,7 @@ def submit_job(job_name: str = "ERCOT_2035_extreme_PCM") -> None:
         module load gurobi
         module load ipopt/3.14.2
 
-        python ./run_coal_prescient_2035.py
+        python ./run_coal_prescient_2035_2.py
     """)
     with open(sh_path, "w", newline="\n") as f:
         f.write(script)
