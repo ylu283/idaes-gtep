@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "gtep/pcm_analysis/cem_vs_pcm_validation_2035/src/extract_gtep_stage3_cost.py", line 246, in <module>
+    main()
+  File "gtep/pcm_analysis/cem_vs_pcm_validation_2035/src/extract_gtep_stage3_cost.py", line 242, in main
+    solve_and_dump()
+  File "gtep/pcm_analysis/cem_vs_pcm_validation_2035/src/extract_gtep_stage3_cost.py", line 171, in solve_and_dump
+    from gtep.gtep_model import ExpansionPlanningModel
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/gtep_model.py", line 15, in <module>
+    from pyomo.repn.linear import LinearRepnVisitor
+ModuleNotFoundError: No module named 'pyomo.repn.linear'
