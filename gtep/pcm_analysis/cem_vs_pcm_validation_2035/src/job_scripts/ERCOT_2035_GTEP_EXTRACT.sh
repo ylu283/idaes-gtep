@@ -16,4 +16,4 @@ module load gurobi
 # resolution for outputs, so the cwd only matters for the GTEP data
 # loader (which reads gtep/data/123_Bus_Coal/).
 cd $HOME/GitHub/idaes-gtep
-python gtep/pcm_analysis/tsa_2035/src/extract_gtep_stage3_cost.py
+python gtep/pcm_analysis/cem_vs_pcm_validation_2035/src/extract_gtep_stage3_cost.py

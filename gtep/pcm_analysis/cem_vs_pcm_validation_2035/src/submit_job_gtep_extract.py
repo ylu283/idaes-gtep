@@ -9,11 +9,11 @@ Env: `gtep1` (conda), with gtep editable-installed. Repo assumed to live at
 `~/GitHub/idaes-gtep` on CRC.
 
 Usage on CRC:
-    python gtep/pcm_analysis/tsa_2035/src/submit_job_gtep_extract.py
+    python gtep/pcm_analysis/cem_vs_pcm_validation_2035/src/submit_job_gtep_extract.py
 
 Writes `job_scripts/ERCOT_2035_GTEP_EXTRACT.sh` next to this file and submits
 it with qsub. Output lands at
-`gtep/pcm_analysis/tsa_2035/results/gtep_stage3_cost.json`.
+`gtep/pcm_analysis/cem_vs_pcm_validation_2035/results/gtep_stage3_cost.json`.
 """
 
 from __future__ import annotations
@@ -52,7 +52,7 @@ def submit_job(job_name: str = "ERCOT_2035_GTEP_EXTRACT") -> None:
         # resolution for outputs, so the cwd only matters for the GTEP data
         # loader (which reads gtep/data/123_Bus_Coal/).
         cd {REPO_ROOT_ON_CRC}
-        python gtep/pcm_analysis/tsa_2035/src/extract_gtep_stage3_cost.py
+        python gtep/pcm_analysis/cem_vs_pcm_validation_2035/src/extract_gtep_stage3_cost.py
     """
     )
     with open(sh_path, "w", newline="\n") as f:
