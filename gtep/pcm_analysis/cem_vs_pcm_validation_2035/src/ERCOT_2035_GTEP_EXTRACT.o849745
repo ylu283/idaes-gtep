@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "gtep/pcm_analysis/tsa_2035/src/extract_gtep_stage3_cost.py", line 193, in <module>
-    main()
-  File "gtep/pcm_analysis/tsa_2035/src/extract_gtep_stage3_cost.py", line 189, in main
-    solve_and_dump()
-  File "gtep/pcm_analysis/tsa_2035/src/extract_gtep_stage3_cost.py", line 134, in solve_and_dump
-    from pyomo.contrib.solver.common.results import TerminationCondition
-ModuleNotFoundError: No module named 'pyomo.contrib.solver'

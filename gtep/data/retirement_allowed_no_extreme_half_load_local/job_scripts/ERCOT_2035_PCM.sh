@@ -12,4 +12,4 @@ export LD_LIBRARY_PATH=~/.conda/envs/users/ylu28//dispatches/lib:$LD_LIBRARY_PAT
 module load gurobi
 module load ipopt/3.14.2
 
-python ./run_coal_prescient_2035.py
+python ./run_coal_prescient_2035_2.py
