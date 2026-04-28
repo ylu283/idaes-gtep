@@ -1846,7 +1846,14 @@ def model_data_references(m):
     m.peakLoad = Param(m.stages, default=0, units=u.MW)
     m.reserveMargin = Param(m.stages, default=0, units=u.MW)
     m.renewableQuota = Param(m.stages, default=0, units=u.MW)
-    m.weights = Param(m.representativePeriods, default=5 * 365 / 4)
+    # Weight = (stage length in years) * 365 days/year / num_reps, so that
+    # sum_{rp} (weight[rp] * len_rep_days) == stage length in days.
+    # With 5-year stages, 4 reps -> 456.25 days/rep; 30 reps -> 60.833; etc.
+    # Parameterized by len(m.representativePeriods) rather than a hardcoded 4
+    # so benchmark runs at higher resolution stay correctly annualized.
+    m.weights = Param(
+        m.representativePeriods, default=5 * 365 / len(m.representativePeriods)
+    )
     m.investmentFactor = Param(m.stages, default=1, mutable=True)
     ## NOTE: Lazy approx for NPV
     ## TODO: don't lazily approx NPV, add it into unit handling and calculate from actual time frames
