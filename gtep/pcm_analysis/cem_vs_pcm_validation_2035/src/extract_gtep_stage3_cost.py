@@ -164,7 +164,7 @@ def _extract(mod_object, objective_value: float | None) -> dict:
 
 
 def solve_and_dump() -> Path:
-    import pyomo.environ as pyo
+    from pyomo.contrib.solver.solvers.gurobi_direct import GurobiDirect
     from pyomo.core import TransformationFactory
 
     from gtep.gtep_data import ExpansionPlanningData
@@ -185,34 +185,16 @@ def solve_and_dump() -> Path:
     mod_object.create_model()
     TransformationFactory("gdp.bigm").apply_to(mod_object.model)
 
-    # Try the new `pyomo.contrib.solver` API first; fall back to the legacy
-    # `pyomo.opt.SolverFactory` path for envs (e.g. CRC `gtep1`) whose Pyomo
-    # predates the contrib.solver split.
-    try:
-        from pyomo.contrib.solver.solvers.gurobi_direct import GurobiDirect
-
-        opt = GurobiDirect()
-        results = opt.solve(
-            mod_object.model,
-            tee=True,
-            solver_options={"LogFile": "basic_logging.log"},
-        )
-        tc = getattr(results, "termination_condition", None)
-        obj_from_results = getattr(results, "best_feasible_objective", None)
-    except ImportError:
-        from pyomo.opt import SolverFactory
-
-        opt = SolverFactory("gurobi_direct")
-        opt.options["LogFile"] = "basic_logging.log"
-        results = opt.solve(mod_object.model, tee=True)
-        tc = results.solver.termination_condition
-        obj_from_results = None  # read from model below
-
+    opt = GurobiDirect()
+    results = opt.solve(
+        mod_object.model, tee=True, solver_options={"LogFile": "basic_logging.log"}
+    )
     mod_object.results = results
 
     # Termination check -- portable across pyomo versions. The enum location
     # (pyomo.contrib.solver.common.results vs pyomo.opt) moved between 6.7
     # and 6.9, so we check by string suffix.
+    tc = getattr(results, "termination_condition", None)
     tc_str = str(tc).lower()
     terminated_ok = tc_str.endswith("optimal") or tc_str.endswith("convergencecriteriasatisfied")
     if not terminated_ok:
@@ -220,13 +202,11 @@ def solve_and_dump() -> Path:
             f"GTEP solver did not terminate optimally: termination_condition={tc!r}"
         )
 
-    if obj_from_results is not None:
-        objective_value = float(obj_from_results)
-    else:
-        active_obj = next(
-            mod_object.model.component_data_objects(pyo.Objective, active=True)
-        )
-        objective_value = float(pyo.value(active_obj))
+    objective_value = (
+        float(results.best_feasible_objective)
+        if getattr(results, "best_feasible_objective", None) is not None
+        else None
+    )
 
     payload = _extract(mod_object, objective_value)
 

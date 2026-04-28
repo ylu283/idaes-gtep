@@ -12,12 +12,7 @@ from pyomo.environ import units as u
 from egret.data.model_data import ModelData
 from egret.model_library.transmission.tx_utils import scale_ModelData_to_pu
 from pyomo.common.timing import TicTocTimer
-
-# LinearRepnVisitor is only needed by report_large_coefficients (a diagnostic).
-# It lives in pyomo.repn.linear as of Pyomo 6.6; older envs (e.g. the CRC
-# `gtep1` conda env, which has Pyomo < 6.6) lack this module entirely. Import
-# lazily inside the method so the rest of this module stays importable there.
-
+from pyomo.repn.linear import LinearRepnVisitor
 import json
 import numpy as np
 import re
@@ -171,8 +166,6 @@ class ExpansionPlanningModel:
         :outfile: should accept filename or open file and write there; see how we do this in pyomo elsewhere
         :magnitude_cutoff: magnitude above which to report coefficients
         """
-        from pyomo.repn.linear import LinearRepnVisitor
-
         var_coef_dict = {}
         for e in self.model.component_data_objects(Constraint):
             cfg = VisitorConfig()
