@@ -1,0 +1,27 @@
+WARNING: DEPRECATED: Declaring class 'BaseRelaxationData' derived from
+'_BlockData'.  The class '_BlockData' has been renamed to 'BlockData'.
+(deprecated in 6.7.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/relaxations/relaxations_base.py:43)
+WARNING: DEPRECATED: pyomo.core.expr.current is deprecated.  Please import
+expression symbols from pyomo.core.expr  (deprecated in 6.6.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/domain_reduction/filters.py:4)
+Traceback (most recent call last):
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/driver_coal_2hr.py", line 96, in <module>
+    data_object.load_prescient(data_path)
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/gtep_data.py", line 43, in load_prescient
+    data_provider = gmlc_data_provider.GmlcDataProvider(options=prescient_options)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/prescient/data/providers/gmlc_data_provider.py", line 34, in __init__
+    self._cache = parser.parse_to_cache(options.data_path, self._start_time, self._end_time)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/egret/parsers/rts_gmlc/parser.py", line 127, in parse_to_cache
+    model_data = _create_rtsgmlc_skeleton(rts_gmlc_dir)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/egret/parsers/rts_gmlc/parser.py", line 353, in _create_rtsgmlc_skeleton
+    _read_branches(base_dir, elements, bus_id_to_name)
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/egret/parsers/rts_gmlc/parser.py", line 448, in _read_branches
+    "from_bus": bus_id_to_name[str(row['From Bus'])], 
+                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyError: '98.0'
