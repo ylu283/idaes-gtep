@@ -33,9 +33,9 @@ def submit_job(job_name: str = "ERCOT_GTEP_4HR_COMMIT") -> None:
         #$ -N {job_name}
 
         source ~/.bashrc
-        conda activate gtep1
+        conda activate gtep2
 
-        export LD_LIBRARY_PATH=~/.conda/envs/gtep1/lib:$LD_LIBRARY_PATH
+        export LD_LIBRARY_PATH=~/.conda/envs/gtep2/lib:$LD_LIBRARY_PATH
         module load gurobi
 
         cd {REPO_ROOT_ON_CRC}
