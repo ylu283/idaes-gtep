@@ -117,15 +117,19 @@ mod_object.config["flow_model"] = "CP"
 
 mod_object.create_model()
 
-# ── Patch commitmentPeriodLength from 1 → BLOCK_HOURS ─────────────────────
+# ── Patch temporal parameters for BLOCK_HOURS-wide periods ────────────────
 m = mod_object.model
 m.commitmentPeriodLength = BLOCK_HOURS
+m.dispatchPeriodLength = BLOCK_HOURS
 for stage in m.stages:
     i_blk = m.investmentStage[stage]
     for rp in i_blk.representativePeriods:
         r_blk = i_blk.representativePeriod[rp]
         for cp in r_blk.commitmentPeriods:
-            r_blk.commitmentPeriod[cp].commitmentPeriodLength = BLOCK_HOURS
+            cp_blk = r_blk.commitmentPeriod[cp]
+            cp_blk.commitmentPeriodLength = BLOCK_HOURS
+            for dp in cp_blk.dispatchPeriods:
+                cp_blk.dispatchPeriod[dp].periodLength = BLOCK_HOURS
 
 mod_object.timer.toc(f"Model built with {NUM_COMMIT} x {BLOCK_HOURS}hr commitment periods")
 

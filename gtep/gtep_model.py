@@ -566,19 +566,15 @@ def add_dispatch_variables(b, dispatch_period):
             b.renewableGeneration[renewableGen] - b.renewableCurtailment[renewableGen]
         )
 
-    # Per generator curtailment cost
+    # Per generator curtailment cost ($/hr × hr = $ per dispatch period)
     @b.Expression(m.renewableGenerators)
     def renewableCurtailmentCost(b, renewableGen):
-        return b.renewableCurtailment[renewableGen] * m.curtailmentCost
+        return b.renewableCurtailment[renewableGen] * m.curtailmentCost * b.periodLength
 
-    # Per generator cost
-    ## TEXAS: added varCost below
+    # Per generator cost ($/hr × hr = $ per dispatch period)
     @b.Expression(m.thermalGenerators)
     def generatorCost(b, gen):
-        return b.thermalGeneration[gen] * i_p.fuelCost[gen]
-        return b.thermalGeneration[gen] * (i_p.fuelCost[gen] + i_p.varCost[gen])
-
-    # * b.dispatchLength
+        return b.thermalGeneration[gen] * i_p.fuelCost[gen] * b.periodLength
 
     # Load shed per bus
     b.loadShed = Var(m.buses, domain=NonNegativeReals, initialize=0, units=u.MW * u.hr)
@@ -586,7 +582,7 @@ def add_dispatch_variables(b, dispatch_period):
     # Per bus load shed cost
     @b.Expression(m.buses)
     def loadShedCost(b, bus):
-        return b.loadShed[bus] * m.loadShedCost
+        return b.loadShed[bus] * m.loadShedCost * b.periodLength
 
     # Track total dispatch values and costs
     b.renewableSurplusDispatch = sum(b.renewableGenerationSurplus.values())

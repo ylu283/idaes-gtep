@@ -1,6 +1,6 @@
 # Quality Reports Index
 
-Last updated: 2026-04-10
+Last updated: 2026-04-30
 
 ## Latest By Topic
 
@@ -21,6 +21,11 @@ Last updated: 2026-04-10
 | GTEP equations | `reports/2026-04-10_gtep_model_equations.md` | (none) | Mathematical formulation of all active constraints |
 | GTEP assumptions & limitations | `reports/2026-04-10_gtep_model_assumptions.md` | (none) | Cost model, temporal, network, data flow assumptions; known TODOs |
 | Lab progress notes | `lab_logs/lab_log_2026-04-02.md` | (none) | Fuel price units fix and fact-check |
+| 2035 CEM-vs-PCM validation | (scaffolded — `../gtep/pcm_analysis/cem_vs_pcm_validation_2035/`) | (none) | 2×2 factorial; CEM-vs-PCM modeling gap (not TSA); 5× scale bug fixed on 2026-04-23 |
+| 2035 PCM config sensitivity | (scaffolded — `../gtep/pcm_analysis/pcm_config_sensitivity_2035/`) | (none) | PTDF vs btheta deltas; carved out of the old TSA notebook |
+| 2035 TSA benchmark (Phase B) | (in progress — `../gtep/pcm_analysis/tsa_benchmark_2035/`) | (none) | 30-rep-day benchmark CEM + plan-aligned error metrics; targets the authoritative plan |
+| Commitment period sensitivity | `reports/2026-04-30_commitment_period_sensitivity_design.md` | (none) | Design report: Approach A vs B, time-scaling bugs, pre-flight checklist |
+| Commitment period guide | `reports/2026-04-30_commitment_period_modification_guide.md` | (none) | Step-by-step guide: data aggregation, parameter patching, time-scaling fix |
 
 ## Legacy Path Map (Phased, Non-Breaking Migration)
 
@@ -48,3 +53,9 @@ Keep only transient logs in:
 - `quality_reports/session_logs/2026-04-07_prescient_2035_annual_analysis.md`
 - `quality_reports/session_logs/2026-04-10_gtep_model_documentation.md`
 - `quality_reports/session_logs/2026-04-10_hr_avg0_fix.md`
+- `quality_reports/session_logs/2026-04-22_extreme_gen_csv_conversion.md`
+- `quality_reports/session_logs/2026-04-22_tsa_2035_setup.md`
+- `quality_reports/session_logs/2026-04-23_cem_vs_pcm_rename_and_scalefix.md`
+- `quality_reports/session_logs/2026-04-23_tsa_phase_a_b_and_pcm_factorial.md`
+- `quality_reports/session_logs/2026-04-28_pcm_rerun_status_audit.md`
+- `quality_reports/session_logs/2026-04-30_commitment_period_driver_analysis.md`
