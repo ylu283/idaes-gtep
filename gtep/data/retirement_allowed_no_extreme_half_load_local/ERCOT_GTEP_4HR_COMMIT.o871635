@@ -1,0 +1,48 @@
+WARNING: DEPRECATED: Declaring class 'BaseRelaxationData' derived from
+'_BlockData'.  The class '_BlockData' has been renamed to 'BlockData'.
+(deprecated in 6.7.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/relaxations/relaxations_base.py:43)
+WARNING: DEPRECATED: pyomo.core.expr.current is deprecated.  Please import
+expression symbols from pyomo.core.expr  (deprecated in 6.6.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/domain_reduction/filters.py:4)
+Traceback (most recent call last):
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/driver_coal_4hr.py", line 96, in <module>
+    data_object.load_prescient(data_path)
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/gtep_data.py", line 43, in load_prescient
+    data_provider = gmlc_data_provider.GmlcDataProvider(options=prescient_options)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/prescient/data/providers/gmlc_data_provider.py", line 34, in __init__
+    self._cache = parser.parse_to_cache(options.data_path, self._start_time, self._end_time)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py", line 142, in parse_to_cache
+    timeseries_df = _read_timeseries_data(model_data, rts_gmlc_dir,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py", line 816, in _read_timeseries_data
+    data = _read_timeseries_file(fname, minutes_per_period[sim], 
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py", line 226, in _read_timeseries_file
+    return _read_columnar_timeseries_file(file_name, minutes_per_period, start_time, end_time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py", line 254, in _read_columnar_timeseries_file
+    df = pd.read_csv(file_name,
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1922, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 152, in __init__
+    validate_parse_dates_presence(self.parse_dates, self.names)
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pandas/io/parsers/base_parser.py", line 914, in validate_parse_dates_presence
+    unique_cols.add(columns[col])
+                    ~~~~~~~^^^^^
+TypeError: list indices must be integers or slices, not list
