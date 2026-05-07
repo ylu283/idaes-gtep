@@ -26,6 +26,7 @@ Last updated: 2026-04-30
 | 2035 TSA benchmark (Phase B) | (in progress — `../gtep/pcm_analysis/tsa_benchmark_2035/`) | (none) | 30-rep-day benchmark CEM + plan-aligned error metrics; targets the authoritative plan |
 | Commitment period sensitivity | `reports/2026-04-30_commitment_period_sensitivity_design.md` | (none) | Design report: Approach A vs B, time-scaling bugs, pre-flight checklist |
 | Commitment period guide | `reports/2026-04-30_commitment_period_modification_guide.md` | (none) | Step-by-step guide: data aggregation, parameter patching, time-scaling fix |
+| GTEP→PCM pipeline overview | `reports/2026-05-06_gtep_to_pcm_pipeline_overview.md` | (none) | Backup slide material: full pipeline diagram, data flow, conversion rules, validation checks |
 
 ## Legacy Path Map (Phased, Non-Breaking Migration)
 
