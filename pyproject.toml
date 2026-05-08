@@ -59,6 +59,10 @@ Homepage        = "https://github.com/IDAES/idaes-gtep"
 Documentation   = "https://idaes-gtep.readthedocs.io/en/latest/"
 Source          = "https://github.com/IDAES/idaes-gtep"
 
+[tool.setuptools.packages.find]
+include = ["gtep*"]
+exclude = ["quality_reports*"]
+
 [tool.setuptools.package-data]
 "*" = [
     "*.csv",
