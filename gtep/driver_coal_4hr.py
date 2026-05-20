@@ -118,18 +118,20 @@ mod_object.config["flow_model"] = "CP"
 mod_object.create_model()
 
 # ── Patch temporal parameters for BLOCK_HOURS-wide periods ────────────────
+# Use set_value() to preserve the Pyomo Param objects (and their units)
+# so that constraint/expression references remain valid.
 m = mod_object.model
-m.commitmentPeriodLength = BLOCK_HOURS
-m.dispatchPeriodLength = BLOCK_HOURS
+m.commitmentPeriodLength.set_value(BLOCK_HOURS)          # units=u.hr
+m.dispatchPeriodLength.set_value(BLOCK_HOURS * 60)       # units=u.minutes
 for stage in m.stages:
     i_blk = m.investmentStage[stage]
     for rp in i_blk.representativePeriods:
         r_blk = i_blk.representativePeriod[rp]
         for cp in r_blk.commitmentPeriods:
             cp_blk = r_blk.commitmentPeriod[cp]
-            cp_blk.commitmentPeriodLength = BLOCK_HOURS
+            cp_blk.commitmentPeriodLength.set_value(BLOCK_HOURS)  # units=u.hr
             for dp in cp_blk.dispatchPeriods:
-                cp_blk.dispatchPeriod[dp].periodLength = BLOCK_HOURS
+                cp_blk.dispatchPeriod[dp].periodLength.set_value(BLOCK_HOURS)
 
 mod_object.timer.toc(f"Model built with {NUM_COMMIT} x {BLOCK_HOURS}hr commitment periods")
 
@@ -171,6 +173,13 @@ for var in mod_object.model.component_objects(gdp.Disjunct, descend_into=True):
                         var[index].indicator_var
                     )
 
+costs = {}
+for exp in mod_object.model.component_objects(pyo.Expression, descend_into=True):
+    if "operatingCost" in exp.name:
+        costs[exp.name] = pyo.value(exp)
+    elif "investmentCost" in exp.name:
+        costs[exp.name] = pyo.value(exp)
+
 # ── Save ──────────────────────────────────────────────────────────────────
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -180,5 +189,7 @@ with open(os.path.join(OUTPUT_DIR, "dispatchable_investments.json"), "w") as fil
     json.dump(dispatchable_investments, fil)
 with open(os.path.join(OUTPUT_DIR, "load_shed.json"), "w") as fil:
     json.dump(load_shed, fil)
+with open(os.path.join(OUTPUT_DIR, "costs.json"), "w") as fil:
+    json.dump(costs, fil)
 
 mod_object.timer.toc(f"Results saved to {OUTPUT_DIR}/")
