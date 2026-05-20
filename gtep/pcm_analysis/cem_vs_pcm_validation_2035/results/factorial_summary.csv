@@ -1,0 +1,5 @@
+key,scenario,config,valid,total_demand_TWh,total_gen_cost_B$,total_fixed_cost_B$,total_cost_B$,cumulative_avg_price_$MWh,total_energy_payments_B$,load_shedding_MWh,curtailment_MWh_overall,reserve_shortfall_MWh,on_offs,load_weighted_lmp_$MWh
+no_extreme_A,no_extreme,A_ptdf_sh6_rh36,True,238.711517081212,1.26737801017332,1.5380229400477359,2.805400950221056,11.752265,4.960400692728809,0.0,0.0,0.0,15095.0,21.63267492290876
+no_extreme_B,no_extreme,B_btheta_sh24_rh48,True,238.711517081212,1.2594886046217821,1.546173316255957,2.80566192087774,11.753358,4.959126968337475,0.0,0.0,0.0,15355.0,21.613986380099963
+extreme_A,,,False,,,,,,,,,,,
+extreme_B,,,False,,,,,,,,,,,

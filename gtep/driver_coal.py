@@ -19,7 +19,6 @@ from pyomo.environ import SolverFactory
 from pyomo.contrib.appsi.solvers.highs import Highs
 from pyomo.contrib.appsi.solvers.gurobi import Gurobi
 from pyomo.contrib.solver.solvers.gurobi_direct import GurobiDirect
-import gurobipy as gp
 import gc
 
 gc.disable()

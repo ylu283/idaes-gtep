@@ -1,0 +1,6 @@
+run,sim_days,partial,load_shedding_MWh,over_generation_MWh,reserve_shortfall_MWh,renewables_curtailment_MWh,load_shed_hours,overgen_hours,reserve_short_hours,curtail_hours,total_hours,peak_load_shed_MW,peak_overgen_MW,peak_reserve_short_MW,line_violations
+no_extreme_A,365,False,0.0,0.0,0.0,0.0,0,0,0,0,8760,0.0,0.0,0.0,0
+no_extreme_B,365,False,0.0,0.0,0.0,0.0,0,0,0,0,8760,0.0,0.0,0.0,0
+extreme_A,69,True,0.0,290611.360286,87.146219,0.0,0,344,2,0,1648,0.0,2191.603866,82.05335,0
+extreme_B,69,True,92.323798,291178.87777599995,713.059829,0.0,4,351,2,0,1648,54.634596,2201.709469,527.430464,0
+base_year,90,False,62.043841,889428.468418,11711.819104,0.0,3,890,71,0,2160,58.068363,3395.442822,646.987,0

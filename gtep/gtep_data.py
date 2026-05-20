@@ -263,6 +263,7 @@ class ExpansionPlanningData:
     def texas_case_study_updates(self, data_path):
         generator_update_path = data_path + "/gen.csv"
         generator_df = pd.read_csv(generator_update_path)
+        generator_df["GEN UID"] = generator_df["GEN UID"].astype(str)
         bonus_feature_list = [
             "capex1",
             "capex2",
@@ -281,6 +282,10 @@ class ExpansionPlanningData:
             for col in bonus_feature_list:
                 for gen in data_point.data["elements"]["generator"]:
                     if not data_point.data["elements"]["generator"][gen].get(col):
-                        data_point.data["elements"]["generator"][gen][col] = float(
-                            generator_df[generator_df["GEN UID"] == gen][col]
-                        )
+                        matched = generator_df.loc[
+                            generator_df["GEN UID"] == gen, col
+                        ]
+                        if not matched.empty:
+                            data_point.data["elements"]["generator"][gen][col] = float(
+                                matched.iloc[0]
+                            )
