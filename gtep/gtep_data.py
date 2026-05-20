@@ -40,7 +40,7 @@ class ExpansionPlanningData:
         options_dict = {
             "data_path": data_path,
             "input_format": "rts-gmlc",
-            "start_date": "01-01-2020",
+            "start_date": "01-01-2019",
             "num_days": 365,
             "sced_horizon": 1,
             "sced_frequency_minutes": 60,
@@ -52,7 +52,7 @@ class ExpansionPlanningData:
         # Use prescient data provider to load in sequential data for representative periods
         data_list = []
 
-        x = datetime.datetime(2020, 1, 1)
+        x = datetime.datetime(2019, 1, 1)
         data_provider = gmlc_data_provider.GmlcDataProvider(options=prescient_options)
         # populate an egret model data with the basic stuff
         self.md = data_provider.get_initial_actuals_model(
@@ -66,6 +66,14 @@ class ExpansionPlanningData:
             start_time=x,
             model=self.md,
         )
+
+        # gridx-prescient 2.2.2 does not overwrite time_keys with date strings
+        _tk = self.md.data["system"]["time_keys"]
+        if _tk and _tk[0].isdigit():
+            self.md.data["system"]["time_keys"] = [
+                (x + datetime.timedelta(hours=i)).strftime('%Y-%m-%d %H:%M')
+                for i in range(24 * 365)
+            ]
 
         # data_provider.populate_initial_state_data(options=prescient_options, model=md)
         self.load_default_data_settings()
