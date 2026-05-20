@@ -95,10 +95,10 @@ class ExpansionPlanningData:
 
         time_keys = self.md.data["system"]["time_keys"]
         self.representative_dates = [
-            "2020-01-28 00:00",
-            "2020-04-23 00:00",
-            "2020-07-05 00:00",
-            "2020-10-14 00:00",
+            "2019-01-28 00:00",
+            "2019-04-23 00:00",
+            "2019-07-05 00:00",
+            "2019-10-14 00:00",
         ]
 
         ## FIXME:
