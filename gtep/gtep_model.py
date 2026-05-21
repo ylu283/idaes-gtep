@@ -1474,7 +1474,7 @@ def add_commitment_variables(b, commitment_period):
                     # [ESR: Make sure the time units are consistent
                     # here since we are only taking the value]
                     pyo.value(m.rampUpRates[generator])
-                    * b.dispatchPeriod[dispatchPeriod].periodLength
+                    * pyo.value(b.dispatchPeriod[dispatchPeriod].periodLength)
                     * pyo.value(m.thermalCapacity[generator]),
                 )
             elif dispatchPeriod == 1 and commitment_period != 1:
@@ -1489,7 +1489,7 @@ def add_commitment_variables(b, commitment_period):
                     # [ESR: Make sure the time units are consistent
                     # here since we are only taking the value]
                     pyo.value(m.rampUpRates[generator])
-                    * b.dispatchPeriod[dispatchPeriod].periodLength
+                    * pyo.value(b.dispatchPeriod[dispatchPeriod].periodLength)
                     * pyo.value(m.thermalCapacity[generator]),
                 )
             else:
@@ -1534,7 +1534,7 @@ def add_commitment_variables(b, commitment_period):
                     # [ESR: Make sure the time units are consistent
                     # here since we are taking the value only]
                     pyo.value(m.rampDownRates[generator])
-                    * b.dispatchPeriod[dispatchPeriod].periodLength
+                    * pyo.value(b.dispatchPeriod[dispatchPeriod].periodLength)
                     * pyo.value(m.thermalCapacity[generator]),
                 )
             elif dispatchPeriod == 1 and commitment_period != 1:
@@ -1549,7 +1549,7 @@ def add_commitment_variables(b, commitment_period):
                     # [ESR: Make sure the time units are consistent
                     # here since we are taking the value only]
                     pyo.value(m.rampDownRates[generator])
-                    * b.dispatchPeriod[dispatchPeriod].periodLength
+                    * pyo.value(b.dispatchPeriod[dispatchPeriod].periodLength)
                     * pyo.value(m.thermalCapacity[generator]),
                 )
             else:
