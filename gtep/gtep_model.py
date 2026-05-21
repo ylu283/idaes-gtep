@@ -162,13 +162,13 @@ class ExpansionPlanningModel:
             initialize=self.num_dispatch,
         )
         m.commitmentPeriodLength = pyo.Param(
-            within=pyo.PositiveReals, default=1, units=u.hr
+            within=pyo.PositiveReals, default=1, mutable=True, units=u.hr
         )
 
         # TODO: index by dispatch period? Certainly index by
         # commitment period
         m.dispatchPeriodLength = pyo.Param(
-            within=pyo.PositiveReals, initialize=self.duration_dispatch, units=u.minutes
+            within=pyo.PositiveReals, initialize=self.duration_dispatch, mutable=True, units=u.minutes
         )
 
         model_data_references(m)
@@ -2054,7 +2054,7 @@ def commitment_period_rule(b, commitment_period):
     ## TODO: Something weird happens if I say periodLength has a unit
     for period in b.dispatchPeriods:
         b.dispatchPeriod[period].periodLength = pyo.Param(
-            within=pyo.PositiveReals, default=1
+            within=pyo.PositiveReals, default=1, mutable=True
         )
         add_dispatch_variables(b.dispatchPeriod[period], period)
 
