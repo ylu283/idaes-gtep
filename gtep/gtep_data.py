@@ -151,31 +151,16 @@ class ExpansionPlanningData:
             "south_net",
             "west_net",
         ]
-        # zones = ["coast", "east", "fwest", "ncent", "north", "scent", "south", "west"]
-        # cap_zones = [zone.upper() for zone in zones]
-        zones = ["1", "2", "3", "4", "5", "6", "7", "8"]
-        cap_zones = ["1", "2", "3", "4", "5", "6", "7", "8"]
+        zones = ["coast", "east", "fwest", "ncent", "north", "scent", "south", "west"]
+        cap_zones = [zone.upper() for zone in zones]
         for i, zone in enumerate(zones):
             adjusted_forecast_by_period["scaled_" + zone] = (
                 adjusted_forecast_by_period[scaled_zones[i]]
                 / adjusted_forecast_by_period[base_zones[i]]
             )
-        column_list = [
-            "year",
-            "month",
-            "day",
-            "hour",
-            "scaled_1",
-            "scaled_2",
-            "scaled_3",
-            "scaled_4",
-            "scaled_5",
-            "scaled_6",
-            "scaled_7",
-            "scaled_8",
-        ]
-        load_scaling_df = adjusted_forecast_by_period[column_list]
         scaled_names = ["scaled_" + zone for zone in zones]
+        column_list = ["year", "month", "day", "hour"] + scaled_names
+        load_scaling_df = adjusted_forecast_by_period[column_list]
         name_conversion_dict = dict(zip(scaled_names, cap_zones))
         load_scaling_df = load_scaling_df.rename(columns=name_conversion_dict)
         self.load_scaling = load_scaling_df
