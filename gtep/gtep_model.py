@@ -3191,6 +3191,58 @@ def model_data_references(m):
         doc="Variable costs",
     )
 
+    if m.config["scale_texas_loads"]:
+        fixedCost1 = {}
+        fixedCost2 = {}
+        fixedCost3 = {}
+        varCost1 = {}
+        varCost2 = {}
+        varCost3 = {}
+        for gen in m.generators:
+            gd = m.md.data["elements"]["generator"][gen]
+            fixedCost1[gen] = gd.get("fixed_ops1", 0)
+            fixedCost2[gen] = gd.get("fixed_ops2", 0)
+            fixedCost3[gen] = gd.get("fixed_ops3", 0)
+            varCost1[gen] = gd.get("var_ops1", 0)
+            varCost2[gen] = gd.get("var_ops2", 0)
+            varCost3[gen] = gd.get("var_ops3", 0)
+        m.fixedCost1 = pyo.Param(
+            m.generators, initialize=fixedCost1, units=u.USD / (u.MW * u.hr)
+        )
+        m.fixedCost2 = pyo.Param(
+            m.generators, initialize=fixedCost2, units=u.USD / (u.MW * u.hr)
+        )
+        m.fixedCost3 = pyo.Param(
+            m.generators, initialize=fixedCost3, units=u.USD / (u.MW * u.hr)
+        )
+        m.varCost1 = pyo.Param(
+            m.generators, initialize=varCost1, units=u.USD / (u.MW * u.hr)
+        )
+        m.varCost2 = pyo.Param(
+            m.generators, initialize=varCost2, units=u.USD / (u.MW * u.hr)
+        )
+        m.varCost3 = pyo.Param(
+            m.generators, initialize=varCost3, units=u.USD / (u.MW * u.hr)
+        )
+
+        fuelCost1 = {}
+        fuelCost2 = {}
+        fuelCost3 = {}
+        for gen in m.thermalGenerators:
+            gd = m.md.data["elements"]["generator"][gen]
+            fuelCost1[gen] = gd.get("fuel_cost1", 0)
+            fuelCost2[gen] = gd.get("fuel_cost2", 0)
+            fuelCost3[gen] = gd.get("fuel_cost3", 0)
+        m.fuelCost1 = pyo.Param(
+            m.thermalGenerators, initialize=fuelCost1, units=u.USD / (u.MW * u.hr)
+        )
+        m.fuelCost2 = pyo.Param(
+            m.thermalGenerators, initialize=fuelCost2, units=u.USD / (u.MW * u.hr)
+        )
+        m.fuelCost3 = pyo.Param(
+            m.thermalGenerators, initialize=fuelCost3, units=u.USD / (u.MW * u.hr)
+        )
+
     # [ESR WIP: Declare and initialize curtailment and load shed costs
     # as parameters. These are re-calculated in
     # investment_stage_rule. Also, note that the original
