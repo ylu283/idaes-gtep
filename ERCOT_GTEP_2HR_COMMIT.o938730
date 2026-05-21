@@ -1,0 +1,53 @@
+Loading CRC_default/1.1
+Loading CRC_default/1.1
+WARNING: DEPRECATED: Declaring class 'BaseRelaxationData' derived from
+'_BlockData'.  The class '_BlockData' has been renamed to 'BlockData'.
+(deprecated in 6.7.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/relaxations/relaxations_base.py:43)
+WARNING: DEPRECATED: pyomo.core.expr.current is deprecated.  Please import
+expression symbols from pyomo.core.expr  (deprecated in 6.6.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/domain_reduction/filters.py:4)
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+Setting default t0 state in RTS-GMLC parser
+Warning: The file './gtep/data/123_Bus_Coal/storage.csv' does not exist. Skipping loading storage data.
+[    0.00] Creating GTEP Model
+b.year = 2025
+Cost data was not provided in m.mc instance (check DataProcessing for more details). Setting costs parameters to random values for now.
+ERROR: Constructing component 'investmentStage' from data=None failed:
+        AttributeError: 'ConcreteModel' object has no attribute 'fixedCost1'
+Traceback (most recent call last):
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/driver_coal_2hr.py", line 118, in <module>
+    mod_object.create_model()
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/gtep_model.py", line 176, in create_model
+    model_create_investment_stages(m, self.stages)
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/gtep_model.py", line 3224, in model_create_investment_stages
+    m.investmentStage = pyo.Block(m.stages, rule=investment_stage_rule)
+    ^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/core/base/block.py", line 573, in __setattr__
+    self.add_component(name, val)
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/core/base/block.py", line 1103, in add_component
+    val.construct(data)
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/core/base/block.py", line 2221, in construct
+    self._getitem_when_not_present(_idx)
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/core/base/block.py", line 2160, in _getitem_when_not_present
+    obj = self._rule(_block, idx)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/core/base/initializer.py", line 351, in __call__
+    return self._fcn(parent, idx, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/gtep_model.py", line 2487, in investment_stage_rule
+    b.fixedCost = pyo.Param(m.generators, initialize=m.fixedCost1)
+                                                     ^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/core/base/block.py", line 552, in __getattr__
+    raise AttributeError(
+AttributeError: 'ConcreteModel' object has no attribute 'fixedCost1'. Did you mean: 'fixedCost'?
+Loading CRC_default/1.1
