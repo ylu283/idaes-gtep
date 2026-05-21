@@ -2499,9 +2499,10 @@ def investment_stage_rule(b, investment_stage):
                 * m.md.data["elements"]["generator"][gen]["capex1"]
                 for gen in m.renewableGenerators
             }
-            m.generatorInvestmentCost = thermalInvestmentCost | renewableInvestmentCost
+            for gen, cost in (thermalInvestmentCost | renewableInvestmentCost).items():
+                m.generatorInvestmentCost[gen] = cost
             print("gen investment cost")
-            print(sum(m.generatorInvestmentCost.values()))
+            print(sum(m.generatorInvestmentCost[gen] for gen in m.generators))
         elif investment_stage == 2:
             b.fixedCost = pyo.Param(m.generators, initialize=m.fixedCost2)
             b.varCost = pyo.Param(m.generators, initialize=m.varCost2)
@@ -2518,7 +2519,8 @@ def investment_stage_rule(b, investment_stage):
                 * m.md.data["elements"]["generator"][gen]["capex2"]
                 for gen in m.renewableGenerators
             }
-            m.generatorInvestmentCost = thermalInvestmentCost | renewableInvestmentCost
+            for gen, cost in (thermalInvestmentCost | renewableInvestmentCost).items():
+                m.generatorInvestmentCost[gen] = cost
         else:
             b.fixedCost = pyo.Param(m.generators, initialize=m.fixedCost3)
             b.varCost = pyo.Param(m.generators, initialize=m.varCost3)
@@ -2535,7 +2537,8 @@ def investment_stage_rule(b, investment_stage):
                 * m.md.data["elements"]["generator"][gen]["capex3"]
                 for gen in m.renewableGenerators
             }
-            m.generatorInvestmentCost = thermalInvestmentCost | renewableInvestmentCost
+            for gen, cost in (thermalInvestmentCost | renewableInvestmentCost).items():
+                m.generatorInvestmentCost[gen] = cost
 
     b.representativePeriods = [
         p
