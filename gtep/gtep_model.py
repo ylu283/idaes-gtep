@@ -1234,7 +1234,7 @@ def add_dispatch_constraints(b, disp_per):
             buses = [bus for bus in m.buses]
             loads = [l for l in c_p.loads]
             gens = [gen for gen in m.generators]
-            batts = [bat for bat in m.storage]
+            batts = list(m.storage) if hasattr(m, "storage") else []
             balance += sum(
                 b.thermalGeneration[g] for g in gens if g in m.thermalGenerators
             )
