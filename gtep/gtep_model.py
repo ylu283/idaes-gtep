@@ -3307,24 +3307,41 @@ def model_create_investment_stages(m, stages):
     #             if t_1 <= stage
     #         )
     if m.config["include_investment"]:
-        # Linking generator investment status constraints
+        # State conservation: the set of "active or retired or extended"
+        # generators is conserved across stages.  Combined with the xor
+        # disjunction this encodes the full state machine:
+        #   Operational → {Operational, Retired, Extended}
+        #   Installed   → {Operational, Retired, Extended}
+        #   Retired     → Retired  (enforced by gen_retirement_monotone)
+        #   Extended    → {Extended, Retired}
+        #   Disabled    → {Disabled, Installed}
         @m.Constraint(m.stages, m.thermalGenerators)
         def gen_stats_link(m, stage, gen):
+            if stage == 1:
+                return pyo.Constraint.Skip
+            cur = m.investmentStage[stage]
+            prev = m.investmentStage[stage - 1]
+            return (
+                cur.genOperational[gen].indicator_var.get_associated_binary()
+                + cur.genRetired[gen].indicator_var.get_associated_binary()
+                + cur.genExtended[gen].indicator_var.get_associated_binary()
+                == prev.genOperational[gen].indicator_var.get_associated_binary()
+                + prev.genInstalled[gen].indicator_var.get_associated_binary()
+                + prev.genRetired[gen].indicator_var.get_associated_binary()
+                + prev.genExtended[gen].indicator_var.get_associated_binary()
+            )
+
+        @m.Constraint(m.stages, m.thermalGenerators)
+        def gen_retirement_monotone(m, stage, gen):
+            if stage == 1:
+                return pyo.Constraint.Skip
             return (
                 m.investmentStage[stage]
-                .genOperational[gen]
-                .indicator_var.get_associated_binary()
-                == m.investmentStage[stage - 1]
-                .genOperational[gen]
-                .indicator_var.get_associated_binary()
-                + m.investmentStage[stage - 1]
-                .genInstalled[gen]
-                .indicator_var.get_associated_binary()
-                - m.investmentStage[stage - 1]
                 .genRetired[gen]
                 .indicator_var.get_associated_binary()
-                if stage != 1
-                else pyo.Constraint.Skip
+                >= m.investmentStage[stage - 1]
+                .genRetired[gen]
+                .indicator_var.get_associated_binary()
             )
 
     if m.config["transmission"]:
