@@ -2724,17 +2724,23 @@ def model_data_references(m):
 
     # [ESR WIP: Rename since the name was repeated in the
     # commitment_period_rule function. Check if this is correct.]
+    # Nameplate must be the max across ALL representative periods so that
+    # variable bounds are never tighter than any period's capacity_factor RHS.
+    def _renewable_nameplate_init(gen):
+        all_data = m.data_list if m.data_list else [m.md]
+        p_max_vals = []
+        for rd in all_data:
+            pm = rd.data["elements"]["generator"][gen]["p_max"]
+            if type(pm) == float:
+                p_max_vals.append(pm)
+            else:
+                p_max_vals.extend(pm["values"])
+        return max(p_max_vals) if p_max_vals else 0
+
     m.renewableCapacityNameplate = pyo.Param(
         m.renewableGenerators,
         initialize={
-            renewableGen: (
-                m.md.data["elements"]["generator"][renewableGen]["p_max"]
-                if type(m.md.data["elements"]["generator"][renewableGen]["p_max"])
-                == float
-                else max(
-                    m.md.data["elements"]["generator"][renewableGen]["p_max"]["values"]
-                )
-            )
+            renewableGen: _renewable_nameplate_init(renewableGen)
             for renewableGen in m.renewableGenerators
         },
         mutable=True,
