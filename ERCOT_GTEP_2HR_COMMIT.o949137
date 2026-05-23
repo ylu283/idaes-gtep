@@ -31,3 +31,45 @@ Cost data was not provided in m.mc instance (check DataProcessing for more detai
 [+ 107.82] Model built with 12 x 2hr commitment periods
 [+ 428.33] BigM transformation done
 [+   0.00] Starting Gurobi solve
+Set parameter LogFile to value "basic_logging_2hr.log"
+Gurobi Optimizer version 11.0.2 build v11.0.2rc0 (linux64 - "Red Hat Enterprise Linux 9.7 (Plow)")
+
+CPU model: AMD EPYC 7543 32-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 64 physical cores, 64 logical processors, using up to 32 threads
+
+Optimize a model with 14921261 rows, 771424 columns and 39712270 nonzeros
+Model fingerprint: 0xc0ddc1e3
+Variable types: 159104 continuous, 612320 integer (612320 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 4e+03]
+  Objective range  [1e+00, 5e+10]
+  Bounds range     [1e+00, 4e+03]
+  RHS range        [5e-03, 2e+05]
+Warning: Model contains large objective coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 4960113 rows and 114865 columns
+Presolve time: 3.08s
+
+Explored 0 nodes (0 simplex iterations) in 7.39 seconds (7.43 work units)
+Thread count was 1 (of 64 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Traceback (most recent call last):
+  File "/users/ylu28/GitHub/idaes-gtep/gtep/driver_coal_2hr.py", line 144, in <module>
+    mod_object.results = opt.solve(
+                         ^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/contrib/solver/solvers/gurobi_direct.py", line 375, in solve
+    res = self._postsolve(
+          ^^^^^^^^^^^^^^^^
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/contrib/solver/solvers/gurobi_direct.py", line 424, in _postsolve
+    raise NoOptimalSolutionError()
+pyomo.contrib.solver.common.util.NoOptimalSolutionError: Solver did not find the optimal solution. Set opt.config.raise_exception_on_nonoptimal_result=False to bypass this error.
+Exception ignored in: <function GurobiDirect.__del__ at 0x150c8a54dda0>
+Traceback (most recent call last):
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/contrib/solver/solvers/gurobi_direct.py", line 272, in __del__
+TypeError: 'NoneType' object is not callable
+Loading CRC_default/1.1
