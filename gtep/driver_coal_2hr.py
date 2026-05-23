@@ -141,9 +141,40 @@ mod_object.timer.toc("BigM transformation done")
 
 opt = GurobiDirect()
 mod_object.timer.toc("Starting Gurobi solve")
-mod_object.results = opt.solve(
-    mod_object.model, tee=True, solver_options={"LogFile": "basic_logging_2hr.log"}
-)
+try:
+    mod_object.results = opt.solve(
+        mod_object.model, tee=True, solver_options={"LogFile": "basic_logging_2hr.log"}
+    )
+except Exception as e:
+    print(f"\nSolve failed: {e}")
+    print("Writing model to LP file for IIS analysis...")
+    mod_object.model.write("model_2hr.lp", io_options={"symbolic_solver_labels": True})
+    print("Model written to model_2hr.lp")
+    print("Computing IIS via gurobipy...")
+    import gurobipy
+    gm = gurobipy.read("model_2hr.lp")
+    gm.computeIIS()
+    gm.write("iis_2hr.ilp")
+    print("IIS written to iis_2hr.ilp")
+    n_constr = 0
+    for c in gm.getConstrs():
+        if c.IISConstr:
+            print(f"  IIS constraint: {c.ConstrName}")
+            n_constr += 1
+            if n_constr >= 50:
+                print("  ... (truncated)")
+                break
+    n_var = 0
+    for v in gm.getVars():
+        if v.IISLB or v.IISUB:
+            print(f"  IIS var bound: {v.VarName} (LB={v.IISLB}, UB={v.IISUB})")
+            n_var += 1
+            if n_var >= 50:
+                print("  ... (truncated)")
+                break
+    print(f"Total IIS: {n_constr} constraints, {n_var} variable bounds")
+    import sys
+    sys.exit(1)
 mod_object.timer.toc("Solve complete")
 
 # ── Extract results ───────────────────────────────────────────────────────

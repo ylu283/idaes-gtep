@@ -79,17 +79,43 @@ mod_object.timer.toc("triple horrible")
 # opt = Gurobi()
 opt = GurobiDirect()
 mod_object.timer.toc("Actually, I think this is garbage collection")
-# opt.gurobi_options['LogFile'] = "basic_logging.log"
-# opt.gurobi_options['LogToConsole'] = 1
-# opt = Highs()
 mod_object.timer.toc(
     "let's start to solve -- this is really the start of the handoff to gurobi"
 )
-mod_object.results = opt.solve(
-    mod_object.model, tee=True, solver_options={"LogFile": "basic_logging.log"}
-)
-# mod_object.model.write('bad_sol.sol')
-# mod_object.results = opt.solve(mod_object.model)
+try:
+    mod_object.results = opt.solve(
+        mod_object.model, tee=True, solver_options={"LogFile": "basic_logging.log"}
+    )
+except Exception as e:
+    print(f"\nSolve failed: {e}")
+    print("Writing model to LP file for IIS analysis...")
+    mod_object.model.write("model_1hr.lp", io_options={"symbolic_solver_labels": True})
+    print("Model written to model_1hr.lp")
+    print("Computing IIS via gurobipy...")
+    import gurobipy
+    gm = gurobipy.read("model_1hr.lp")
+    gm.computeIIS()
+    gm.write("iis_1hr.ilp")
+    print("IIS written to iis_1hr.ilp")
+    n_constr = 0
+    for c in gm.getConstrs():
+        if c.IISConstr:
+            print(f"  IIS constraint: {c.ConstrName}")
+            n_constr += 1
+            if n_constr >= 50:
+                print("  ... (truncated)")
+                break
+    n_var = 0
+    for v in gm.getVars():
+        if v.IISLB or v.IISUB:
+            print(f"  IIS var bound: {v.VarName} (LB={v.IISLB}, UB={v.IISUB})")
+            n_var += 1
+            if n_var >= 50:
+                print("  ... (truncated)")
+                break
+    print(f"Total IIS: {n_constr} constraints, {n_var} variable bounds")
+    import sys
+    sys.exit(1)
 
 mod_object.timer.toc("we've solved, let's pull investment variables")
 
