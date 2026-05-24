@@ -183,3 +183,9 @@ WORKFLOW_QUICK_REF.md
 # Codex local workflow files
 AGENTS.md
 .codex/
+
+# Local solver / run output files
+ERCOT_GTEP_*
+basic_logging*
+iis*
+model_*
