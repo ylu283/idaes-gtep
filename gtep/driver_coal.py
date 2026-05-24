@@ -153,9 +153,9 @@ for var in mod_object.model.component_objects(gdp.Disjunct, descend_into=True):
 costs = {}
 for exp in mod_object.model.component_objects(pyo.Expression, descend_into=True):
     if "operatingCost" in exp.name:
-        costs[var.name] = pyo.value(exp)
+        costs[exp.name] = pyo.value(exp)
     elif "investmentCost" in exp.name:
-        costs[var.name] = pyo.value(exp)
+        costs[exp.name] = pyo.value(exp)
 
 import json
 
