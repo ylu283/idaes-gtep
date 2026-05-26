@@ -156,3 +156,36 @@ Total elapsed time = 1663.37s (DegenMoves)
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
      0     0 9.7940e+09    0 1440 1.1085e+10 9.7940e+09  11.6%     - 1702s
+H    0     0                    9.877040e+09 9.7940e+09  0.84%     - 1727s
+H    0     0                    9.867433e+09 9.7940e+09  0.74%     - 1737s
+     0     0 9.7940e+09    0 1936 9.8674e+09 9.7940e+09  0.74%     - 3111s
+     0     0 9.7940e+09    0 1935 9.8674e+09 9.7940e+09  0.74%     - 3128s
+H    0     0                    9.795837e+09 9.7940e+09  0.02%     - 3166s
+H    0     0                    9.794015e+09 9.7940e+09  0.00%     - 3190s
+
+Cutting planes:
+  Gomory: 32
+  Cover: 2704
+  Implied bound: 350
+  Clique: 1168
+  MIR: 2862
+  StrongCG: 6
+  Flow cover: 46
+  Zero half: 1
+  RLT: 242
+  Relax-and-lift: 2920
+
+Explored 1 nodes (51473 simplex iterations) in 3193.31 seconds (527.81 work units)
+Thread count was 24 (of 24 available processors)
+
+Solution count 7: 9.79401e+09 9.79401e+09 9.79584e+09 ... 1.57453e+10
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.794014526396e+09, best bound 9.794013551191e+09, gap 0.0000%
+[+3771.88] Solve complete
+[+ 117.87] Results saved to retirement_allowed_no_extreme_2hr_commit/
+Exception ignored in: <function GurobiDirect.__del__ at 0x14db043d9da0>
+Traceback (most recent call last):
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/contrib/solver/solvers/gurobi_direct.py", line 272, in __del__
+TypeError: 'NoneType' object is not callable
+Loading CRC_default/1.1
