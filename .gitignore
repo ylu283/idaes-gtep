@@ -167,6 +167,9 @@ cython_debug/
 # ignore json saves
 *.json
 
+# Allow GTEP result JSONs in commitment-period result folders
+!retirement_allowed_no_extreme_*/*.json
+
 # ignore .DS_Store
 *.DS_Store
 ~$*.pptx
@@ -189,3 +192,6 @@ ERCOT_GTEP_*
 basic_logging*
 iis*
 model_*
+
+# Allow GTEP result JSONs in commitment-period result folders
+!retirement_allowed_no_extreme_*/*.json
