@@ -174,6 +174,8 @@ with open(
     json.dump(dispatchable_investments, fil)
 with open("retirement_allowed_no_extreme_full_load/load_shed.json", "w") as fil:
     json.dump(load_shed, fil)
+with open("retirement_allowed_no_extreme_full_load/costs.json", "w") as fil:
+    json.dump(costs, fil)
 
 mod_object.timer.toc("we've dumped; get everybody and the stuff together")
 
