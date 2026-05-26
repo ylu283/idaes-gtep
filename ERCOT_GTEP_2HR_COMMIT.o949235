@@ -1,0 +1,121 @@
+Loading CRC_default/1.1
+Loading CRC_default/1.1
+WARNING: DEPRECATED: Declaring class 'BaseRelaxationData' derived from
+'_BlockData'.  The class '_BlockData' has been renamed to 'BlockData'.
+(deprecated in 6.7.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/relaxations/relaxations_base.py:43)
+WARNING: DEPRECATED: pyomo.core.expr.current is deprecated.  Please import
+expression symbols from pyomo.core.expr  (deprecated in 6.6.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/domain_reduction/filters.py:4)
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+Setting default t0 state in RTS-GMLC parser
+Warning: The file './gtep/data/123_Bus_Coal/storage.csv' does not exist. Skipping loading storage data.
+[    0.00] Creating GTEP Model
+b.year = 2025
+Cost data was not provided in m.mc instance (check DataProcessing for more details). Setting costs parameters to random values for now.
+gen investment cost
+generatorInvestmentCost['1'] + generatorInvestmentCost['2'] + generatorInvestmentCost['3'] + generatorInvestmentCost['4'] + generatorInvestmentCost['5'] + generatorInvestmentCost['6'] + generatorInvestmentCost['7'] + generatorInvestmentCost['8'] + generatorInvestmentCost['9'] + generatorInvestmentCost['10'] + generatorInvestmentCost['11'] + generatorInvestmentCost['12'] + generatorInvestmentCost['13'] + generatorInvestmentCost['14'] + generatorInvestmentCost['15'] + generatorInvestmentCost['16'] + generatorInvestmentCost['17'] + generatorInvestmentCost['18'] + generatorInvestmentCost['19'] + generatorInvestmentCost['20'] + generatorInvestmentCost['21'] + generatorInvestmentCost['22'] + generatorInvestmentCost['23'] + generatorInvestmentCost['24'] + generatorInvestmentCost['25'] + generatorInvestmentCost['26'] + generatorInvestmentCost['27'] + generatorInvestmentCost['28'] + generatorInvestmentCost['29'] + generatorInvestmentCost['30'] + generatorInvestmentCost['31'] + generatorInvestmentCost['32'] + generatorInvestmentCost['33'] + generatorInvestmentCost['34'] + generatorInvestmentCost['35'] + generatorInvestmentCost['36'] + generatorInvestmentCost['37'] + generatorInvestmentCost['38'] + generatorInvestmentCost['39'] + generatorInvestmentCost['40'] + generatorInvestmentCost['41'] + generatorInvestmentCost['42'] + generatorInvestmentCost['43'] + generatorInvestmentCost['44'] + generatorInvestmentCost['45'] + generatorInvestmentCost['46'] + generatorInvestmentCost['47'] + generatorInvestmentCost['48'] + generatorInvestmentCost['49'] + generatorInvestmentCost['50'] + generatorInvestmentCost['51'] + generatorInvestmentCost['52'] + generatorInvestmentCost['53'] + generatorInvestmentCost['54'] + generatorInvestmentCost['55'] + generatorInvestmentCost['56'] + generatorInvestmentCost['57'] + generatorInvestmentCost['58'] + generatorInvestmentCost['59'] + generatorInvestmentCost['60'] + generatorInvestmentCost['61'] + generatorInvestmentCost['62'] + generatorInvestmentCost['63'] + generatorInvestmentCost['64'] + generatorInvestmentCost['65'] + generatorInvestmentCost['66'] + generatorInvestmentCost['67'] + generatorInvestmentCost['68'] + generatorInvestmentCost['69'] + generatorInvestmentCost['70'] + generatorInvestmentCost['71'] + generatorInvestmentCost['72'] + generatorInvestmentCost['73'] + generatorInvestmentCost['74'] + generatorInvestmentCost['75'] + generatorInvestmentCost['76'] + generatorInvestmentCost['77'] + generatorInvestmentCost['78'] + generatorInvestmentCost['79'] + generatorInvestmentCost['80'] + generatorInvestmentCost['81'] + generatorInvestmentCost['82'] + generatorInvestmentCost['83'] + generatorInvestmentCost['84'] + generatorInvestmentCost['85'] + generatorInvestmentCost['86'] + generatorInvestmentCost['87'] + generatorInvestmentCost['88'] + generatorInvestmentCost['89'] + generatorInvestmentCost['90'] + generatorInvestmentCost['91'] + generatorInvestmentCost['92'] + generatorInvestmentCost['93'] + generatorInvestmentCost['94'] + generatorInvestmentCost['95'] + generatorInvestmentCost['96'] + generatorInvestmentCost['97'] + generatorInvestmentCost['98'] + generatorInvestmentCost['99'] + generatorInvestmentCost['100'] + generatorInvestmentCost['101'] + generatorInvestmentCost['102'] + generatorInvestmentCost['103'] + generatorInvestmentCost['104'] + generatorInvestmentCost['105'] + generatorInvestmentCost['106'] + generatorInvestmentCost['107'] + generatorInvestmentCost['108'] + generatorInvestmentCost['109'] + generatorInvestmentCost['110'] + generatorInvestmentCost['111'] + generatorInvestmentCost['112'] + generatorInvestmentCost['113'] + generatorInvestmentCost['114'] + generatorInvestmentCost['115'] + generatorInvestmentCost['116'] + generatorInvestmentCost['117'] + generatorInvestmentCost['118'] + generatorInvestmentCost['119'] + generatorInvestmentCost['120'] + generatorInvestmentCost['121'] + generatorInvestmentCost['122'] + generatorInvestmentCost['123'] + generatorInvestmentCost['124'] + generatorInvestmentCost['125'] + generatorInvestmentCost['126'] + generatorInvestmentCost['127'] + generatorInvestmentCost['128'] + generatorInvestmentCost['129'] + generatorInvestmentCost['130'] + generatorInvestmentCost['131'] + generatorInvestmentCost['132'] + generatorInvestmentCost['133'] + generatorInvestmentCost['134'] + generatorInvestmentCost['135'] + generatorInvestmentCost['136'] + generatorInvestmentCost['137'] + generatorInvestmentCost['138'] + generatorInvestmentCost['139'] + generatorInvestmentCost['140'] + generatorInvestmentCost['141'] + generatorInvestmentCost['142'] + generatorInvestmentCost['143'] + generatorInvestmentCost['144'] + generatorInvestmentCost['145'] + generatorInvestmentCost['146'] + generatorInvestmentCost['147'] + generatorInvestmentCost['148'] + generatorInvestmentCost['149'] + generatorInvestmentCost['150'] + generatorInvestmentCost['151'] + generatorInvestmentCost['152'] + generatorInvestmentCost['153'] + generatorInvestmentCost['154'] + generatorInvestmentCost['155'] + generatorInvestmentCost['156'] + generatorInvestmentCost['157'] + generatorInvestmentCost['158'] + generatorInvestmentCost['159'] + generatorInvestmentCost['160'] + generatorInvestmentCost['161'] + generatorInvestmentCost['162'] + generatorInvestmentCost['163'] + generatorInvestmentCost['164'] + generatorInvestmentCost['165'] + generatorInvestmentCost['166'] + generatorInvestmentCost['167'] + generatorInvestmentCost['168'] + generatorInvestmentCost['169'] + generatorInvestmentCost['170'] + generatorInvestmentCost['171'] + generatorInvestmentCost['172'] + generatorInvestmentCost['173'] + generatorInvestmentCost['174'] + generatorInvestmentCost['175'] + generatorInvestmentCost['176'] + generatorInvestmentCost['177'] + generatorInvestmentCost['178'] + generatorInvestmentCost['179'] + generatorInvestmentCost['180'] + generatorInvestmentCost['181'] + generatorInvestmentCost['182'] + generatorInvestmentCost['183'] + generatorInvestmentCost['184'] + generatorInvestmentCost['185'] + generatorInvestmentCost['186'] + generatorInvestmentCost['187'] + generatorInvestmentCost['188'] + generatorInvestmentCost['189'] + generatorInvestmentCost['190'] + generatorInvestmentCost['191'] + generatorInvestmentCost['192'] + generatorInvestmentCost['193'] + generatorInvestmentCost['194'] + generatorInvestmentCost['195'] + generatorInvestmentCost['196'] + generatorInvestmentCost['197'] + generatorInvestmentCost['198'] + generatorInvestmentCost['199'] + generatorInvestmentCost['200'] + generatorInvestmentCost['201'] + generatorInvestmentCost['202'] + generatorInvestmentCost['203'] + generatorInvestmentCost['204'] + generatorInvestmentCost['205'] + generatorInvestmentCost['206'] + generatorInvestmentCost['207'] + generatorInvestmentCost['208'] + generatorInvestmentCost['209'] + generatorInvestmentCost['210'] + generatorInvestmentCost['211'] + generatorInvestmentCost['212'] + generatorInvestmentCost['213'] + generatorInvestmentCost['214'] + generatorInvestmentCost['215'] + generatorInvestmentCost['216'] + generatorInvestmentCost['217'] + generatorInvestmentCost['218'] + generatorInvestmentCost['219'] + generatorInvestmentCost['220'] + generatorInvestmentCost['221'] + generatorInvestmentCost['222'] + generatorInvestmentCost['223'] + generatorInvestmentCost['224'] + generatorInvestmentCost['225'] + generatorInvestmentCost['226'] + generatorInvestmentCost['227'] + generatorInvestmentCost['228'] + generatorInvestmentCost['229'] + generatorInvestmentCost['230'] + generatorInvestmentCost['231'] + generatorInvestmentCost['232'] + generatorInvestmentCost['233'] + generatorInvestmentCost['234'] + generatorInvestmentCost['235'] + generatorInvestmentCost['236'] + generatorInvestmentCost['237'] + generatorInvestmentCost['238'] + generatorInvestmentCost['239'] + generatorInvestmentCost['240'] + generatorInvestmentCost['241'] + generatorInvestmentCost['242'] + generatorInvestmentCost['243'] + generatorInvestmentCost['244'] + generatorInvestmentCost['245'] + generatorInvestmentCost['246'] + generatorInvestmentCost['247'] + generatorInvestmentCost['248'] + generatorInvestmentCost['249'] + generatorInvestmentCost['250'] + generatorInvestmentCost['251'] + generatorInvestmentCost['252'] + generatorInvestmentCost['253'] + generatorInvestmentCost['254'] + generatorInvestmentCost['255'] + generatorInvestmentCost['256'] + generatorInvestmentCost['257'] + generatorInvestmentCost['258'] + generatorInvestmentCost['259'] + generatorInvestmentCost['260'] + generatorInvestmentCost['261'] + generatorInvestmentCost['262'] + generatorInvestmentCost['263'] + generatorInvestmentCost['264'] + generatorInvestmentCost['265'] + generatorInvestmentCost['266'] + generatorInvestmentCost['267'] + generatorInvestmentCost['268'] + generatorInvestmentCost['269'] + generatorInvestmentCost['270'] + generatorInvestmentCost['271'] + generatorInvestmentCost['272'] + generatorInvestmentCost['273'] + generatorInvestmentCost['274'] + generatorInvestmentCost['275'] + generatorInvestmentCost['276'] + generatorInvestmentCost['277'] + generatorInvestmentCost['278'] + generatorInvestmentCost['279'] + generatorInvestmentCost['280'] + generatorInvestmentCost['281'] + generatorInvestmentCost['282'] + generatorInvestmentCost['283'] + generatorInvestmentCost['284'] + generatorInvestmentCost['285'] + generatorInvestmentCost['286'] + generatorInvestmentCost['287'] + generatorInvestmentCost['288'] + generatorInvestmentCost['289'] + generatorInvestmentCost['290'] + generatorInvestmentCost['291'] + generatorInvestmentCost['292']
+b.year = 2030
+Cost data was not provided in m.mc instance (check DataProcessing for more details). Setting costs parameters to random values for now.
+b.year = 2035
+Cost data was not provided in m.mc instance (check DataProcessing for more details). Setting costs parameters to random values for now.
+[+ 103.20] Model built with 12 x 2hr commitment periods
+[+ 443.29] BigM transformation done
+[+   0.00] Starting Gurobi solve
+Set parameter LogFile to value "basic_logging_2hr.log"
+Gurobi Optimizer version 11.0.2 build v11.0.2rc0 (linux64 - "Red Hat Enterprise Linux 9.7 (Plow)")
+
+CPU model: AMD EPYC 7543 32-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 64 physical cores, 64 logical processors, using up to 32 threads
+
+Optimize a model with 14921261 rows, 771424 columns and 39712270 nonzeros
+Model fingerprint: 0xb64e64d9
+Variable types: 159104 continuous, 612320 integer (612320 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 4e+03]
+  Objective range  [1e+00, 5e+10]
+  Bounds range     [1e+00, 4e+03]
+  RHS range        [5e-03, 2e+05]
+Warning: Model contains large objective coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 5148320 rows and 175456 columns (presolve time = 6s) ...
+Presolve removed 5713586 rows and 508627 columns
+Presolve time: 10.12s
+
+Explored 0 nodes (0 simplex iterations) in 14.81 seconds (15.63 work units)
+Thread count was 1 (of 64 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+Solve failed: Solver did not find the optimal solution. Set opt.config.raise_exception_on_nonoptimal_result=False to bypass this error.
+Writing model to LP file for IIS analysis...
+Model written to model_2hr.lp
+Computing IIS via gurobipy...
+Set parameter GURO_PAR_SPECIAL
+Set parameter TokenServer to value "linux4-lic.virtual.crc.nd.edu"
+Read LP format model from file model_2hr.lp
+Reading time = 95.44 seconds
+total_cost_objective_rule: 14921261 rows, 771424 columns, 39712270 nonzeros
+Gurobi Optimizer version 11.0.2 build v11.0.2rc0 (linux64 - "Red Hat Enterprise Linux 9.7 (Plow)")
+
+CPU model: AMD EPYC 7543 32-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 64 physical cores, 64 logical processors, using up to 32 threads
+
+IIS computation: initial model status unknown, solving to determine model status
+Presolve removed 5154821 rows and 199612 columns (presolve time = 6s) ...
+Presolve removed 5517656 rows and 445568 columns (presolve time = 11s) ...
+Presolve removed 5719368 rows and 543025 columns
+Presolve time: 15.10s
+
+Explored 0 nodes (0 simplex iterations) in 23.56 seconds (16.01 work units)
+Thread count was 1 (of 64 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+Computing Irreducible Inconsistent Subsystem (IIS)...
+
+           Constraints          |            Bounds           |  Runtime
+      Min       Max     Guess   |   Min       Max     Guess   |
+--------------------------------------------------------------------------
+        0  14838418         -         0    298352         -          24s
+        0        10         -         0         0         0          48s
+        0         9         -         0         0         0          56s
+        2         9         -         0         0         0          62s
+        2         8         -         0         0         0          65s
+        3         7         -         0         0         0          73s
+        3         6         -         0         0         0          76s
+        5         6         -         0         0         0          82s
+        6         6         6         0         0         0          86s
+        6         6         6         0         0         0          89s
+
+IIS computed: 6 constraints, 0 bounds
+IIS runtime: 89.42 seconds (30.28 work units)
+IIS written to iis_2hr.ilp
+  IIS constraint: c_e_gen_stats_link(2__6_)_
+  IIS constraint: c_e_gen_stats_link(3__6_)_
+  IIS constraint: c_u_gen_retirement(3__6_)_
+  IIS constraint: c_e_investmentStage(1)__pyomo_gdp_bigm_reformulation_investStatus_xor(_6_)_
+  IIS constraint: c_e_investmentStage(2)__pyomo_gdp_bigm_reformulation_investStatus_xor(_6_)_
+  IIS constraint: c_e_investmentStage(3)__pyomo_gdp_bigm_reformulation_investStatus_xor(_6_)_
+Total IIS: 6 constraints, 0 variable bounds
+Exception ignored in: <function GurobiDirect.__del__ at 0x147ac17c9da0>
+Traceback (most recent call last):
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/contrib/solver/solvers/gurobi_direct.py", line 272, in __del__
+TypeError: 'NoneType' object is not callable
+Loading CRC_default/1.1

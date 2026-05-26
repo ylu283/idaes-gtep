@@ -1,0 +1,269 @@
+Loading CRC_default/1.1
+Loading CRC_default/1.1
+WARNING: DEPRECATED: Declaring class 'BaseRelaxationData' derived from
+'_BlockData'.  The class '_BlockData' has been renamed to 'BlockData'.
+(deprecated in 6.7.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/relaxations/relaxations_base.py:43)
+WARNING: DEPRECATED: pyomo.core.expr.current is deprecated.  Please import
+expression symbols from pyomo.core.expr  (deprecated in 6.6.2) (called from
+/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-
+packages/coramin/domain_reduction/filters.py:4)
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+/users/ylu28/GitHub/Egret/egret/parsers/rts_gmlc/parser.py:255: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df['Year_Month_Day'] = pd.to_datetime(
+Setting default t0 state in RTS-GMLC parser
+Warning: The file './gtep/data/123_Bus_Coal/storage.csv' does not exist. Skipping loading storage data.
+[    0.00] Creating GTEP Model
+b.year = 2025
+Cost data was not provided in m.mc instance (check DataProcessing for more details). Setting costs parameters to random values for now.
+gen investment cost
+generatorInvestmentCost['1'] + generatorInvestmentCost['2'] + generatorInvestmentCost['3'] + generatorInvestmentCost['4'] + generatorInvestmentCost['5'] + generatorInvestmentCost['6'] + generatorInvestmentCost['7'] + generatorInvestmentCost['8'] + generatorInvestmentCost['9'] + generatorInvestmentCost['10'] + generatorInvestmentCost['11'] + generatorInvestmentCost['12'] + generatorInvestmentCost['13'] + generatorInvestmentCost['14'] + generatorInvestmentCost['15'] + generatorInvestmentCost['16'] + generatorInvestmentCost['17'] + generatorInvestmentCost['18'] + generatorInvestmentCost['19'] + generatorInvestmentCost['20'] + generatorInvestmentCost['21'] + generatorInvestmentCost['22'] + generatorInvestmentCost['23'] + generatorInvestmentCost['24'] + generatorInvestmentCost['25'] + generatorInvestmentCost['26'] + generatorInvestmentCost['27'] + generatorInvestmentCost['28'] + generatorInvestmentCost['29'] + generatorInvestmentCost['30'] + generatorInvestmentCost['31'] + generatorInvestmentCost['32'] + generatorInvestmentCost['33'] + generatorInvestmentCost['34'] + generatorInvestmentCost['35'] + generatorInvestmentCost['36'] + generatorInvestmentCost['37'] + generatorInvestmentCost['38'] + generatorInvestmentCost['39'] + generatorInvestmentCost['40'] + generatorInvestmentCost['41'] + generatorInvestmentCost['42'] + generatorInvestmentCost['43'] + generatorInvestmentCost['44'] + generatorInvestmentCost['45'] + generatorInvestmentCost['46'] + generatorInvestmentCost['47'] + generatorInvestmentCost['48'] + generatorInvestmentCost['49'] + generatorInvestmentCost['50'] + generatorInvestmentCost['51'] + generatorInvestmentCost['52'] + generatorInvestmentCost['53'] + generatorInvestmentCost['54'] + generatorInvestmentCost['55'] + generatorInvestmentCost['56'] + generatorInvestmentCost['57'] + generatorInvestmentCost['58'] + generatorInvestmentCost['59'] + generatorInvestmentCost['60'] + generatorInvestmentCost['61'] + generatorInvestmentCost['62'] + generatorInvestmentCost['63'] + generatorInvestmentCost['64'] + generatorInvestmentCost['65'] + generatorInvestmentCost['66'] + generatorInvestmentCost['67'] + generatorInvestmentCost['68'] + generatorInvestmentCost['69'] + generatorInvestmentCost['70'] + generatorInvestmentCost['71'] + generatorInvestmentCost['72'] + generatorInvestmentCost['73'] + generatorInvestmentCost['74'] + generatorInvestmentCost['75'] + generatorInvestmentCost['76'] + generatorInvestmentCost['77'] + generatorInvestmentCost['78'] + generatorInvestmentCost['79'] + generatorInvestmentCost['80'] + generatorInvestmentCost['81'] + generatorInvestmentCost['82'] + generatorInvestmentCost['83'] + generatorInvestmentCost['84'] + generatorInvestmentCost['85'] + generatorInvestmentCost['86'] + generatorInvestmentCost['87'] + generatorInvestmentCost['88'] + generatorInvestmentCost['89'] + generatorInvestmentCost['90'] + generatorInvestmentCost['91'] + generatorInvestmentCost['92'] + generatorInvestmentCost['93'] + generatorInvestmentCost['94'] + generatorInvestmentCost['95'] + generatorInvestmentCost['96'] + generatorInvestmentCost['97'] + generatorInvestmentCost['98'] + generatorInvestmentCost['99'] + generatorInvestmentCost['100'] + generatorInvestmentCost['101'] + generatorInvestmentCost['102'] + generatorInvestmentCost['103'] + generatorInvestmentCost['104'] + generatorInvestmentCost['105'] + generatorInvestmentCost['106'] + generatorInvestmentCost['107'] + generatorInvestmentCost['108'] + generatorInvestmentCost['109'] + generatorInvestmentCost['110'] + generatorInvestmentCost['111'] + generatorInvestmentCost['112'] + generatorInvestmentCost['113'] + generatorInvestmentCost['114'] + generatorInvestmentCost['115'] + generatorInvestmentCost['116'] + generatorInvestmentCost['117'] + generatorInvestmentCost['118'] + generatorInvestmentCost['119'] + generatorInvestmentCost['120'] + generatorInvestmentCost['121'] + generatorInvestmentCost['122'] + generatorInvestmentCost['123'] + generatorInvestmentCost['124'] + generatorInvestmentCost['125'] + generatorInvestmentCost['126'] + generatorInvestmentCost['127'] + generatorInvestmentCost['128'] + generatorInvestmentCost['129'] + generatorInvestmentCost['130'] + generatorInvestmentCost['131'] + generatorInvestmentCost['132'] + generatorInvestmentCost['133'] + generatorInvestmentCost['134'] + generatorInvestmentCost['135'] + generatorInvestmentCost['136'] + generatorInvestmentCost['137'] + generatorInvestmentCost['138'] + generatorInvestmentCost['139'] + generatorInvestmentCost['140'] + generatorInvestmentCost['141'] + generatorInvestmentCost['142'] + generatorInvestmentCost['143'] + generatorInvestmentCost['144'] + generatorInvestmentCost['145'] + generatorInvestmentCost['146'] + generatorInvestmentCost['147'] + generatorInvestmentCost['148'] + generatorInvestmentCost['149'] + generatorInvestmentCost['150'] + generatorInvestmentCost['151'] + generatorInvestmentCost['152'] + generatorInvestmentCost['153'] + generatorInvestmentCost['154'] + generatorInvestmentCost['155'] + generatorInvestmentCost['156'] + generatorInvestmentCost['157'] + generatorInvestmentCost['158'] + generatorInvestmentCost['159'] + generatorInvestmentCost['160'] + generatorInvestmentCost['161'] + generatorInvestmentCost['162'] + generatorInvestmentCost['163'] + generatorInvestmentCost['164'] + generatorInvestmentCost['165'] + generatorInvestmentCost['166'] + generatorInvestmentCost['167'] + generatorInvestmentCost['168'] + generatorInvestmentCost['169'] + generatorInvestmentCost['170'] + generatorInvestmentCost['171'] + generatorInvestmentCost['172'] + generatorInvestmentCost['173'] + generatorInvestmentCost['174'] + generatorInvestmentCost['175'] + generatorInvestmentCost['176'] + generatorInvestmentCost['177'] + generatorInvestmentCost['178'] + generatorInvestmentCost['179'] + generatorInvestmentCost['180'] + generatorInvestmentCost['181'] + generatorInvestmentCost['182'] + generatorInvestmentCost['183'] + generatorInvestmentCost['184'] + generatorInvestmentCost['185'] + generatorInvestmentCost['186'] + generatorInvestmentCost['187'] + generatorInvestmentCost['188'] + generatorInvestmentCost['189'] + generatorInvestmentCost['190'] + generatorInvestmentCost['191'] + generatorInvestmentCost['192'] + generatorInvestmentCost['193'] + generatorInvestmentCost['194'] + generatorInvestmentCost['195'] + generatorInvestmentCost['196'] + generatorInvestmentCost['197'] + generatorInvestmentCost['198'] + generatorInvestmentCost['199'] + generatorInvestmentCost['200'] + generatorInvestmentCost['201'] + generatorInvestmentCost['202'] + generatorInvestmentCost['203'] + generatorInvestmentCost['204'] + generatorInvestmentCost['205'] + generatorInvestmentCost['206'] + generatorInvestmentCost['207'] + generatorInvestmentCost['208'] + generatorInvestmentCost['209'] + generatorInvestmentCost['210'] + generatorInvestmentCost['211'] + generatorInvestmentCost['212'] + generatorInvestmentCost['213'] + generatorInvestmentCost['214'] + generatorInvestmentCost['215'] + generatorInvestmentCost['216'] + generatorInvestmentCost['217'] + generatorInvestmentCost['218'] + generatorInvestmentCost['219'] + generatorInvestmentCost['220'] + generatorInvestmentCost['221'] + generatorInvestmentCost['222'] + generatorInvestmentCost['223'] + generatorInvestmentCost['224'] + generatorInvestmentCost['225'] + generatorInvestmentCost['226'] + generatorInvestmentCost['227'] + generatorInvestmentCost['228'] + generatorInvestmentCost['229'] + generatorInvestmentCost['230'] + generatorInvestmentCost['231'] + generatorInvestmentCost['232'] + generatorInvestmentCost['233'] + generatorInvestmentCost['234'] + generatorInvestmentCost['235'] + generatorInvestmentCost['236'] + generatorInvestmentCost['237'] + generatorInvestmentCost['238'] + generatorInvestmentCost['239'] + generatorInvestmentCost['240'] + generatorInvestmentCost['241'] + generatorInvestmentCost['242'] + generatorInvestmentCost['243'] + generatorInvestmentCost['244'] + generatorInvestmentCost['245'] + generatorInvestmentCost['246'] + generatorInvestmentCost['247'] + generatorInvestmentCost['248'] + generatorInvestmentCost['249'] + generatorInvestmentCost['250'] + generatorInvestmentCost['251'] + generatorInvestmentCost['252'] + generatorInvestmentCost['253'] + generatorInvestmentCost['254'] + generatorInvestmentCost['255'] + generatorInvestmentCost['256'] + generatorInvestmentCost['257'] + generatorInvestmentCost['258'] + generatorInvestmentCost['259'] + generatorInvestmentCost['260'] + generatorInvestmentCost['261'] + generatorInvestmentCost['262'] + generatorInvestmentCost['263'] + generatorInvestmentCost['264'] + generatorInvestmentCost['265'] + generatorInvestmentCost['266'] + generatorInvestmentCost['267'] + generatorInvestmentCost['268'] + generatorInvestmentCost['269'] + generatorInvestmentCost['270'] + generatorInvestmentCost['271'] + generatorInvestmentCost['272'] + generatorInvestmentCost['273'] + generatorInvestmentCost['274'] + generatorInvestmentCost['275'] + generatorInvestmentCost['276'] + generatorInvestmentCost['277'] + generatorInvestmentCost['278'] + generatorInvestmentCost['279'] + generatorInvestmentCost['280'] + generatorInvestmentCost['281'] + generatorInvestmentCost['282'] + generatorInvestmentCost['283'] + generatorInvestmentCost['284'] + generatorInvestmentCost['285'] + generatorInvestmentCost['286'] + generatorInvestmentCost['287'] + generatorInvestmentCost['288'] + generatorInvestmentCost['289'] + generatorInvestmentCost['290'] + generatorInvestmentCost['291'] + generatorInvestmentCost['292']
+b.year = 2030
+Cost data was not provided in m.mc instance (check DataProcessing for more details). Setting costs parameters to random values for now.
+b.year = 2035
+Cost data was not provided in m.mc instance (check DataProcessing for more details). Setting costs parameters to random values for now.
+[+ 209.25] horrible
+[+   0.00] double horrible
+[+ 871.00] triple horrible
+[+   0.00] Actually, I think this is garbage collection
+[+   0.00] let's start to solve -- this is really the start of the handoff to gurobi
+Set parameter LogFile to value "basic_logging.log"
+Gurobi Optimizer version 11.0.2 build v11.0.2rc0 (linux64 - "Red Hat Enterprise Linux 9.7 (Plow)")
+
+CPU model: AMD EPYC 7543 32-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 64 physical cores, 64 logical processors, using up to 32 threads
+
+Optimize a model with 30709389 rows, 1573216 columns and 82758354 nonzeros
+Model fingerprint: 0x26c8021e
+Variable types: 316064 continuous, 1257152 integer (1257152 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 4e+03]
+  Objective range  [1e+00, 5e+10]
+  Bounds range     [1e+00, 4e+03]
+  RHS range        [1e-02, 2e+05]
+Warning: Model contains large objective coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 0 rows and 0 columns (presolve time = 6s) ...
+Presolve removed 10308350 rows and 408946 columns (presolve time = 13s) ...
+Presolve removed 10959923 rows and 836024 columns (presolve time = 18s) ...
+Presolve removed 11156420 rows and 922853 columns (presolve time = 20s) ...
+Presolve removed 11157225 rows and 923036 columns (presolve time = 31s) ...
+Presolve removed 11157225 rows and 923036 columns (presolve time = 38s) ...
+Presolve removed 11157225 rows and 923036 columns (presolve time = 58s) ...
+Presolve removed 11157225 rows and 923036 columns (presolve time = 65s) ...
+Presolve removed 11222209 rows and 989729 columns (presolve time = 73s) ...
+Presolve removed 11222209 rows and 989729 columns (presolve time = 83s) ...
+Presolve removed 11222209 rows and 989729 columns (presolve time = 92s) ...
+Presolve removed 11222209 rows and 989905 columns (presolve time = 99s) ...
+Presolve removed 11222304 rows and 990000 columns (presolve time = 106s) ...
+Presolve removed 11299529 rows and 1067225 columns (presolve time = 111s) ...
+Presolve removed 11299529 rows and 1067225 columns (presolve time = 116s) ...
+Presolve removed 11336649 rows and 1098927 columns (presolve time = 121s) ...
+Presolve removed 11499505 rows and 1098927 columns (presolve time = 125s) ...
+Presolve removed 11499505 rows and 1098927 columns (presolve time = 130s) ...
+Presolve removed 11499505 rows and 1099311 columns (presolve time = 135s) ...
+Presolve removed 11499505 rows and 1099311 columns (presolve time = 140s) ...
+Presolve removed 11499505 rows and 1099311 columns (presolve time = 145s) ...
+Presolve removed 11499505 rows and 1099311 columns (presolve time = 150s) ...
+Presolve removed 11499505 rows and 1099311 columns (presolve time = 155s) ...
+Presolve removed 11501537 rows and 1099311 columns (presolve time = 161s) ...
+Presolve removed 11640627 rows and 1099439 columns (presolve time = 166s) ...
+Presolve removed 11677977 rows and 1112098 columns (presolve time = 171s) ...
+Presolve removed 11677977 rows and 1112098 columns (presolve time = 179s) ...
+Presolve removed 11677977 rows and 1112098 columns (presolve time = 181s) ...
+Presolve removed 11767105 rows and 1112098 columns (presolve time = 188s) ...
+Presolve removed 11767105 rows and 1112098 columns (presolve time = 191s) ...
+Presolve removed 11767105 rows and 1112098 columns (presolve time = 195s) ...
+Presolve removed 11818066 rows and 1163059 columns (presolve time = 202s) ...
+Presolve removed 11819422 rows and 1163059 columns (presolve time = 205s) ...
+Presolve removed 11856496 rows and 1163499 columns (presolve time = 210s) ...
+Presolve removed 11856496 rows and 1163499 columns (presolve time = 217s) ...
+Presolve removed 11856496 rows and 1163499 columns (presolve time = 223s) ...
+Presolve removed 11856496 rows and 1163499 columns (presolve time = 226s) ...
+Presolve removed 11857852 rows and 1163499 columns (presolve time = 233s) ...
+Presolve removed 11857852 rows and 1163499 columns (presolve time = 235s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 242s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 247s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 250s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 256s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 261s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 266s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 270s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 275s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 289s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 294s) ...
+Presolve removed 11864180 rows and 1169827 columns (presolve time = 295s) ...
+Presolve removed 11918924 rows and 1169827 columns (presolve time = 303s) ...
+Presolve removed 11918924 rows and 1169827 columns (presolve time = 311s) ...
+Presolve removed 11918924 rows and 1205882 columns (presolve time = 315s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 320s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 327s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 330s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 335s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 340s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 345s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 350s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 355s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 360s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 365s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 370s) ...
+Presolve removed 11918924 rows and 1212835 columns (presolve time = 528s) ...
+Presolve removed 11918924 rows and 1265161 columns (presolve time = 530s) ...
+Presolve removed 11918924 rows and 1265161 columns (presolve time = 535s) ...
+Presolve removed 11918924 rows and 1265161 columns (presolve time = 540s) ...
+Presolve removed 11918924 rows and 1265161 columns (presolve time = 545s) ...
+Presolve removed 11918924 rows and 1265161 columns (presolve time = 550s) ...
+Presolve removed 11918924 rows and 1265161 columns (presolve time = 555s) ...
+Presolve removed 11918924 rows and 1265161 columns (presolve time = 636s) ...
+Presolve removed 12253082 rows and 1319768 columns (presolve time = 643s) ...
+Presolve removed 12253082 rows and 1319768 columns
+Presolve time: 642.67s
+Presolved: 18456307 rows, 253448 columns, 56294325 nonzeros
+Variable types: 37089 continuous, 216359 integer (216359 binary)
+Found heuristic solution: objective 3.764315e+09
+Found heuristic solution: objective 3.427663e+09
+Root relaxation presolved: 66654 rows, 6256432 columns, 19736890 nonzeros
+
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Root relaxation presolved: 66654 rows, 6256386 columns, 19736752 nonzeros
+
+Root barrier log...
+
+Elapsed ordering time = 5s
+Elapsed ordering time = 10s
+Elapsed ordering time = 15s
+Elapsed ordering time = 20s
+Elapsed ordering time = 25s
+Elapsed ordering time = 30s
+Ordering time: 36.13s
+
+Barrier statistics:
+ Dense cols : 96
+ Free vars  : 7280
+ AA' NZ     : 1.021e+07
+ Factor NZ  : 8.533e+07 (roughly 3.0 GB of memory)
+ Factor Ops : 2.133e+11 (roughly 1 second per iteration)
+ Threads    : 30
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0  -3.90622969e+11  3.53917009e+09  4.65e+06 5.04e+04  3.47e+07  1318s
+   1  -2.79355170e+11  3.57509780e+09  3.25e+06 5.27e+04  2.56e+07  1354s
+   2  -2.05022749e+11  4.22352347e+09  2.29e+06 4.42e+04  1.92e+07  1388s
+   3  -1.51998239e+11  4.63471083e+09  1.28e+06 3.75e+04  1.37e+07  1431s
+   4  -1.29943401e+11  4.64469282e+09  6.71e+05 3.07e+04  9.87e+06  1465s
+   5  -1.30729865e+11  4.59149397e+09  9.99e+04 2.04e+04  6.09e+06  1507s
+   6  -1.36915634e+11  4.43419785e+09  1.06e+04 1.02e+04  3.09e+06  1557s
+   7  -1.34073393e+11  4.26012621e+09  3.37e+02 1.74e+03  5.45e+05  1599s
+   8  -1.21514388e+11  4.18604191e+09  1.28e+02 1.19e+03  3.75e+05  1633s
+   9  -1.13759031e+11  4.10056244e+09  8.42e+01 8.28e+02  2.65e+05  1660s
+  10  -1.07995365e+11  4.05864905e+09  5.85e+01 6.16e+02  1.98e+05  1687s
+  11  -1.02729216e+11  4.00329713e+09  4.34e+01 4.24e+02  1.38e+05  1714s
+  12  -9.20126325e+10  3.94105720e+09  2.56e+01 3.24e+02  1.04e+05  1742s
+  13  -8.32027081e+10  3.91165162e+09  1.70e+01 2.65e+02  8.30e+04  1776s
+  14  -7.38200715e+10  3.86069689e+09  1.07e+01 1.79e+02  5.61e+04  1818s
+  15  -6.44094942e+10  3.84609875e+09  7.03e+00 1.41e+02  4.28e+04  1868s
+  16  -5.99171119e+10  3.82977466e+09  5.91e+00 1.09e+02  3.39e+04  1919s
+  17  -5.33795393e+10  3.79034133e+09  4.60e+00 8.88e+01  2.71e+04  1970s
+  18  -4.76982932e+10  3.66686421e+09  3.59e+00 6.85e+01  2.11e+04  2020s
+  19  -4.17767001e+10  3.53720384e+09  2.72e+00 5.41e+01  1.66e+04  2071s
+  20  -4.08546526e+10  3.45646176e+09  2.61e+00 4.60e+01  1.49e+04  2106s
+  21  -3.38498906e+10  3.35116451e+09  1.86e+00 3.63e+01  1.13e+04  2155s
+  22  -2.86588124e+10  3.24007221e+09  1.45e+00 2.67e+01  8.65e+03  2206s
+  23  -2.27500438e+10  3.15882653e+09  1.06e+00 2.10e+01  6.56e+03  2256s
+  24  -1.77276243e+10  3.06423806e+09  7.79e-01 1.57e+01  4.87e+03  2306s
+  25  -1.31004749e+10  2.95753388e+09  5.53e-01 1.20e+01  3.56e+03  2357s
+  26  -9.31024345e+09  2.85586951e+09  3.86e-01 1.08e+01  2.69e+03  2400s
+  27  -7.10437524e+09  2.75922444e+09  2.96e-01 9.24e+00  2.13e+03  2451s
+  28  -6.04341532e+09  2.71844125e+09  2.54e-01 8.77e+00  1.88e+03  2501s
+  29  -4.35276279e+09  2.60678055e+09  1.90e-01 7.33e+00  1.46e+03  2552s
+  30  -2.58976129e+09  2.55667401e+09  1.30e-01 6.24e+00  1.06e+03  2604s
+  31  -1.31942080e+09  2.53722298e+09  9.03e-02 5.61e+00  7.92e+02  2654s
+  32  -1.05269772e+08  2.50876648e+09  5.53e-02 4.65e+00  5.34e+02  2705s
+  33   9.65625082e+07  2.50239715e+09  5.02e-02 4.29e+00  4.86e+02  2748s
+  34   9.86651293e+08  2.50547312e+09  2.87e-02 3.09e+00  3.00e+02  2798s
+  35   1.98703639e+09  2.46862121e+09  6.90e-03 1.18e+00  9.12e+01  2850s
+  36   2.19754190e+09  2.45374544e+09  3.43e-03 5.36e-01  4.62e+01  2900s
+  37   2.27211783e+09  2.44711724e+09  2.30e-03 2.29e-01  2.99e+01  2941s
+  38   2.35877275e+09  2.44553206e+09  1.07e-03 1.51e-01  1.48e+01  2976s
+  39   2.39214162e+09  2.44386935e+09  6.14e-04 7.12e-02  8.58e+00  3003s
+  40   2.41937442e+09  2.44328127e+09  2.51e-04 4.29e-02  3.91e+00  3030s
+  41   2.42691347e+09  2.44307112e+09  1.61e-04 3.30e-02  2.63e+00  3058s
+  42   2.43322723e+09  2.44293587e+09  9.18e-05 2.67e-02  1.58e+00  3084s
+  43   2.43712923e+09  2.44278647e+09  5.08e-05 2.00e-02  9.16e-01  3112s
+  44   2.43825457e+09  2.44269562e+09  3.93e-05 1.62e-02  7.17e-01  3140s
+  45   2.43948307e+09  2.44263158e+09  2.73e-05 1.35e-02  5.08e-01  3167s
+  46   2.44031425e+09  2.44255736e+09  1.92e-05 1.04e-02  3.61e-01  3195s
+  47   2.44096528e+09  2.44250859e+09  1.28e-05 8.49e-03  2.49e-01  3222s
+  48   2.44130963e+09  2.44248220e+09  9.49e-06 7.46e-03  1.89e-01  3249s
+  49   2.44162615e+09  2.44243659e+09  6.40e-06 5.72e-03  1.30e-01  3276s
+  50   2.44178078e+09  2.44240853e+09  4.81e-06 4.66e-03  1.01e-01  3303s
+  51   2.44201569e+09  2.44237632e+09  2.48e-06 3.45e-03  5.81e-02  3331s
+  52   2.44209542e+09  2.44236163e+09  1.70e-06 2.91e-03  4.30e-02  3358s
+  53   2.44216299e+09  2.44234723e+09  1.06e-06 2.37e-03  2.98e-02  3385s
+  54   2.44220529e+09  2.44233308e+09  6.66e-07 1.85e-03  2.07e-02  3412s
+  55   2.44222716e+09  2.44231984e+09  4.67e-07 1.36e-03  1.50e-02  3439s
+  56   2.44225014e+09  2.44230520e+09  2.66e-07 8.11e-04  8.91e-03  3466s
+
+Barrier performed 56 iterations in 3466.47 seconds (937.34 work units)
+Barrier solve interrupted - model solved by another algorithm
+
+Concurrent spin time: 30.50s
+
+Solved with primal simplex
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+  129425    2.4422831e+09   0.000000e+00   0.000000e+00   3498s
+Extra simplex iterations from dual to original model: 2
+
+Root relaxation: objective 2.442283e+09, 129425 iterations, 2320.70 seconds (144.68 work units)
+Total elapsed time = 3499.29s (DegenMoves)
+Total elapsed time = 3512.54s (DegenMoves)
+Total elapsed time = 3515.86s (DegenMoves)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 2.4423e+09    0 2973 3.4277e+09 2.4423e+09  28.7%     - 3524s
+H    0     0                    2.442642e+09 2.4423e+09  0.01%     - 3534s
+     0     0 2.4423e+09    0 4864 2.4426e+09 2.4423e+09  0.01%     - 3936s
+     0     0 2.4423e+09    0 4864 2.4426e+09 2.4423e+09  0.01%     - 3938s
+H    0     0                    2.442549e+09 2.4423e+09  0.01%     - 3958s
+H    0     0                    2.442289e+09 2.4423e+09  0.00%     - 3968s
+
+Cutting planes:
+  Gomory: 6
+  Cover: 1138
+  MIR: 2763
+  StrongCG: 2
+  Flow cover: 37
+  Zero half: 23
+  RLT: 104
+  Relax-and-lift: 1619
+  BQP: 100
+
+Explored 1 nodes (168586 simplex iterations) in 3972.55 seconds (1603.91 work units)
+Thread count was 32 (of 64 available processors)
+
+Solution count 6: 2.44229e+09 2.44229e+09 2.44255e+09 ... 3.76432e+09
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.442288897045e+09, best bound 2.442283153533e+09, gap 0.0002%
+[+4677.88] we've solved, let's pull investment variables
+[+ 161.91] we've dumped; get everybody and the stuff together
+Exception ignored in: <function GurobiDirect.__del__ at 0x147d36b65ee0>
+Traceback (most recent call last):
+  File "/users/ylu28/.conda/envs/gtep2/lib/python3.11/site-packages/pyomo/contrib/solver/solvers/gurobi_direct.py", line 272, in __del__
+TypeError: 'NoneType' object is not callable
+Loading CRC_default/1.1
