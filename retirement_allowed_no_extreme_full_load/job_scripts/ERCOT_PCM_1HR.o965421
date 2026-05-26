@@ -13,3 +13,54 @@ Using persistent forecast error model when projecting demand and renewables in S
 
 Extracting scenario to simulate
 Calculating PTDF Matrix Factorization
+
+Pyomo model construction time:         4.86
+
+Pyomo model solve time: 86.21964311599731
+
+Deterministic RUC Cost: 15068252696.60
+
+Fixed costs:      6151000.36
+Variable costs:   5459175.04
+
+Projected over-generation reported at t=2035-01-01 00:00 -   total=    -1347.45
+Projected over-generation reported at t=2035-01-01 01:00 -   total=    -1251.92
+Projected over-generation reported at t=2035-01-01 02:00 -   total=    -1288.84
+Projected over-generation reported at t=2035-01-01 03:00 -   total=    -1257.77
+Projected over-generation reported at t=2035-01-01 04:00 -   total=    -1184.21
+Projected over-generation reported at t=2035-01-01 05:00 -   total=    -1271.92
+Projected over-generation reported at t=2035-01-01 06:00 -   total=    -1307.35
+Projected over-generation reported at t=2035-01-01 07:00 -   total=    -1188.36
+Projected over-generation reported at t=2035-01-01 08:00 -   total=    -1006.62
+Projected over-generation reported at t=2035-01-01 09:00 -   total=     -889.54
+Projected over-generation reported at t=2035-01-01 11:00 -   total=     -542.20
+Projected over-generation reported at t=2035-01-01 12:00 -   total=    -1122.96
+Projected over-generation reported at t=2035-01-01 13:00 -   total=     -482.06
+Projected over-generation reported at t=2035-01-01 14:00 -   total=     -520.76
+Projected over-generation reported at t=2035-01-01 15:00 -   total=     -394.69
+
+Traceback (most recent call last):
+  File "./run_prescient_2035.py", line 33, in <module>
+    Prescient().simulate(**prescient_options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 75, in simulate
+    return self._simulate(self.config)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 82, in _simulate
+    return super().simulate(options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/simulator.py", line 95, in simulate
+    oracle_manager.call_initialization_oracle(options, first_time_step)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/oracle_manager.py", line 125, in call_initialization_oracle
+    self._generate_pending_ruc(options, time_step.date, time_step.hour, None)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/oracle_manager.py", line 212, in _generate_pending_ruc
+    deterministic_ruc_instance, ruc_market = self._solve_ruc(
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/oracle_manager.py", line 162, in _solve_ruc
+    deterministic_ruc_instance = self.engine.solve_deterministic_ruc(
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/engine.py", line 108, in solve_deterministic_ruc
+    return self._p.solve_deterministic_ruc(self._ruc_solver, options, ruc_instance, uc_date, uc_hour, network_type, slack_type, self._ptdf_manager)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/egret_plugin.py", line 315, in solve_deterministic_ruc
+    reporting.report_curtailment_for_deterministic_ruc(ruc_instance_for_this_period)                        
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/reporting.py", line 122, in report_curtailment_for_deterministic_ruc
+    quantity_curtailed_this_period = sum(gdict['p_max']['values'][i] - gdict['pg']['values'][i] \
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/reporting.py", line 122, in <genexpr>
+    quantity_curtailed_this_period = sum(gdict['p_max']['values'][i] - gdict['pg']['values'][i] \
+TypeError: 'float' object is not subscriptable
+Loading CRC_default/1.1
