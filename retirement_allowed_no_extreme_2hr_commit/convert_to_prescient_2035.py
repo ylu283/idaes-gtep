@@ -207,17 +207,57 @@ def build_timeseries_pointers(gen_df):
     return filtered
 
 
-def copy_static_files():
-    """Copy bus, branch, simulation_objects, and timeseries files."""
+def _load_timeseries(fname):
+    """Load a timeseries CSV from timeseries_2035/ or Prescient_2/."""
+    src = TIMESERIES_DIR / fname
+    if src.exists():
+        return pd.read_csv(src), "timeseries_2035"
+    src_alt = STATIC_DIR / fname
+    if src_alt.exists():
+        return pd.read_csv(src_alt), "Prescient_2"
+    return None, None
+
+
+def _rescale_renewable_timeseries(df, base_pmax, new_pmax):
+    """Rescale renewable timeseries columns by new_pmax / base_pmax.
+
+    Timeseries are in absolute MW. When GTEP changes a generator's PMax,
+    the profile must be rescaled proportionally so that dispatch reflects
+    the GTEP-determined capacity.
+    """
+    rescaled = 0
+    for gen_id, new_cap in new_pmax.items():
+        gid = str(gen_id)
+        if gid not in df.columns:
+            continue
+        base_cap = base_pmax.get(gid, 0)
+        if base_cap <= 0:
+            continue
+        scale = new_cap / base_cap
+        if abs(scale - 1.0) < 1e-6:
+            continue
+        df[gid] = df[gid] * scale
+        rescaled += 1
+    return rescaled
+
+
+def copy_static_files(gen_df, renewable_capacity):
+    """Copy bus, branch, simulation_objects, and timeseries files.
+
+    Renewable timeseries (solar, wind) are rescaled to match the
+    GTEP-determined PMax for each generator.
+    """
+    base_gen = pd.read_csv(CORRECT_GEN)
+    base_gen["GEN UID"] = base_gen["GEN UID"].astype(str)
+    base_pmax = dict(zip(base_gen["GEN UID"], base_gen["PMax MW"]))
+
+    new_pmax = {str(k): v for k, v in renewable_capacity.items()}
+
     for fname in ["bus.csv", "branch.csv"]:
         shutil.copy2(STATIC_DIR / fname, OUTPUT_DIR / fname)
         print(f"  Copied {fname}")
 
-    for fname in [
-        "DAY_AHEAD_load.csv", "REAL_TIME_load.csv",
-        "DAY_AHEAD_wind.csv", "REAL_TIME_wind.csv",
-        "DAY_AHEAD_solar.csv", "REAL_TIME_solar.csv",
-    ]:
+    for fname in ["DAY_AHEAD_load.csv", "REAL_TIME_load.csv"]:
         src = TIMESERIES_DIR / fname
         if src.exists():
             shutil.copy2(src, OUTPUT_DIR / fname)
@@ -229,6 +269,28 @@ def copy_static_files():
                 print(f"  Copied {fname} (from Prescient_2/)")
             else:
                 print(f"  WARNING: {fname} not found")
+
+    pv_ids = set(
+        gen_df.loc[gen_df["Unit Type"] == "PV", "GEN UID"].astype(str)
+    )
+    wind_ids = set(
+        gen_df.loc[gen_df["Unit Type"] == "WIND", "GEN UID"].astype(str)
+    )
+
+    for fname, gen_ids in [
+        ("DAY_AHEAD_solar.csv", pv_ids),
+        ("REAL_TIME_solar.csv", pv_ids),
+        ("DAY_AHEAD_wind.csv", wind_ids),
+        ("REAL_TIME_wind.csv", wind_ids),
+    ]:
+        df, source = _load_timeseries(fname)
+        if df is None:
+            print(f"  WARNING: {fname} not found")
+            continue
+        subset_pmax = {g: new_pmax[g] for g in gen_ids if g in new_pmax}
+        n = _rescale_renewable_timeseries(df, base_pmax, subset_pmax)
+        df.to_csv(OUTPUT_DIR / fname, index=False)
+        print(f"  Wrote {fname} (from {source}/, rescaled {n} generators)")
 
     sim_obj = pd.read_csv(STATIC_DIR / "simulation_objects.csv")
     sim_obj.loc[
@@ -368,7 +430,7 @@ def main():
     ptrs_df.to_csv(OUTPUT_DIR / "timeseries_pointers.csv", index=False)
 
     print("\n-- 4. Copy Static & Timeseries Files --")
-    copy_static_files()
+    copy_static_files(gen_df, ren_cap)
 
     print("\n-- 5. Validate --")
     valid = validate(gen_df, ptrs_df)
