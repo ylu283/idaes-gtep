@@ -1,0 +1,26 @@
+Loading CRC_default/1.1
+Loading CRC_default/1.1
+ERROR: Unable to locate a modulefile for 'ipopt/3.14.2'
+Initializing simulation...
+WARNING: Could not create Model - gurobi message=Request denied: license
+    expired
+
+    Set parameter GURO_PAR_SPECIAL Set parameter TokenServer to value
+    "linux4-lic.virtual.crc.nd.edu"
+Traceback (most recent call last):
+  File "./run_prescient_2035.py", line 66, in <module>
+    Prescient().simulate(**prescient_options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 75, in simulate
+    return self._simulate(self.config)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/prescient.py", line 82, in _simulate
+    return super().simulate(options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/simulator/simulator.py", line 85, in simulate
+    engine.initialize(options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/engine.py", line 75, in initialize
+    self._setup_solvers(options)
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/prescient/engine/egret/engine.py", line 423, in _setup_solvers
+    if not pe.SolverFactory(self._ruc_solver).available():
+  File "/users/ylu28/dispatches/lib/python3.8/site-packages/pyomo/solvers/plugins/solvers/gurobi_direct.py", line 151, in available
+    raise ApplicationError(
+pyomo.common.errors.ApplicationError: Could not create a gurobipy Model for <class 'pyomo.solvers.plugins.solvers.gurobi_persistent.GurobiPersistent'> solver plugin
+Loading CRC_default/1.1
