@@ -7539,3 +7539,2310 @@ Renewables curtailment reported at t=1 - total=       88.50
 
 Number on/offs:                  8
 Sum on/off ramps:           612.60
+Sum nominal ramps:         4668.73
+
+Simulating time_step  2035-01-23 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       127849.74
+Variable costs:    145477.73
+
+Over-generation reported at t=1 -   total=      781.35
+Renewables curtailment reported at t=1 - total=       88.50
+
+Number on/offs:                  1
+Sum on/off ramps:            45.00
+Sum nominal ramps:         1129.48
+
+Simulating time_step  2035-01-23 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       129304.42
+Variable costs:    151960.07
+
+Over-generation reported at t=1 -   total=      883.84
+Renewables curtailment reported at t=1 - total=      113.35
+
+Number on/offs:                  1
+Sum on/off ramps:            54.51
+Sum nominal ramps:          606.85
+
+Simulating time_step  2035-01-23 16:00
+
+Creating and solving SCED to determine UC initial conditions for date: 2035-01-24 hour: 0
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.82
+
+Pyomo model solve time: 78.77382779121399
+
+Deterministic RUC Cost: 7264991860.47
+
+Fixed costs:      6904587.64
+Variable costs:   6437020.19
+
+Projected over-generation reported at t=2035-01-24 12:00 -   total=     -267.85
+Projected over-generation reported at t=2035-01-24 13:00 -   total=    -1091.93
+Projected over-generation reported at t=2035-01-24 14:00 -   total=    -1671.26
+Projected over-generation reported at t=2035-01-24 15:00 -   total=    -1664.74
+Projected over-generation reported at t=2035-01-24 16:00 -   total=     -950.79
+Projected over-generation reported at t=2035-01-24 17:00 -   total=     -947.91
+Projected over-generation reported at t=2035-01-24 18:00 -   total=     -657.18
+
+Renewables curtailment summary (time-period, aggregate_quantity):
+2035-01-24 12:00       130.50
+2035-01-24 13:00       130.50
+2035-01-24 14:00       130.50
+2035-01-24 15:00       130.50
+2035-01-24 16:00       130.50
+2035-01-24 17:00        42.00
+2035-01-24 18:00        42.00
+Solving day-ahead market
+Computing day-ahead prices using method LMP.
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       129302.43
+Variable costs:    177900.45
+
+Over-generation reported at t=1 -   total=      741.07
+Renewables curtailment reported at t=1 - total=       88.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1505.52
+
+Simulating time_step  2035-01-23 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       222091.08
+Variable costs:     94072.47
+
+Number on/offs:                 13
+Sum on/off ramps:          5020.59
+Sum nominal ramps:         5511.34
+
+Simulating time_step  2035-01-23 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       219062.47
+Variable costs:    167806.11
+
+Number on/offs:                 20
+Sum on/off ramps:          2000.94
+Sum nominal ramps:         4318.14
+
+Simulating time_step  2035-01-23 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       226877.22
+Variable costs:    207056.45
+
+Number on/offs:                  5
+Sum on/off ramps:           378.51
+Sum nominal ramps:         2883.58
+
+Simulating time_step  2035-01-23 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       236946.61
+Variable costs:    224560.40
+
+Number on/offs:                  5
+Sum on/off ramps:           394.08
+Sum nominal ramps:          764.76
+
+Simulating time_step  2035-01-23 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       236934.82
+Variable costs:    228348.00
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1024.12
+
+Simulating time_step  2035-01-23 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       217734.48
+Variable costs:    224721.13
+
+Number on/offs:                  4
+Sum on/off ramps:             0.00
+Sum nominal ramps:          777.73
+
+Simulating time_step  2035-01-23 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       216435.67
+Variable costs:    218685.50
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:          445.23
+
+Simulating time_step  2035-01-24 00:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       215336.52
+Variable costs:    202516.09
+
+Number on/offs:                  5
+Sum on/off ramps:           740.91
+Sum nominal ramps:          558.65
+
+Simulating time_step  2035-01-24 01:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       214141.31
+Variable costs:    188480.85
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1626.06
+
+Simulating time_step  2035-01-24 02:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       219625.17
+Variable costs:    208836.66
+
+Number on/offs:                  1
+Sum on/off ramps:           240.96
+Sum nominal ramps:          882.92
+
+Simulating time_step  2035-01-24 03:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       224475.34
+Variable costs:    227624.33
+
+Number on/offs:                  3
+Sum on/off ramps:           196.56
+Sum nominal ramps:          823.42
+
+Simulating time_step  2035-01-24 04:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       232831.39
+Variable costs:    245572.65
+
+Number on/offs:                  3
+Sum on/off ramps:           362.85
+Sum nominal ramps:          786.46
+
+Simulating time_step  2035-01-24 05:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       250814.19
+Variable costs:    262623.22
+
+Number on/offs:                  3
+Sum on/off ramps:           759.51
+Sum nominal ramps:          740.47
+
+Simulating time_step  2035-01-24 06:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       252027.34
+Variable costs:    278544.60
+
+Number on/offs:                  1
+Sum on/off ramps:            53.19
+Sum nominal ramps:         1163.86
+
+Simulating time_step  2035-01-24 07:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       241959.10
+Variable costs:    284620.82
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1167.60
+
+Simulating time_step  2035-01-24 08:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       241959.10
+Variable costs:    269633.25
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          652.06
+
+Simulating time_step  2035-01-24 09:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       238304.34
+Variable costs:    212391.34
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2223.33
+
+Simulating time_step  2035-01-24 10:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       206072.52
+Variable costs:    155006.29
+
+Number on/offs:                 10
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1448.31
+
+Simulating time_step  2035-01-24 11:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       229425.52
+Variable costs:     83152.13
+
+Number on/offs:                 19
+Sum on/off ramps:          1728.60
+Sum nominal ramps:         3177.54
+
+Simulating time_step  2035-01-24 12:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       134764.88
+Variable costs:    162301.17
+
+Over-generation reported at t=1 -   total=      267.85
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                 17
+Sum on/off ramps:           136.05
+Sum nominal ramps:         7920.24
+
+Simulating time_step  2035-01-24 13:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       153111.11
+Variable costs:    102189.13
+
+Over-generation reported at t=1 -   total=     1091.91
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  2
+Sum on/off ramps:           830.73
+Sum nominal ramps:         4647.34
+
+Simulating time_step  2035-01-24 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       105641.77
+Variable costs:    133243.92
+
+Over-generation reported at t=1 -   total=     1671.26
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  9
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2263.61
+
+Simulating time_step  2035-01-24 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       102259.55
+Variable costs:    124422.53
+
+Over-generation reported at t=1 -   total=     1664.73
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2205.78
+
+Simulating time_step  2035-01-24 16:00
+
+Creating and solving SCED to determine UC initial conditions for date: 2035-01-25 hour: 0
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.89
+
+Pyomo model solve time: 43.31843280792236
+
+Deterministic RUC Cost: 1538078603.89
+
+Fixed costs:      6764819.65
+Variable costs:   5552999.66
+
+Projected over-generation reported at t=2035-01-25 13:00 -   total=     -477.59
+Projected over-generation reported at t=2035-01-25 14:00 -   total=     -575.50
+Projected over-generation reported at t=2035-01-25 15:00 -   total=     -434.43
+Projected over-generation reported at t=2035-01-25 16:00 -   total=      -38.24
+
+Renewables curtailment summary (time-period, aggregate_quantity):
+2035-01-25 13:00       130.50
+2035-01-25 14:00       130.50
+2035-01-25 15:00       130.50
+2035-01-25 16:00       130.50
+Solving day-ahead market
+Computing day-ahead prices using method LMP.
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:        95450.96
+Variable costs:    112373.69
+
+Over-generation reported at t=1 -   total=      950.79
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1301.84
+
+Simulating time_step  2035-01-24 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       124029.05
+Variable costs:     94274.51
+
+Over-generation reported at t=1 -   total=      947.91
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                  5
+Sum on/off ramps:          2055.36
+Sum nominal ramps:         3412.25
+
+Simulating time_step  2035-01-24 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       149863.78
+Variable costs:    119192.58
+
+Over-generation reported at t=1 -   total=      657.18
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                 11
+Sum on/off ramps:          1381.05
+Sum nominal ramps:         1148.93
+
+Simulating time_step  2035-01-24 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       185862.12
+Variable costs:    101406.46
+
+Number on/offs:                  9
+Sum on/off ramps:          1847.37
+Sum nominal ramps:         6161.54
+
+Simulating time_step  2035-01-24 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       158548.27
+Variable costs:    147907.88
+
+Number on/offs:                  5
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2481.77
+
+Simulating time_step  2035-01-24 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       164952.82
+Variable costs:    147850.40
+
+Number on/offs:                  1
+Sum on/off ramps:           277.14
+Sum nominal ramps:           33.91
+
+Simulating time_step  2035-01-24 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       164950.67
+Variable costs:    159744.83
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          564.25
+
+Simulating time_step  2035-01-24 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       187516.77
+Variable costs:    131547.54
+
+Number on/offs:                  9
+Sum on/off ramps:          1439.22
+Sum nominal ramps:         1240.69
+
+Simulating time_step  2035-01-25 00:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       197866.26
+Variable costs:    123116.98
+
+Number on/offs:                  5
+Sum on/off ramps:          1093.71
+Sum nominal ramps:         2259.34
+
+Simulating time_step  2035-01-25 01:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       184648.41
+Variable costs:    147616.70
+
+Number on/offs:                  6
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1226.47
+
+Simulating time_step  2035-01-25 02:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       190597.34
+Variable costs:    153671.62
+
+Number on/offs:                  1
+Sum on/off ramps:           394.44
+Sum nominal ramps:          268.37
+
+Simulating time_step  2035-01-25 03:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       190595.52
+Variable costs:    167785.80
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          678.15
+
+Simulating time_step  2035-01-25 04:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       206483.17
+Variable costs:    170737.94
+
+Number on/offs:                  4
+Sum on/off ramps:           687.81
+Sum nominal ramps:          233.00
+
+Simulating time_step  2035-01-25 05:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       230478.41
+Variable costs:    213832.36
+
+Number on/offs:                  7
+Sum on/off ramps:          1024.44
+Sum nominal ramps:         1889.35
+
+Simulating time_step  2035-01-25 06:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       230462.90
+Variable costs:    241467.09
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1210.37
+
+Simulating time_step  2035-01-25 07:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       220396.80
+Variable costs:    237685.67
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1228.17
+
+Simulating time_step  2035-01-25 08:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       220396.80
+Variable costs:    244275.69
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          416.07
+
+Simulating time_step  2035-01-25 09:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       220396.80
+Variable costs:    213360.27
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1348.63
+
+Simulating time_step  2035-01-25 10:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       200385.59
+Variable costs:    159927.03
+
+Number on/offs:                  4
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1850.44
+
+Simulating time_step  2035-01-25 11:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       173325.80
+Variable costs:    139996.65
+
+Number on/offs:                  7
+Sum on/off ramps:             0.00
+Sum nominal ramps:          552.61
+
+Simulating time_step  2035-01-25 12:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       203875.37
+Variable costs:     56737.59
+
+Number on/offs:                 22
+Sum on/off ramps:          2077.11
+Sum nominal ramps:         3163.57
+
+Simulating time_step  2035-01-25 13:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       137028.74
+Variable costs:    137011.02
+
+Over-generation reported at t=1 -   total=      477.59
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                 12
+Sum on/off ramps:           281.88
+Sum nominal ramps:         9665.41
+
+Simulating time_step  2035-01-25 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       137026.80
+Variable costs:    138635.30
+
+Over-generation reported at t=1 -   total=      575.50
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1503.68
+
+Simulating time_step  2035-01-25 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       137026.80
+Variable costs:    148188.41
+
+Over-generation reported at t=1 -   total=      434.43
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          633.90
+
+Simulating time_step  2035-01-25 16:00
+
+Creating and solving SCED to determine UC initial conditions for date: 2035-01-26 hour: 0
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         4.59
+
+Pyomo model solve time: 42.492684841156006
+
+Deterministic RUC Cost: 1223469496.50
+
+Fixed costs:      6970129.46
+Variable costs:   6176346.37
+
+Projected over-generation reported at t=2035-01-26 13:00 -   total=     -370.96
+Projected over-generation reported at t=2035-01-26 14:00 -   total=     -493.02
+Projected over-generation reported at t=2035-01-26 15:00 -   total=     -346.35
+
+Renewables curtailment summary (time-period, aggregate_quantity):
+2035-01-26 13:00       130.50
+2035-01-26 14:00       130.50
+2035-01-26 15:00       130.50
+Solving day-ahead market
+Computing day-ahead prices using method LMP.
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       137026.80
+Variable costs:    161611.87
+
+Over-generation reported at t=1 -   total=       38.24
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          840.89
+
+Simulating time_step  2035-01-25 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       216709.13
+Variable costs:     70746.50
+
+Number on/offs:                 15
+Sum on/off ramps:          4173.66
+Sum nominal ramps:        10449.39
+
+Simulating time_step  2035-01-25 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       183818.31
+Variable costs:    152981.67
+
+Number on/offs:                 18
+Sum on/off ramps:           379.62
+Sum nominal ramps:         3728.73
+
+Simulating time_step  2035-01-25 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       193883.65
+Variable costs:    171220.78
+
+Number on/offs:                  2
+Sum on/off ramps:           585.24
+Sum nominal ramps:         1574.55
+
+Simulating time_step  2035-01-25 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       193879.73
+Variable costs:    166982.03
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1074.97
+
+Simulating time_step  2035-01-25 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       192073.48
+Variable costs:    145106.62
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1263.80
+
+Simulating time_step  2035-01-25 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       175345.65
+Variable costs:    119149.72
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1901.57
+
+Simulating time_step  2035-01-25 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       178322.39
+Variable costs:    117982.17
+
+Number on/offs:                  4
+Sum on/off ramps:           594.00
+Sum nominal ramps:         1207.21
+
+Simulating time_step  2035-01-26 00:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       171198.13
+Variable costs:    134644.81
+
+Number on/offs:                  3
+Sum on/off ramps:           459.00
+Sum nominal ramps:         3065.15
+
+Simulating time_step  2035-01-26 01:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       175123.10
+Variable costs:    147962.51
+
+Number on/offs:                  2
+Sum on/off ramps:           281.91
+Sum nominal ramps:         1034.85
+
+Simulating time_step  2035-01-26 02:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       175121.11
+Variable costs:    152700.13
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1163.78
+
+Simulating time_step  2035-01-26 03:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       183052.66
+Variable costs:    160208.56
+
+Number on/offs:                  1
+Sum on/off ramps:           345.84
+Sum nominal ramps:          813.98
+
+Simulating time_step  2035-01-26 04:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       189872.16
+Variable costs:    168674.11
+
+Number on/offs:                  2
+Sum on/off ramps:           295.14
+Sum nominal ramps:          931.60
+
+Simulating time_step  2035-01-26 05:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       198917.24
+Variable costs:    184247.53
+
+Number on/offs:                  2
+Sum on/off ramps:           389.22
+Sum nominal ramps:          765.30
+
+Simulating time_step  2035-01-26 06:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       211199.53
+Variable costs:    194639.80
+
+Number on/offs:                  4
+Sum on/off ramps:           526.44
+Sum nominal ramps:          534.43
+
+Simulating time_step  2035-01-26 07:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       214464.23
+Variable costs:    218872.71
+
+Number on/offs:                  2
+Sum on/off ramps:           384.00
+Sum nominal ramps:         1367.33
+
+Simulating time_step  2035-01-26 08:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       210188.27
+Variable costs:    230955.50
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1073.36
+
+Simulating time_step  2035-01-26 09:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       210188.27
+Variable costs:    211389.54
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          843.39
+
+Simulating time_step  2035-01-26 10:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       190038.47
+Variable costs:    173579.10
+
+Number on/offs:                  4
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1358.27
+
+Simulating time_step  2035-01-26 11:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       181181.78
+Variable costs:    155042.24
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:          956.54
+
+Simulating time_step  2035-01-26 12:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       226922.00
+Variable costs:     76530.67
+
+Number on/offs:                 23
+Sum on/off ramps:          2444.73
+Sum nominal ramps:         3101.93
+
+Simulating time_step  2035-01-26 13:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       166111.25
+Variable costs:    172504.56
+
+Over-generation reported at t=1 -   total=      370.96
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                 12
+Sum on/off ramps:           336.39
+Sum nominal ramps:        11311.07
+
+Simulating time_step  2035-01-26 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       166107.31
+Variable costs:    164129.00
+
+Over-generation reported at t=1 -   total=      493.02
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1243.15
+
+Simulating time_step  2035-01-26 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       166107.31
+Variable costs:    163712.67
+
+Over-generation reported at t=1 -   total=      346.35
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          737.19
+
+Simulating time_step  2035-01-26 16:00
+
+Creating and solving SCED to determine UC initial conditions for date: 2035-01-27 hour: 0
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         4.29
+
+Pyomo model solve time: 44.02662801742554
+
+Deterministic RUC Cost: 2805025405.15
+
+Fixed costs:      6476624.28
+Variable costs:   4761957.42
+
+Projected over-generation reported at t=2035-01-27 12:00 -   total=     -162.89
+Projected over-generation reported at t=2035-01-27 13:00 -   total=     -714.59
+Projected over-generation reported at t=2035-01-27 14:00 -   total=     -868.62
+Projected over-generation reported at t=2035-01-27 15:00 -   total=     -725.63
+Projected over-generation reported at t=2035-01-27 16:00 -   total=     -322.06
+
+Renewables curtailment summary (time-period, aggregate_quantity):
+2035-01-27 12:00       130.50
+2035-01-27 13:00       130.50
+2035-01-27 14:00       130.50
+2035-01-27 15:00       130.50
+2035-01-27 16:00       130.50
+Solving day-ahead market
+Computing day-ahead prices using method LMP.
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       206958.07
+Variable costs:     58780.14
+
+Number on/offs:                  8
+Sum on/off ramps:          2705.37
+Sum nominal ramps:        10984.42
+
+Simulating time_step  2035-01-26 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       176277.89
+Variable costs:    138917.70
+
+Number on/offs:                 25
+Sum on/off ramps:          1067.40
+Sum nominal ramps:         3572.40
+
+Simulating time_step  2035-01-26 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       198760.53
+Variable costs:    166843.22
+
+Number on/offs:                  4
+Sum on/off ramps:           958.83
+Sum nominal ramps:         1235.46
+
+Simulating time_step  2035-01-26 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       204546.59
+Variable costs:    188387.80
+
+Number on/offs:                  1
+Sum on/off ramps:           332.49
+Sum nominal ramps:         1267.58
+
+Simulating time_step  2035-01-26 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       204544.69
+Variable costs:    187493.17
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          593.51
+
+Simulating time_step  2035-01-26 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       204544.69
+Variable costs:    174968.30
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1185.82
+
+Simulating time_step  2035-01-26 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       188770.53
+Variable costs:    166689.91
+
+Number on/offs:                  5
+Sum on/off ramps:           132.90
+Sum nominal ramps:          452.46
+
+Simulating time_step  2035-01-26 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       187549.27
+Variable costs:    190143.52
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1156.40
+
+Simulating time_step  2035-01-27 00:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       215024.42
+Variable costs:    158324.76
+
+Number on/offs:                 10
+Sum on/off ramps:          1629.66
+Sum nominal ramps:         1358.64
+
+Simulating time_step  2035-01-27 01:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       208334.07
+Variable costs:    155050.31
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2530.25
+
+Simulating time_step  2035-01-27 02:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       208334.07
+Variable costs:    167538.35
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          549.82
+
+Simulating time_step  2035-01-27 03:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       212049.88
+Variable costs:    170752.23
+
+Number on/offs:                  1
+Sum on/off ramps:           155.10
+Sum nominal ramps:          143.27
+
+Simulating time_step  2035-01-27 04:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       212048.00
+Variable costs:    168149.87
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          362.38
+
+Simulating time_step  2035-01-27 05:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       212048.00
+Variable costs:    176947.57
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          386.46
+
+Simulating time_step  2035-01-27 06:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       210265.55
+Variable costs:    188255.62
+
+Number on/offs:                  2
+Sum on/off ramps:           240.96
+Sum nominal ramps:         1430.90
+
+Simulating time_step  2035-01-27 07:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       203678.10
+Variable costs:    189859.87
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:          678.10
+
+Simulating time_step  2035-01-27 08:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       205249.10
+Variable costs:    204422.81
+
+Number on/offs:                  1
+Sum on/off ramps:            69.00
+Sum nominal ramps:          632.27
+
+Simulating time_step  2035-01-27 09:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       205246.39
+Variable costs:    182878.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          937.76
+
+Simulating time_step  2035-01-27 10:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       197581.16
+Variable costs:    124452.34
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2318.93
+
+Simulating time_step  2035-01-27 11:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       229072.81
+Variable costs:     70702.36
+
+Number on/offs:                 18
+Sum on/off ramps:          1765.98
+Sum nominal ramps:         2285.20
+
+Simulating time_step  2035-01-27 12:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       160626.62
+Variable costs:    162848.82
+
+Over-generation reported at t=1 -   total=      162.89
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                 22
+Sum on/off ramps:           743.31
+Sum nominal ramps:         8447.75
+
+Simulating time_step  2035-01-27 13:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       160616.55
+Variable costs:    144755.61
+
+Over-generation reported at t=1 -   total=      714.59
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2510.89
+
+Simulating time_step  2035-01-27 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       155101.83
+Variable costs:    129103.48
+
+Over-generation reported at t=1 -   total=      868.62
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  4
+Sum on/off ramps:             0.00
+Sum nominal ramps:         3533.58
+
+Simulating time_step  2035-01-27 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       150307.33
+Variable costs:    125384.15
+
+Over-generation reported at t=1 -   total=      725.63
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:          384.07
+
+Simulating time_step  2035-01-27 16:00
+
+Creating and solving SCED to determine UC initial conditions for date: 2035-01-28 hour: 0
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.76
+
+Pyomo model solve time: 95.83961915969849
+
+Deterministic RUC Cost: 8814953378.55
+
+Fixed costs:      5759407.57
+Variable costs:   4418801.15
+
+Projected over-generation reported at t=2035-01-28 11:00 -   total=     -348.29
+Projected over-generation reported at t=2035-01-28 12:00 -   total=    -1387.73
+Projected over-generation reported at t=2035-01-28 13:00 -   total=    -1101.14
+Projected over-generation reported at t=2035-01-28 14:00 -   total=    -1114.17
+Projected over-generation reported at t=2035-01-28 15:00 -   total=     -883.19
+Projected over-generation reported at t=2035-01-28 16:00 -   total=     -409.14
+Projected over-generation reported at t=2035-01-28 17:00 -   total=     -659.83
+Projected over-generation reported at t=2035-01-28 18:00 -   total=     -723.48
+Projected over-generation reported at t=2035-01-28 19:00 -   total=     -496.84
+Projected over-generation reported at t=2035-01-28 20:00 -   total=     -659.06
+Projected over-generation reported at t=2035-01-28 21:00 -   total=    -1021.92
+
+Renewables curtailment summary (time-period, aggregate_quantity):
+2035-01-28 11:00       261.43
+2035-01-28 12:00       283.50
+2035-01-28 13:00       391.20
+2035-01-28 14:00       353.06
+2035-01-28 15:00       130.50
+2035-01-28 16:00       130.50
+2035-01-28 17:00        51.91
+2035-01-28 18:00        42.00
+2035-01-28 19:00        42.00
+2035-01-28 20:00        42.00
+2035-01-28 21:00        42.00
+Solving day-ahead market
+Computing day-ahead prices using method LMP.
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       150307.33
+Variable costs:    137655.23
+
+Over-generation reported at t=1 -   total=      322.06
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1325.80
+
+Simulating time_step  2035-01-27 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       215711.36
+Variable costs:     59116.08
+
+Number on/offs:                 13
+Sum on/off ramps:          3590.58
+Sum nominal ramps:         8836.15
+
+Simulating time_step  2035-01-27 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       187717.98
+Variable costs:    144907.33
+
+Number on/offs:                 23
+Sum on/off ramps:          1394.82
+Sum nominal ramps:         3844.28
+
+Simulating time_step  2035-01-27 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       188785.05
+Variable costs:    207121.91
+
+Number on/offs:                  1
+Sum on/off ramps:            45.00
+Sum nominal ramps:         2821.57
+
+Simulating time_step  2035-01-27 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       187564.76
+Variable costs:    202435.15
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:          405.08
+
+Simulating time_step  2035-01-27 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       186373.30
+Variable costs:    165641.57
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1474.56
+
+Simulating time_step  2035-01-27 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       177758.77
+Variable costs:     98780.48
+
+Number on/offs:                  4
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2681.02
+
+Simulating time_step  2035-01-27 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       172140.48
+Variable costs:     87333.17
+
+Number on/offs:                  6
+Sum on/off ramps:           332.49
+Sum nominal ramps:         1168.27
+
+Simulating time_step  2035-01-28 00:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       149201.91
+Variable costs:     92742.23
+
+Number on/offs:                  8
+Sum on/off ramps:          1064.55
+Sum nominal ramps:         1643.14
+
+Simulating time_step  2035-01-28 01:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       135769.48
+Variable costs:    102507.58
+
+Number on/offs:                  7
+Sum on/off ramps:           644.76
+Sum nominal ramps:         2320.30
+
+Simulating time_step  2035-01-28 02:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       145047.56
+Variable costs:    115357.44
+
+Number on/offs:                  3
+Sum on/off ramps:           786.48
+Sum nominal ramps:         2139.19
+
+Simulating time_step  2035-01-28 03:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       147108.81
+Variable costs:    133999.24
+
+Number on/offs:                  3
+Sum on/off ramps:           615.54
+Sum nominal ramps:          956.19
+
+Simulating time_step  2035-01-28 04:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       165993.37
+Variable costs:    141017.73
+
+Number on/offs:                  3
+Sum on/off ramps:           895.17
+Sum nominal ramps:          382.66
+
+Simulating time_step  2035-01-28 05:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       179988.10
+Variable costs:    155686.92
+
+Number on/offs:                  3
+Sum on/off ramps:           606.15
+Sum nominal ramps:          656.10
+
+Simulating time_step  2035-01-28 06:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       179981.86
+Variable costs:    176626.02
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          927.01
+
+Simulating time_step  2035-01-28 07:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       179981.86
+Variable costs:    161706.93
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          662.51
+
+Simulating time_step  2035-01-28 08:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       179981.86
+Variable costs:    189250.86
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1214.56
+
+Simulating time_step  2035-01-28 09:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       179981.86
+Variable costs:    162878.82
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1149.34
+
+Simulating time_step  2035-01-28 10:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       200667.17
+Variable costs:     78509.65
+
+Number on/offs:                  6
+Sum on/off ramps:          1008.66
+Sum nominal ramps:         3594.07
+
+Simulating time_step  2035-01-28 11:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       174591.26
+Variable costs:    119616.82
+
+Over-generation reported at t=1 -   total=      348.29
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                 29
+Sum on/off ramps:          1640.70
+Sum nominal ramps:         4815.66
+
+Simulating time_step  2035-01-28 12:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       146142.90
+Variable costs:     88270.29
+
+Over-generation reported at t=1 -   total=     1387.73
+Renewables curtailment reported at t=1 - total=      283.50
+
+Number on/offs:                 13
+Sum on/off ramps:          1260.48
+Sum nominal ramps:         2043.47
+
+Simulating time_step  2035-01-28 13:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       152201.30
+Variable costs:    135860.44
+
+Over-generation reported at t=1 -   total=     1101.14
+Renewables curtailment reported at t=1 - total=      391.20
+
+Number on/offs:                 32
+Sum on/off ramps:          2511.57
+Sum nominal ramps:         3222.63
+
+Simulating time_step  2035-01-28 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       171697.21
+Variable costs:    136076.04
+
+Over-generation reported at t=1 -   total=     1114.17
+Renewables curtailment reported at t=1 - total=      353.06
+
+Number on/offs:                 16
+Sum on/off ramps:          1716.30
+Sum nominal ramps:         4576.20
+
+Simulating time_step  2035-01-28 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       165279.40
+Variable costs:    147967.09
+
+Over-generation reported at t=1 -   total=      883.19
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  6
+Sum on/off ramps:           568.50
+Sum nominal ramps:          792.09
+
+Simulating time_step  2035-01-28 16:00
+
+Creating and solving SCED to determine UC initial conditions for date: 2035-01-29 hour: 0
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         3.61
+
+Pyomo model solve time: 52.98705816268921
+
+Deterministic RUC Cost: 1233563340.35
+
+Fixed costs:      8186774.07
+Variable costs:   7740847.02
+
+Projected over-generation reported at t=2035-01-29 13:00 -   total=     -283.95
+Projected over-generation reported at t=2035-01-29 14:00 -   total=     -364.86
+Projected over-generation reported at t=2035-01-29 15:00 -   total=     -282.93
+Projected over-generation reported at t=2035-01-29 16:00 -   total=     -285.90
+
+Renewables curtailment summary (time-period, aggregate_quantity):
+2035-01-29 13:00        88.50
+2035-01-29 14:00        88.50
+2035-01-29 15:00        88.50
+2035-01-29 16:00        88.50
+Solving day-ahead market
+Computing day-ahead prices using method LMP.
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       161671.63
+Variable costs:    144895.85
+
+Over-generation reported at t=1 -   total=      409.00
+Renewables curtailment reported at t=1 - total=      103.70
+
+Number on/offs:                  6
+Sum on/off ramps:           411.54
+Sum nominal ramps:         1839.75
+
+Simulating time_step  2035-01-28 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       154332.45
+Variable costs:    138912.71
+
+Over-generation reported at t=1 -   total=      659.83
+Renewables curtailment reported at t=1 - total=       49.12
+
+Number on/offs:                 15
+Sum on/off ramps:          1709.52
+Sum nominal ramps:         3844.55
+
+Simulating time_step  2035-01-28 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       155408.65
+Variable costs:    150065.99
+
+Over-generation reported at t=1 -   total=      723.48
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                 16
+Sum on/off ramps:          1627.11
+Sum nominal ramps:         3372.95
+
+Simulating time_step  2035-01-28 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       161613.80
+Variable costs:    197788.44
+
+Over-generation reported at t=1 -   total=      496.84
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                  2
+Sum on/off ramps:           242.70
+Sum nominal ramps:         4019.69
+
+Simulating time_step  2035-01-28 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       160472.33
+Variable costs:    183474.47
+
+Over-generation reported at t=1 -   total=      659.06
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1343.92
+
+Simulating time_step  2035-01-28 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       152551.32
+Variable costs:    156838.38
+
+Over-generation reported at t=1 -   total=     1021.62
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1578.91
+
+Simulating time_step  2035-01-28 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       147528.80
+Variable costs:    129182.03
+
+Number on/offs:                  3
+Sum on/off ramps:           394.44
+Sum nominal ramps:         1671.99
+
+Simulating time_step  2035-01-28 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       180729.74
+Variable costs:     93504.26
+
+Number on/offs:                  7
+Sum on/off ramps:          2212.98
+Sum nominal ramps:         3754.57
+
+Simulating time_step  2035-01-29 00:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       195321.27
+Variable costs:     97716.13
+
+Number on/offs:                  8
+Sum on/off ramps:          1725.69
+Sum nominal ramps:         2656.75
+
+Simulating time_step  2035-01-29 01:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       203159.32
+Variable costs:    105733.34
+
+Number on/offs:                  8
+Sum on/off ramps:           597.99
+Sum nominal ramps:         2395.56
+
+Simulating time_step  2035-01-29 02:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       197965.23
+Variable costs:    135443.33
+
+Number on/offs:                  2
+Sum on/off ramps:            53.19
+Sum nominal ramps:         1600.72
+
+Simulating time_step  2035-01-29 03:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       221538.56
+Variable costs:    141794.74
+
+Number on/offs:                  5
+Sum on/off ramps:          1009.02
+Sum nominal ramps:          730.73
+
+Simulating time_step  2035-01-29 04:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       258702.79
+Variable costs:    190769.30
+
+Number on/offs:                 14
+Sum on/off ramps:          1565.46
+Sum nominal ramps:         2759.61
+
+Simulating time_step  2035-01-29 05:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       265818.06
+Variable costs:    268450.75
+
+Number on/offs:                  5
+Sum on/off ramps:           277.95
+Sum nominal ramps:         3348.46
+
+Simulating time_step  2035-01-29 06:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       265806.88
+Variable costs:    334922.43
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2810.08
+
+Simulating time_step  2035-01-29 07:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       265806.88
+Variable costs:    362443.16
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1148.44
+
+Simulating time_step  2035-01-29 08:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       265806.88
+Variable costs:    345656.30
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          697.91
+
+Simulating time_step  2035-01-29 09:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       265806.88
+Variable costs:    269437.58
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         3274.21
+
+Simulating time_step  2035-01-29 10:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       256840.95
+Variable costs:    209672.93
+
+Number on/offs:                  6
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2470.75
+
+Simulating time_step  2035-01-29 11:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       227422.68
+Variable costs:    176997.50
+
+Number on/offs:                  8
+Sum on/off ramps:             0.00
+Sum nominal ramps:          850.28
+
+Simulating time_step  2035-01-29 12:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       230438.08
+Variable costs:    106104.26
+
+Number on/offs:                 18
+Sum on/off ramps:          1094.61
+Sum nominal ramps:         2741.33
+
+Simulating time_step  2035-01-29 13:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       130575.38
+Variable costs:    175038.39
+
+Over-generation reported at t=1 -   total=      283.95
+Renewables curtailment reported at t=1 - total=       88.50
+
+Number on/offs:                 16
+Sum on/off ramps:             0.00
+Sum nominal ramps:         5175.31
+
+Simulating time_step  2035-01-29 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       126515.29
+Variable costs:    160406.64
+
+Over-generation reported at t=1 -   total=      364.86
+Renewables curtailment reported at t=1 - total=       88.50
+
+Number on/offs:                  3
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2318.65
+
+Simulating time_step  2035-01-29 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       118812.68
+Variable costs:    162230.07
+
+Over-generation reported at t=1 -   total=      282.93
+Renewables curtailment reported at t=1 - total=       88.50
+
+Number on/offs:                  1
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2012.37
+
+Simulating time_step  2035-01-29 16:00
+
+Creating and solving SCED to determine UC initial conditions for date: 2035-01-30 hour: 0
+Using persistent forecast error model when projecting demand and renewables in SCED
+
+
+Extracting scenario to simulate
+
+Pyomo model construction time:         4.51
+
+Pyomo model solve time: 65.11970782279968
+
+Deterministic RUC Cost: 4440162946.19
+
+Fixed costs:      7009993.19
+Variable costs:   6008837.84
+
+Projected over-generation reported at t=2035-01-30 13:00 -   total=     -428.86
+Projected over-generation reported at t=2035-01-30 14:00 -   total=     -738.78
+Projected over-generation reported at t=2035-01-30 15:00 -   total=    -1515.73
+Projected over-generation reported at t=2035-01-30 16:00 -   total=     -772.54
+Projected over-generation reported at t=2035-01-30 17:00 -   total=     -971.22
+
+Renewables curtailment summary (time-period, aggregate_quantity):
+2035-01-30 13:00       130.50
+2035-01-30 14:00       255.50
+2035-01-30 15:00       130.50
+2035-01-30 16:00       130.50
+2035-01-30 17:00        42.00
+Solving day-ahead market
+Computing day-ahead prices using method LMP.
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       136354.28
+Variable costs:    169892.21
+
+Over-generation reported at t=1 -   total=      285.90
+Renewables curtailment reported at t=1 - total=       88.50
+
+Number on/offs:                  4
+Sum on/off ramps:           737.34
+Sum nominal ramps:         1443.82
+
+Simulating time_step  2035-01-29 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       221540.76
+Variable costs:    131791.12
+
+Number on/offs:                 15
+Sum on/off ramps:          4168.74
+Sum nominal ramps:         3452.56
+
+Simulating time_step  2035-01-29 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       233851.74
+Variable costs:    191587.90
+
+Number on/offs:                 19
+Sum on/off ramps:          1188.45
+Sum nominal ramps:         5023.39
+
+Simulating time_step  2035-01-29 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       228680.11
+Variable costs:    240652.93
+
+Number on/offs:                  3
+Sum on/off ramps:            10.50
+Sum nominal ramps:         2410.18
+
+Simulating time_step  2035-01-29 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       228678.06
+Variable costs:    252625.83
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          696.91
+
+Simulating time_step  2035-01-29 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       228678.06
+Variable costs:    239757.22
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          555.03
+
+Simulating time_step  2035-01-29 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       222655.35
+Variable costs:    232184.63
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:          240.26
+
+Simulating time_step  2035-01-29 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       227539.98
+Variable costs:    211481.76
+
+Number on/offs:                  5
+Sum on/off ramps:           614.40
+Sum nominal ramps:          822.34
+
+Simulating time_step  2035-01-30 00:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       242904.19
+Variable costs:    188361.27
+
+Number on/offs:                  3
+Sum on/off ramps:           952.05
+Sum nominal ramps:         1977.79
+
+Simulating time_step  2035-01-30 01:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       230773.29
+Variable costs:    203305.35
+
+Number on/offs:                  7
+Sum on/off ramps:           352.80
+Sum nominal ramps:         1236.74
+
+Simulating time_step  2035-01-30 02:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       237356.74
+Variable costs:    218926.79
+
+Number on/offs:                  2
+Sum on/off ramps:           281.52
+Sum nominal ramps:         1285.20
+
+Simulating time_step  2035-01-30 03:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       247360.93
+Variable costs:    226670.39
+
+Number on/offs:                  2
+Sum on/off ramps:           418.08
+Sum nominal ramps:          340.89
+
+Simulating time_step  2035-01-30 04:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       253042.30
+Variable costs:    235921.52
+
+Number on/offs:                  2
+Sum on/off ramps:           230.76
+Sum nominal ramps:          864.99
+
+Simulating time_step  2035-01-30 05:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       258031.06
+Variable costs:    262238.79
+
+Number on/offs:                  3
+Sum on/off ramps:           211.29
+Sum nominal ramps:         1477.49
+
+Simulating time_step  2035-01-30 06:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       259243.49
+Variable costs:    279730.25
+
+Number on/offs:                  1
+Sum on/off ramps:            53.19
+Sum nominal ramps:          910.33
+
+Simulating time_step  2035-01-30 07:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       259241.35
+Variable costs:    271267.07
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          496.91
+
+Simulating time_step  2035-01-30 08:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       259241.35
+Variable costs:    261588.76
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          688.59
+
+Simulating time_step  2035-01-30 09:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       255905.38
+Variable costs:    241337.65
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:         1099.78
+
+Simulating time_step  2035-01-30 10:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       248354.26
+Variable costs:    191082.76
+
+Number on/offs:                  3
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2361.74
+
+Simulating time_step  2035-01-30 11:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       215034.87
+Variable costs:    164549.09
+
+Number on/offs:                 11
+Sum on/off ramps:             0.00
+Sum nominal ramps:          551.72
+
+Simulating time_step  2035-01-30 12:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       232634.42
+Variable costs:     85439.46
+
+Number on/offs:                 23
+Sum on/off ramps:          1949.58
+Sum nominal ramps:         2802.45
+
+Simulating time_step  2035-01-30 13:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       166384.87
+Variable costs:    146938.86
+
+Over-generation reported at t=1 -   total=      428.81
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                 15
+Sum on/off ramps:           631.08
+Sum nominal ramps:         5735.16
+
+Simulating time_step  2035-01-30 14:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       128078.24
+Variable costs:    136280.99
+
+Over-generation reported at t=1 -   total=      738.78
+Renewables curtailment reported at t=1 - total=      255.50
+
+Number on/offs:                 12
+Sum on/off ramps:             0.00
+Sum nominal ramps:         3421.53
+
+Simulating time_step  2035-01-30 15:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       128078.24
+Variable costs:    131046.17
+
+Over-generation reported at t=1 -   total=     1515.73
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:         2093.35
+
+Simulating time_step  2035-01-30 16:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       128078.24
+Variable costs:    141303.19
+
+Over-generation reported at t=1 -   total=      772.54
+Renewables curtailment reported at t=1 - total=      130.50
+
+Number on/offs:                  0
+Sum on/off ramps:             0.00
+Sum nominal ramps:          541.36
+
+Simulating time_step  2035-01-30 17:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       173642.01
+Variable costs:    126559.30
+
+Over-generation reported at t=1 -   total=      971.22
+Renewables curtailment reported at t=1 - total=       42.00
+
+Number on/offs:                  9
+Sum on/off ramps:          2620.53
+Sum nominal ramps:         4087.93
+
+Simulating time_step  2035-01-30 18:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       209913.10
+Variable costs:    129294.25
+
+Number on/offs:                 15
+Sum on/off ramps:          2927.31
+Sum nominal ramps:         4517.39
+
+Simulating time_step  2035-01-30 19:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       195259.30
+Variable costs:    193184.55
+
+Number on/offs:                  5
+Sum on/off ramps:           125.82
+Sum nominal ramps:         4610.92
+
+Simulating time_step  2035-01-30 20:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       188015.25
+Variable costs:    179821.90
+
+Number on/offs:                  3
+Sum on/off ramps:             0.00
+Sum nominal ramps:          503.50
+
+Simulating time_step  2035-01-30 21:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       171515.84
+Variable costs:    151015.54
+
+Number on/offs:                  2
+Sum on/off ramps:             0.00
+Sum nominal ramps:          728.52
+
+Simulating time_step  2035-01-30 22:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       148083.25
+Variable costs:    146493.44
+
+Number on/offs:                  5
+Sum on/off ramps:             0.00
+Sum nominal ramps:          571.14
+
+Simulating time_step  2035-01-30 23:00
+
+Solving SCED instance
+Solving for LMPs
+Fixed costs:       153270.65
+Variable costs:    141182.22
+
+Number on/offs:                  2
+Sum on/off ramps:           277.14
+Sum nominal ramps:          277.39
+
+Simulation Complete
+Total simulation time: 3935.78 seconds
+Loading CRC_default/1.1
