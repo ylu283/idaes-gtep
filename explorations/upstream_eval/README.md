@@ -42,3 +42,16 @@ $PY -m jupyter nbconvert --to notebook --execute --inplace \
   --ExecutePreprocessor.timeout=1800 --ExecutePreprocessor.kernel_name=gtep_up \
   output/tutorial_5bus.ipynb
 ```
+
+## 123-bus (prompt 03)
+
+- `scripts/patch_tutorial_123bus.py` -- instrumentation of
+  `docs/source/tutorials/123bus/tutorial_123bus.ipynb` (Experiments 1 and 2 run live,
+  per-run HiGHS logs, size / time / RSS, metrics table). The copy lives in
+  `output/123bus/` (four levels deep, no path patch) with `soln_expr1/`, `soln_expr2/`
+  copied beside it.
+- `scripts/resolve_123bus_tight_gap.py` -- baseline + Experiment 1 at `mip_rel_gap=1e-4`
+  (run from `output/123bus/`).
+- `scripts/tutorial_123bus.ipynb` -- patched notebook, outputs cleared.
+- `results_123bus.md` -- committed tables. Report:
+  `quality_reports/reports/2026-10-08_pmaps_123bus_tutorial_reproduction.md`.
