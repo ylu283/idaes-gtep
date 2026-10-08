@@ -176,3 +176,9 @@ cython_debug/
 
 # ignore html files
 *.html
+# eval-branch local tooling
+.claude/
+CLAUDE.md
+AGENTS.md
+~$*.pptx
+explorations/**/output/
