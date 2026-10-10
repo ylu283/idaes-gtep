@@ -9,11 +9,11 @@
 # Usage: qsub -N COAL_<RUN> -v RUN=<RUN>,RUNARGS="<run_coal.py args>" run_coal.sh
 # Gurobi, 1 % gap, 24 h limit, 16 threads; full structure 3 stages x 4 reps.
 set -eo pipefail
-ROOT=/groups/adowling/ylu28/idaes-gtep-eval
 source ~/.bashrc
+GTEP_ROOT=/groups/adowling/ylu28/idaes-gtep-eval   # set after bashrc; never use ENV/ROOT (Modules init clobbers ENV)
 conda activate /groups/adowling/ylu28/conda_envs/gtep_up
 module load gurobi
-cd "$ROOT"
+cd "$GTEP_ROOT"
 mkdir -p explorations/coal_upstream/output/crc_logs
 # $RUNARGS last: argparse keeps the last occurrence, so RUNARGS may override
 # --stages / --num-reps (e.g. G0 = "--stages 1 --num-reps 1").
