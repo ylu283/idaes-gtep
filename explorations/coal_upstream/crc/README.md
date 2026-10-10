@@ -10,7 +10,7 @@ rsync -av --delete --exclude '.git/' --exclude '.claude/' --exclude 'exploration
   ~/Documents/GitHub/idaes-gtep-eval/ ylu28@crcfe01.crc.nd.edu:/groups/adowling/ylu28/idaes-gtep-eval/
 # 2. on CRC, once: env with upstream pins + gurobipy matching the Gurobi 11.0.2 module
 bash /groups/adowling/ylu28/idaes-gtep-eval/explorations/coal_upstream/crc/setup_env.sh
-# 3. on CRC, per run (ask first): e.g.
+# 3. on CRC, per run (ask first), from the repo root; RUNARGS may override --stages/--num-reps (G0 smoke): e.g.
 qsub -N COAL_A1 -v RUNARGS="--config 1HR --cost-data off --scale-texas-loads off",RUN=A1 \
   /groups/adowling/ylu28/idaes-gtep-eval/explorations/coal_upstream/crc/run_coal.sh
 ```

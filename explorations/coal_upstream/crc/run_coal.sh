@@ -15,6 +15,8 @@ conda activate /groups/adowling/ylu28/conda_envs/gtep_up
 module load gurobi
 cd "$ROOT"
 mkdir -p explorations/coal_upstream/output/crc_logs
-python explorations/coal_upstream/scripts/run_coal.py $RUNARGS \
+# $RUNARGS last: argparse keeps the last occurrence, so RUNARGS may override
+# --stages / --num-reps (e.g. G0 = "--stages 1 --num-reps 1").
+python explorations/coal_upstream/scripts/run_coal.py \
   --stages 3 --num-reps 4 --solver gurobi --mip-rel-gap 0.01 \
-  --time-limit 86400 --threads 16 --out "explorations/coal_upstream/output/$RUN"
+  --time-limit 86400 --threads 16 --out "explorations/coal_upstream/output/$RUN" $RUNARGS
