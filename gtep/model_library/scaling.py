@@ -45,9 +45,15 @@ def add_load_scaling(m, b, commitment_period, investment_stage, scaling_value):
             )
 
         elif m.config["scale_texas_loads"]:
+            # [eval port: b is the commitment block; the scaling table is
+            # attached to the investment-stage block (fork reads it via
+            # i_p.load_scaling, gtep_model.py:2035@commitment_period).]
+            i_p = b.parent_block().parent_block()
             b.loads[load_n] = (
                 p_load
-                * b.load_scaling[m.md.data["elements"]["load"][load_n]["zone"]].iloc[0]
+                * i_p.load_scaling[m.md.data["elements"]["load"][load_n]["zone"]].iloc[
+                    0
+                ]
             )
 
         else:

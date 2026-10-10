@@ -288,6 +288,14 @@ def create_stages(
     for investment_stage in m.stages:
         b_inv = m.investmentStage[investment_stage]
         b_inv.year = m.years[investment_stage - 1]
+
+        # [eval port: load-scaling attachment from the fork,
+        # gtep_model.py:2481@commitment_period. Read in
+        # model_library/scaling.py via the investment-stage block.]
+        if m.config["scale_texas_loads"]:
+            b_inv.load_scaling = m.data.load_scaling[
+                m.data.load_scaling["year"] == b_inv.year
+            ]
         # print(f"{b_inv}.year = {b_inv.year}")
 
         # Declare cost parameters for each stage because they depend
