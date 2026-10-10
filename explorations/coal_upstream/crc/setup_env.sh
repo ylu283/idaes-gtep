@@ -2,7 +2,7 @@
 # One-time env on CRC for prompt 04: upstream 7b84352 pins (pyproject.toml) +
 # gurobipy 11.0.2 to match `module load gurobi` (11.0.2). May lesson:
 # gurobipy 13 against the Gurobi 11 module conflicts.
-set -euo pipefail
+set -eo pipefail  # no -u: /etc/bashrc on CRC references unset BASHRCSOURCED
 ROOT=/groups/adowling/ylu28/idaes-gtep-eval
 ENV=/groups/adowling/ylu28/conda_envs/gtep_up
 source ~/.bashrc
