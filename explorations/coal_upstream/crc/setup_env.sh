@@ -6,6 +6,10 @@ set -euo pipefail
 ROOT=/groups/adowling/ylu28/idaes-gtep-eval
 ENV=/groups/adowling/ylu28/conda_envs/gtep_up
 source ~/.bashrc
+# keep conda/pip caches out of $HOME (home quota crash of 2026-08-29)
+export CONDA_PKGS_DIRS=/groups/adowling/ylu28/conda_pkgs
+export PIP_CACHE_DIR=/groups/adowling/ylu28/pip_cache
+mkdir -p "$CONDA_PKGS_DIRS" "$PIP_CACHE_DIR"
 conda create -y -p "$ENV" python=3.11
 conda activate "$ENV"
 pip install -e "$ROOT"
